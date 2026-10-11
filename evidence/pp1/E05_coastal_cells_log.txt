@@ -1,0 +1,47 @@
+Input file: Nutrients_Western_Southern_SriLanka_daily.nc
+Grid: 6 lat x 8 lon = 48 cells
+Dates: 1997-09-04 -> 2025-12-31
+Days in file: 10346 | days expected: 10346 | missing days: 0
+Land cells (always empty): 22
+Ocean cells with complete data: 26
+Cells with partial gaps (excluded): 0
+
+Coastal cells selected: 12
+region
+Southern    9
+Western     3
+
+     cell_id  lat   lon   region
+N5.75_E80.00 5.75 80.00 Southern
+N5.75_E80.25 5.75 80.25 Southern
+N5.75_E80.50 5.75 80.50 Southern
+N5.75_E80.75 5.75 80.75 Southern
+N5.75_E81.00 5.75 81.00 Southern
+N6.00_E80.00 6.00 80.00 Southern
+N6.00_E81.00 6.00 81.00 Southern
+N6.25_E79.75 6.25 79.75 Southern
+N6.25_E80.00 6.25 80.00 Southern
+N6.50_E79.75 6.50 79.75  Western
+N6.75_E79.75 6.75 79.75  Western
+N7.00_E79.75 7.00 79.75  Western
+
+Nutrient table rows: 124,152  (= 12 cells x 10346 days)
+Missing values per nutrient:
+no3    0
+po4    0
+si     0
+
+Summary statistics (mmol m-3):
+               no3          po4           si
+count  124152.0000  124152.0000  124152.0000
+mean        0.4224       0.0821       2.7723
+std         0.7357       0.1088       1.1200
+min         0.0036       0.0000       0.6004
+25%         0.0344       0.0007       1.9790
+50%         0.1068       0.0212       2.6581
+75%         0.4783       0.1494       3.3741
+max         6.9757       0.8729       7.7277
+
+Saved: data/processed/cells.csv, data/processed/nutrients_coastal_daily.parquet
+Saved: evidence/pp1/E05_coastal_cells_map.png, evidence/pp1/E06_example_nutrient_series.png
+Step 02 completed successfully.
