@@ -1,0 +1,32 @@
+Coastal cells: 12
+HydroBASINS L9 sub-basins in Sri Lanka box: 256
+River systems reaching the sea (outlet basins): 107
+Outlets within 30 km of a coastal cell (assigned): 26
+Outlets further away (other coasts, not used): 81
+Sub-basins assigned to a coastal cell: 70
+ERA5-Land land points (0.1°) over Sri Lanka: 532
+
+Static features per coastal cell:
+     cell_id  lat  lon   region  catchment_area_km2  n_subbasins  n_river_outlets  n_land_points    forcing_method  dist_to_land_km
+N5.75_E80.00  5.8 80.0 Southern                 0.0          0.0              0.0             10 nearest_10_points             43.2
+N5.75_E80.25  5.8 80.2 Southern                 0.0          0.0              0.0              1        local_30km             28.2
+N5.75_E80.50  5.8 80.5 Southern              1589.3         11.0              5.0             13         catchment             27.6
+N5.75_E80.75  5.8 80.8 Southern                 0.0          0.0              0.0              2        local_30km             28.2
+N5.75_E81.00  5.8 81.0 Southern                 0.0          0.0              0.0             10 nearest_10_points             35.4
+N6.00_E80.00  6.0 80.0 Southern               927.6          7.0              1.0              8         catchment             24.7
+N6.00_E81.00  6.0 81.0 Southern              4019.1         18.0             10.0             30         catchment             15.6
+N6.25_E79.75  6.2 79.8 Southern                 0.0          0.0              0.0             10 nearest_10_points             39.1
+N6.25_E80.00  6.2 80.0 Southern              1044.4          3.0              3.0              8         catchment             12.4
+N6.50_E79.75  6.5 79.8  Western                 0.0          0.0              0.0              3        local_30km             27.6
+N6.75_E79.75  6.8 79.8  Western              2942.4         13.0              1.0             22         catchment             17.5
+N7.00_E79.75  7.0 79.8  Western              5043.1         18.0              6.0             42         catchment             16.6
+
+Cells with NO land forcing at all: 0
+Forcing method per cell:
+forcing_method
+catchment            6
+nearest_10_points    3
+local_30km           3
+
+Saved: era5land_points_to_cells.csv, cell_static_features.csv, E07 map
+Step 03 completed successfully.
