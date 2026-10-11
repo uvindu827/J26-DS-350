@@ -1,0 +1,17 @@
+# data is too large for git; keep it local
+data/
+*.nc
+*.zip
+*.shp
+*.dbf
+*.shx
+*.prj
+
+# python / jupyter clutter
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+
+# secrets
+.cdsapirc
+.env

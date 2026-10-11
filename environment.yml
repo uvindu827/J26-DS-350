@@ -1,0 +1,21 @@
+name: fishguard-c1
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - xarray
+  - netcdf4
+  - dask
+  - pandas
+  - numpy
+  - geopandas
+  - shapely
+  - pyarrow
+  - matplotlib
+  - scikit-learn
+  - xgboost
+  - jupyterlab
+  - pip
+  - pip:
+      - "cdsapi>=0.7.4"
