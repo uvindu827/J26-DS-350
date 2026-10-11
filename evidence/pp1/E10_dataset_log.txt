@@ -1,0 +1,25 @@
+Rows: 124,152 (expected 124,152)
+Cells: 12 | dates: 1997-09-04 -> 2025-12-31
+
+Columns with missing values:
+none
+
+Chronological split:
+             min        max  count  share_%
+split                                      
+test  2022-01-01 2025-12-31  17532     14.1
+train 1997-09-04 2017-12-31  89088     71.8
+val   2018-01-01 2021-12-31  17532     14.1
+
+Rows per season:
+season
+SWM    51732
+NEM    30696
+SIM    21228
+FIM    20496
+
+All columns (35):
+['date', 'cell_id', 'lat', 'lon', 'region', 'no3', 'po4', 'si', 'precip_mm', 'surface_runoff_mm', 'subsurface_runoff_mm', 'soil_moisture', 'u10', 'v10', 'wind_speed', 'precip_sum_3d', 'precip_sum_7d', 'precip_sum_14d', 'precip_sum_30d', 'surface_runoff_sum_3d', 'surface_runoff_sum_7d', 'subsurface_runoff_sum_7d', 'subsurface_runoff_sum_30d', 'wind_speed_mean_3d', 'catchment_area_km2', 'n_subbasins', 'n_river_outlets', 'n_land_points', 'forcing_method', 'dist_to_land_km', 'season', 'season_code', 'doy_sin', 'doy_cos', 'split']
+
+Saved: model_dataset_daily.parquet, experiments/split_config.json, docs/data_dictionary.md, E10 plot
+Step 06 completed successfully.

@@ -1,0 +1,39 @@
+{
+  "split": {
+    "train": [
+      "1997-09-04",
+      "2017-12-31"
+    ],
+    "val": [
+      "2018-01-01",
+      "2021-12-31"
+    ],
+    "test": [
+      "2022-01-01",
+      "2025-12-31"
+    ]
+  },
+  "seasons": {
+    "3": "FIM",
+    "4": "FIM",
+    "5": "SWM",
+    "6": "SWM",
+    "7": "SWM",
+    "8": "SWM",
+    "9": "SWM",
+    "10": "SIM",
+    "11": "SIM",
+    "12": "NEM",
+    "1": "NEM",
+    "2": "NEM"
+  },
+  "season_code": {
+    "NEM": 0,
+    "FIM": 1,
+    "SWM": 2,
+    "SIM": 3
+  },
+  "rows": 124152,
+  "cells": 12,
+  "note": "Whole calendar years; test period never used for tuning."
+}
