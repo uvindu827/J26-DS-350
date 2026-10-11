@@ -142,5 +142,13 @@ ax.set_title("HydroBASINS L9 catchments coloured by the coastal cell they feed (
 plt.savefig(EVID / "E07_catchment_mapping_map.png", dpi=150, bbox_inches="tight")
 plt.close()
 
+# save the final mapping (after fallback rows are added) and verify it on disk
+mapping.to_csv(OUT / "era5land_points_to_cells.csv", index=False)
+check = pd.read_csv(OUT / "era5land_points_to_cells.csv")
+log(f"\nMapping file written: {len(check)} rows, {check['cell_id'].nunique()} cells")
+log(check.groupby(["cell_id", "method"]).size().to_string())
+if check["cell_id"].nunique() != len(coastal):
+    raise SystemExit("ERROR: mapping file does not contain every coastal cell. Stopping.")
+
 log("\nSaved: era5land_points_to_cells.csv, cell_static_features.csv, E07 map")
 log("Step 03 completed successfully.")

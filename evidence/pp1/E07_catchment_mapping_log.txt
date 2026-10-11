@@ -28,5 +28,20 @@ catchment            6
 nearest_10_points    3
 local_30km           3
 
+Mapping file written: 159 rows, 12 cells
+cell_id       method           
+N5.75_E80.00  nearest_10_points    10
+N5.75_E80.25  local_30km            1
+N5.75_E80.50  catchment            13
+N5.75_E80.75  local_30km            2
+N5.75_E81.00  nearest_10_points    10
+N6.00_E80.00  catchment             8
+N6.00_E81.00  catchment            30
+N6.25_E79.75  nearest_10_points    10
+N6.25_E80.00  catchment             8
+N6.50_E79.75  local_30km            3
+N6.75_E79.75  catchment            22
+N7.00_E79.75  catchment            42
+
 Saved: era5land_points_to_cells.csv, cell_static_features.csv, E07 map
 Step 03 completed successfully.
