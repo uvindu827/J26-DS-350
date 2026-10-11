@@ -1,0 +1,36 @@
+ERA5 wind files found: 29
+Variables: ['u10', 'v10']
+Raw time range: 1997-01-01T00:00 -> 2025-12-31T18:00
+Max distance between wind grid point and cell centre: 0.0000 degrees
+
+Cells: 12 | days expected per cell: 10592
+Rows per cell:
+count       12.0
+mean     10592.0
+std          0.0
+min      10592.0
+25%      10592.0
+50%      10592.0
+75%      10592.0
+max      10592.0
+
+Missing values:
+date          0
+cell_id       0
+u10           0
+v10           0
+wind_speed    0
+
+Summary (m/s):
+                      date         u10         v10  wind_speed
+count               127104  127104.000  127104.000  127104.000
+mean   2011-07-02 12:00:00       2.828       0.099       5.090
+min    1997-01-01 00:00:00      -8.959     -11.501       0.508
+25%    2004-04-01 18:00:00      -0.275      -1.025       2.883
+50%    2011-07-02 12:00:00       3.220       0.322       5.069
+75%    2018-10-01 06:00:00       6.379       1.577       6.997
+max    2025-12-31 00:00:00      14.888       9.900      14.893
+std                    NaN       4.195       2.180       2.432
+
+Saved: data/processed/forcing_wind_daily.parquet, evidence E09
+Step 05 completed successfully.
