@@ -1,0 +1,67 @@
+{
+  "task": "predict NO3/PO4/Si at t0+1..t0+7 from state at t0 + forcing (hindcast-forcing mode)",
+  "target": "change from t0; forecast = t0 + predicted change, clipped at 0",
+  "feature_sets": {
+    "A_raw": [
+      "precip_mm",
+      "surface_runoff_mm",
+      "subsurface_runoff_mm",
+      "soil_moisture",
+      "u10",
+      "v10",
+      "wind_speed",
+      "lat",
+      "lon"
+    ],
+    "B_process": [
+      "precip_mm",
+      "surface_runoff_mm",
+      "subsurface_runoff_mm",
+      "soil_moisture",
+      "u10",
+      "v10",
+      "wind_speed",
+      "lat",
+      "lon",
+      "precip_sum_3d",
+      "precip_sum_7d",
+      "precip_sum_14d",
+      "precip_sum_30d",
+      "surface_runoff_sum_3d",
+      "surface_runoff_sum_7d",
+      "subsurface_runoff_sum_7d",
+      "subsurface_runoff_sum_30d",
+      "wind_speed_mean_3d",
+      "season_code",
+      "doy_sin",
+      "doy_cos",
+      "catchment_area_km2",
+      "n_river_outlets",
+      "n_land_points",
+      "dist_to_land_km"
+    ]
+  },
+  "rf_params": {
+    "n_estimators": 200,
+    "min_samples_leaf": 5,
+    "max_features": 0.5,
+    "max_samples": 0.3,
+    "n_jobs": -1,
+    "random_state": 42
+  },
+  "xgb_params": {
+    "n_estimators": 2000,
+    "learning_rate": 0.05,
+    "max_depth": 8,
+    "min_child_weight": 5,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "tree_method": "hist",
+    "early_stopping_rounds": 50,
+    "eval_metric": "rmse",
+    "n_jobs": -1,
+    "random_state": 42
+  },
+  "seed": 42,
+  "tuning": "XGBoost early stopping on validation only; test scored once"
+}

@@ -1,0 +1,56 @@
+Forecast samples (cell x t0 x lead time): 868,056
+split
+test     122388
+train    623280
+val      122388
+
+Persistence reference done.
+
+=== Feature set A_raw: 13 inputs ===
+RF_A_raw trained in 35 s
+XGB_A_raw trained in 9 s | best iteration: 101
+
+=== Feature set B_process: 29 inputs ===
+RF_B_process trained in 79 s
+XGB_B_process trained in 12 s | best iteration: 80
+
+===== VAL (all cells, all lead times) =====
+                 rmse                     mae                      r2                
+nutrient          no3     po4      si     no3     po4      si     no3     po4      si
+model                                                                                
+Persistence    0.3752  0.0372  0.3332  0.1680  0.0174  0.2121  0.7708  0.8788  0.9007
+RF_A_raw       0.3367  0.0333  0.2979  0.1590  0.0163  0.2003  0.8153  0.9028  0.9206
+RF_B_process   0.3209  0.0313  0.2931  0.1536  0.0155  0.1976  0.8323  0.9143  0.9231
+XGB_A_raw      0.3377  0.0330  0.2956  0.1597  0.0162  0.1977  0.8143  0.9047  0.9218
+XGB_B_process  0.3234  0.0304  0.2896  0.1523  0.0150  0.1929  0.8297  0.9188  0.9250
+
+Skill vs persistence (1 - RMSE/RMSE_persistence; >0 = better than 'no change'):
+nutrient         no3    po4     si
+model                             
+Persistence    0.000  0.000  0.000
+RF_A_raw       0.102  0.105  0.106
+RF_B_process   0.145  0.159  0.120
+XGB_A_raw      0.100  0.113  0.113
+XGB_B_process  0.138  0.182  0.131
+
+===== TEST (all cells, all lead times) =====
+                 rmse                     mae                      r2                
+nutrient          no3     po4      si     no3     po4      si     no3     po4      si
+model                                                                                
+Persistence    0.3694  0.0454  0.3301  0.1660  0.0203  0.2094  0.6230  0.8267  0.8750
+RF_A_raw       0.3283  0.0403  0.3005  0.1581  0.0189  0.1969  0.7022  0.8633  0.8964
+RF_B_process   0.3050  0.0382  0.2961  0.1463  0.0178  0.1905  0.7431  0.8776  0.8995
+XGB_A_raw      0.3235  0.0402  0.2968  0.1546  0.0192  0.1925  0.7109  0.8643  0.8990
+XGB_B_process  0.3056  0.0375  0.2916  0.1459  0.0182  0.1866  0.7419  0.8818  0.9025
+
+Skill vs persistence (1 - RMSE/RMSE_persistence; >0 = better than 'no change'):
+nutrient         no3    po4     si
+model                             
+Persistence    0.000  0.000  0.000
+RF_A_raw       0.111  0.112  0.090
+RF_B_process   0.174  0.160  0.103
+XGB_A_raw      0.124  0.115  0.101
+XGB_B_process  0.173  0.174  0.117
+
+Saved: baseline_metrics.csv, baselines_config.json, baseline_predictions.parquet, E11-E13 plots
+Step 07 completed successfully.
