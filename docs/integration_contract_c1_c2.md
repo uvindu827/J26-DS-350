@@ -2,7 +2,7 @@
 
 
 
-Version 0.1 – agreed 11 Oct 2026 – status: agreed; grid-centre check pending
+Version 1.0 – agreed 11 Oct 2026 – status: agreed by both components (cell IDs and grid centres verified)
 
 
 
@@ -61,6 +61,9 @@ CSV (Parquet optional), one row per cell × issue\_date × lead time:
 | (after PP1) \*\_lower, \*\_upper | Uncertainty bounds | mmol m-3 |
 
 
+Unique row key: `cell_id + issue_date + lead_time_days` (equivalently `cell_id + target_date + lead_time_days`).
+Each target_date appears once per lead time (7 times per cell). Component 2 filters to one lead
+time before joining on `cell_id + target_date`.
 
 Missing values: empty / NaN.
 
