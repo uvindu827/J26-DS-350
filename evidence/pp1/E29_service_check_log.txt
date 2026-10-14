@@ -1,0 +1,17 @@
+Service loaded in 1.4 s | model NeuralODE_s2026
+Forecast N6.75_E79.75 issued 2024-05-15 in 0.07 s | season {'code': 'SWM', 'name': 'Southwest Monsoon', 'day': 15, 'length': 153}
+  [PASS] export file has this case (7 lead days)
+  [PASS] same model run as export
+  [PASS] no3 forecast equals exported forecast (max diff 5.00e-06)
+  [PASS] no3 actual equals Copernicus reference (max diff 4.00e-06)
+  [PASS] po4 forecast equals exported forecast (max diff 0.00e+00)
+  [PASS] po4 actual equals Copernicus reference (max diff 4.00e-06)
+  [PASS] si forecast equals exported forecast (max diff 5.00e-06)
+  [PASS] si actual equals Copernicus reference (max diff 4.00e-06)
+  [PASS] outlook returns all 12 cells
+  [PASS] outlook labels valid
+  [PASS] training-period date refused
+
+NO3 issue 2.13238 (above) -> day 7 0.76193 (falling, normal) | actual 0.66457 | benchmark 0.99994
+Outlook NO3 day 7: N5.75_E80.00=below/stable, N5.75_E80.25=normal/stable, N5.75_E80.50=above/stable, N5.75_E80.75=above/stable, N5.75_E81.00=above/stable, N6.00_E80.00=normal/falling, N6.00_E81.00=above/stable, N6.25_E79.75=above/falling, N6.25_E80.00=above/falling, N6.50_E79.75=above/falling, N6.75_E79.75=normal/falling, N7.00_E79.75=normal/falling
+Step 13 completed successfully.
