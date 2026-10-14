@@ -1,0 +1,47 @@
+Baseline rows: 244,776 | Neural ODE rows: 244,272 | common rows: 244,272
+Alignment check - max difference between baseline and Neural ODE true values: 0.000000
+
+===== VAL - all models on identical samples =====
+                 rmse                     mae                      r2                
+nutrient          no3     po4      si     no3     po4      si     no3     po4      si
+model                                                                                
+NeuralODE      0.3072  0.0293  0.2880  0.1622  0.0159  0.1934  0.8447  0.9247  0.9257
+Persistence    0.3754  0.0372  0.3335  0.1680  0.0174  0.2123  0.7681  0.8786  0.9004
+RF_A_raw       0.3367  0.0333  0.2981  0.1588  0.0163  0.2004  0.8135  0.9027  0.9204
+RF_B_process   0.3210  0.0313  0.2933  0.1535  0.0155  0.1977  0.8305  0.9142  0.9230
+XGB_A_raw      0.3378  0.0330  0.2957  0.1596  0.0162  0.1977  0.8123  0.9046  0.9217
+XGB_B_process  0.3234  0.0304  0.2898  0.1522  0.0150  0.1930  0.8279  0.9188  0.9248
+
+Skill vs persistence:
+nutrient         no3    po4     si
+model                             
+NeuralODE      0.182  0.212  0.136
+Persistence    0.000  0.000  0.000
+RF_A_raw       0.103  0.105  0.106
+RF_B_process   0.145  0.159  0.121
+XGB_A_raw      0.100  0.113  0.113
+XGB_B_process  0.139  0.182  0.131
+
+===== TEST - all models on identical samples =====
+                 rmse                     mae                      r2                
+nutrient          no3     po4      si     no3     po4      si     no3     po4      si
+model                                                                                
+NeuralODE      0.2949  0.0352  0.2962  0.1556  0.0187  0.1897  0.7602  0.8957  0.8995
+Persistence    0.3697  0.0454  0.3304  0.1662  0.0203  0.2096  0.6230  0.8265  0.8750
+RF_A_raw       0.3286  0.0404  0.3007  0.1582  0.0189  0.1970  0.7022  0.8631  0.8965
+RF_B_process   0.3052  0.0382  0.2963  0.1465  0.0178  0.1907  0.7431  0.8775  0.8995
+XGB_A_raw      0.3237  0.0402  0.2969  0.1548  0.0193  0.1926  0.7110  0.8641  0.8990
+XGB_B_process  0.3059  0.0375  0.2918  0.1460  0.0182  0.1867  0.7419  0.8817  0.9025
+
+Skill vs persistence:
+nutrient         no3    po4     si
+model                             
+NeuralODE      0.202  0.225  0.103
+Persistence    0.000  0.000  0.000
+RF_A_raw       0.111  0.112  0.090
+RF_B_process   0.174  0.160  0.103
+XGB_A_raw      0.124  0.115  0.101
+XGB_B_process  0.173  0.174  0.117
+
+Saved: comparison_metrics.csv, all_predictions.parquet, E17-E19 plots
+Step 09 completed successfully.
