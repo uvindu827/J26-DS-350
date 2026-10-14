@@ -1,0 +1,419 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "FishGuard AI \u00b7 Component 1 \u00b7 Coastal Nutrients API",
+    "description": "Read-only replay-mode NO3 / PO4 / Si forecasts for 12 Western and Southern coastal cells, validated on 2022\u20132025.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/c1/health": {
+      "get": {
+        "tags": [
+          "C1 \u00b7 Coastal Nutrients"
+        ],
+        "summary": "Health",
+        "operationId": "health_c1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/c1/meta": {
+      "get": {
+        "tags": [
+          "C1 \u00b7 Coastal Nutrients"
+        ],
+        "summary": "Meta",
+        "operationId": "meta_c1_meta_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/c1/cells": {
+      "get": {
+        "tags": [
+          "C1 \u00b7 Coastal Nutrients"
+        ],
+        "summary": "Cells",
+        "operationId": "cells_c1_cells_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/c1/geo": {
+      "get": {
+        "tags": [
+          "C1 \u00b7 Coastal Nutrients"
+        ],
+        "summary": "Geo",
+        "operationId": "geo_c1_geo_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/c1/outlook": {
+      "get": {
+        "tags": [
+          "C1 \u00b7 Coastal Nutrients"
+        ],
+        "summary": "Outlook",
+        "operationId": "outlook_c1_outlook_get",
+        "parameters": [
+          {
+            "name": "issue",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "description": "Forecast issue date YYYY-MM-DD, replay mode: 2022-01-01 to 2025-12-24",
+              "title": "Issue"
+            },
+            "description": "Forecast issue date YYYY-MM-DD, replay mode: 2022-01-01 to 2025-12-24"
+          },
+          {
+            "name": "nutrient",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "no3",
+                "po4",
+                "si"
+              ],
+              "type": "string",
+              "default": "no3",
+              "title": "Nutrient"
+            }
+          },
+          {
+            "name": "lead",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 7,
+              "minimum": 1,
+              "description": "Outlook day 1-7",
+              "default": 7,
+              "title": "Lead"
+            },
+            "description": "Outlook day 1-7"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/c1/forecast": {
+      "get": {
+        "tags": [
+          "C1 \u00b7 Coastal Nutrients"
+        ],
+        "summary": "Forecast",
+        "operationId": "forecast_c1_forecast_get",
+        "parameters": [
+          {
+            "name": "cell",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Cell id, e.g. N6.75_E79.75",
+              "title": "Cell"
+            },
+            "description": "Cell id, e.g. N6.75_E79.75"
+          },
+          {
+            "name": "issue",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "description": "Forecast issue date YYYY-MM-DD, replay mode: 2022-01-01 to 2025-12-24",
+              "title": "Issue"
+            },
+            "description": "Forecast issue date YYYY-MM-DD, replay mode: 2022-01-01 to 2025-12-24"
+          },
+          {
+            "name": "benchmark",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Include the XGBoost benchmark (expert view)",
+              "default": false,
+              "title": "Benchmark"
+            },
+            "description": "Include the XGBoost benchmark (expert view)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/c1/forecast.csv": {
+      "get": {
+        "tags": [
+          "C1 \u00b7 Coastal Nutrients"
+        ],
+        "summary": "Forecast Csv",
+        "operationId": "forecast_csv_c1_forecast_csv_get",
+        "parameters": [
+          {
+            "name": "cell",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Cell"
+            }
+          },
+          {
+            "name": "issue",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "description": "Forecast issue date YYYY-MM-DD, replay mode: 2022-01-01 to 2025-12-24",
+              "title": "Issue"
+            },
+            "description": "Forecast issue date YYYY-MM-DD, replay mode: 2022-01-01 to 2025-12-24"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/c1/climatology": {
+      "get": {
+        "tags": [
+          "C1 \u00b7 Coastal Nutrients"
+        ],
+        "summary": "Climatology",
+        "operationId": "climatology_c1_climatology_get",
+        "parameters": [
+          {
+            "name": "region",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "Western",
+                    "Southern"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Region"
+            }
+          },
+          {
+            "name": "cell",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cell"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/c1/reliability": {
+      "get": {
+        "tags": [
+          "C1 \u00b7 Coastal Nutrients"
+        ],
+        "summary": "Reliability",
+        "operationId": "reliability_c1_reliability_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "issue_date": "2024-05-15",
+  "target_date": "2024-05-22",
+  "lead": 7,
+  "nutrient": "no3",
+  "unit": "mmol m-3",
+  "season": {
+    "code": "SWM",
+    "name": "Southwest Monsoon",
+    "day": 15,
+    "length": 153
+  },
+  "cells": [
+    {
+      "cell_id": "N5.75_E80.00",
+      "name": "Galle offshore (west)",
+      "region": "Southern",
+      "lat": 5.75,
+      "lon": 80.0,
+      "issue_value": 0.11837,
+      "forecast_value": 0.0,
+      "change": -0.11837,
+      "status": "below",
+      "trend": "stable"
+    },
+    {
+      "cell_id": "N5.75_E80.25",
+      "name": "Galle–Unawatuna offshore",
+      "region": "Southern",
+      "lat": 5.75,
+      "lon": 80.25,
+      "issue_value": 0.18596,
+      "forecast_value": 0.03731,
+      "change": -0.14865,
+      "status": "normal",
+      "trend": "stable"
+    },
+    {
+      "cell_id": "N5.75_E80.50",
+      "name": "Matara coast",
+      "region": "Southern",
+      "lat": 5.75,
+      "lon": 80.5,
+      "issue_value": 0.10601,
+      "forecast_value": 0.13239,
+      "change": 0.02639,
+      "status": "above",
+      "trend": "stable"
+    },
+    {
+      "cell_id": "N5.75_E80.75",
+      "name": "Tangalle offshore",
+      "region": "Southern",
+      "lat": 5.75,
+      "lon": 80.75,
+      "issue_value": 0.07202,
+      "forecast_value": 0.15282,
+      "change": 0.0808,
+      "status": "above",
+      "trend": "stable"
+    },
+    {
+      "cell_id": "N5.75_E81.00",
+      "name": "Hambantota offshore",
+      "region": "Southern",
+      "lat": 5.75,
+      "lon": 81.0,
+      "issue_value": 0.01459,
+      "forecast_value": 0.27159,
+      "change": 0.257,
+      "status": "above",
+      "trend": "stable"
+    },
+    {
+      "cell_id": "N6.00_E80.00",
+      "name": "Hikkaduwa coast",
+      "region": "Southern",
+      "lat": 6.0,
+      "lon": 80.0,
+      "issue_value": 0.93471,
+      "forecast_value": 0.16987,
+      "change": -0.76484,
+      "status": "normal",
+      "trend": "falling"
+    },
+    {
+      "cell_id": "N6.00_E81.00",
+      "name": "Hambantota coast",
+      "region": "Southern",
+      "lat": 6.0,
+      "lon": 81.0,
+      "issue_value": 0.03889,
+      "forecast_value": 0.11921,
+      "change": 0.08032,
+      "status": "above",
+      "trend": "stable"
+    },
+    {
+      "cell_id": "N6.25_E79.75",
+      "name": "Bentota offshore",
+      "region": "Southern",
+      "lat": 6.25,
+      "lon": 79.75,
+      "issue_value": 1.1751,
+      "forecast_value": 0.5914,
+      "change": -0.5837,
+      "status": "above",
+      "trend": "falling"
+    },
+    {
+      "cell_id": "N6.25_E80.00",
+      "name": "Bentota–Ambalangoda coast",
+      "region": "Southern",
+      "lat": 6.25,
+      "lon": 80.0,
+      "issue_value": 2.11004,
+      "forecast_value": 0.79675,
+      "change": -1.31329,
+      "status": "above",
+      "trend": "falling"
+    },
+    {
+      "cell_id": "N6.50_E79.75",
+      "name": "Kalutara coast",
+      "region": "Western",
+      "lat": 6.5,
+      "lon": 79.75,
+      "issue_value": 2.28248,
+      "forecast_value": 1.11996,
+      "change": -1.16252,
+      "status": "above",
+      "trend": "falling"
+    },
+    {
+      "cell_id": "N6.75_E79.75",
+      "name": "Panadura coast",
+      "region": "Western",
+      "lat": 6.75,
+      "lon": 79.75,
+      "issue_value": 2.13238,
+      "forecast_value": 0.76193,
+      "change": -1.37045,
+      "status": "normal",
+      "trend": "falling"
+    },
+    {
+      "cell_id": "N7.00_E79.75",
+      "name": "Colombo coast",
+      "region": "Western",
+      "lat": 7.0,
+      "lon": 79.75,
+      "issue_value": 1.99581,
+      "forecast_value": 0.51286,
+      "change": -1.48294,
+      "status": "normal",
+      "trend": "falling"
+    }
+  ],
+  "regions": {
+    "Western": {
+      "cells": 3,
+      "status_counts": {
+        "below": 0,
+        "normal": 2,
+        "above": 1
+      },
+      "trend_counts": {
+        "falling": 3,
+        "stable": 0,
+        "rising": 0
+      }
+    },
+    "Southern": {
+      "cells": 9,
+      "status_counts": {
+        "below": 1,
+        "normal": 2,
+        "above": 6
+      },
+      "trend_counts": {
+        "falling": 3,
+        "stable": 6,
+        "rising": 0
+      }
+    }
+  }
+}

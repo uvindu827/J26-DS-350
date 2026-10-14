@@ -1,0 +1,16 @@
+Endpoints in contract: ['/c1/cells', '/c1/climatology', '/c1/forecast', '/c1/forecast.csv', '/c1/geo', '/c1/health', '/c1/meta', '/c1/outlook', '/c1/reliability']
+  [PASS] GET /c1/health -> 200
+  [PASS] GET /c1/meta -> 200
+  [PASS] GET /c1/cells -> 200
+  [PASS] GET /c1/geo -> 200
+  [PASS] GET /c1/reliability -> 200
+  [PASS] GET /c1/climatology?region=Western -> 200
+  [PASS] GET /c1/forecast -> 200
+  [PASS] API forecast identical to service forecast
+  [PASS] GET /c1/outlook -> 12 cells
+  [PASS] GET /c1/forecast.csv -> CSV with 21 rows
+  [PASS] training-period date -> 400
+  [PASS] unknown cell -> 400
+  [PASS] lead day 9 -> 422 (validation)
+Saved docs/c1_api_openapi.json and E30_api_outlook_sample.json
+Step 14 completed successfully.

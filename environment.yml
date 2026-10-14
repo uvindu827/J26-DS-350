@@ -12,6 +12,9 @@ dependencies:
   - geopandas
   - shapely
   - pyarrow
+  - fastapi
+  - uvicorn
+  - httpx
   - matplotlib
   - scikit-learn
   - xgboost
@@ -20,4 +23,5 @@ dependencies:
   - pip
     - pip:
       - "cdsapi>=0.7.4"
+
       
