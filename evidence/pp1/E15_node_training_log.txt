@@ -1,0 +1,35 @@
+Training windows: 89,004 | validation windows: 17,448
+Inputs: state 3 | forcing 19 | static 6
+Neural ODE parameters: 6,211 | hidden=64 | RK4 substeps/day=1
+Reference: persistence validation loss = 0.15002 (the Neural ODE must go below this)
+
+epoch   1 | train 0.13176 | val 0.11710 |    6s  * best
+epoch   2 | train 0.11918 | val 0.11170 |    6s  * best
+epoch   3 | train 0.11350 | val 0.11221 |    7s
+epoch   4 | train 0.10936 | val 0.10698 |    7s  * best
+epoch   5 | train 0.10603 | val 0.10667 |    7s  * best
+epoch   6 | train 0.10366 | val 0.11034 |    7s
+epoch   7 | train 0.10159 | val 0.10636 |    7s  * best
+epoch   8 | train 0.10013 | val 0.10802 |    6s
+epoch   9 | train 0.09887 | val 0.10660 |    6s
+epoch  10 | train 0.09738 | val 0.10622 |    7s  * best
+epoch  11 | train 0.09636 | val 0.10710 |    7s
+epoch  12 | train 0.09568 | val 0.10513 |    7s  * best
+epoch  13 | train 0.09437 | val 0.10382 |    6s  * best
+epoch  14 | train 0.09347 | val 0.10403 |    6s
+epoch  15 | train 0.09271 | val 0.10358 |    7s  * best
+epoch  16 | train 0.09182 | val 0.10937 |    7s
+epoch  17 | train 0.09114 | val 0.10431 |    6s
+epoch  18 | train 0.09053 | val 0.10239 |    6s  * best
+epoch  19 | train 0.08952 | val 0.10137 |    6s  * best
+epoch  20 | train 0.08899 | val 0.10595 |    7s
+epoch  21 | train 0.08843 | val 0.10697 |    7s
+epoch  22 | train 0.08793 | val 0.10434 |    6s
+epoch  23 | train 0.08747 | val 0.10257 |    6s
+epoch  24 | train 0.08685 | val 0.10149 |    7s
+epoch  25 | train 0.08602 | val 0.10282 |    7s
+Early stopping: no validation improvement for 6 epochs.
+
+Best validation loss: 0.10137 | persistence: 0.15002 | improvement: 32.4%
+Saved: experiments/models/node_best.pt, node_config.json, training history, E16 plot
+Step 08 completed successfully.
