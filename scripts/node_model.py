@@ -104,3 +104,41 @@ def get_batch(arr, idx, horizon=HORIZON):
     Y = arr["Z"][c[:, None], steps]        # (B, H, 3)
     s = arr["S"][c]                        # (B, S)
     return (torch.from_numpy(z0), torch.from_numpy(U), torch.from_numpy(s), torch.from_numpy(Y))
+
+# ------------------------------------------------------------------ discrete-time control
+class LSTMSeq(nn.Module):
+    """LSTM-B: architecture-fair discrete-time control for the Neural ODE.
+    Same information: z(t0) + daily forcing for t0+1..t0+H + static s. No nutrient history.
+    z0 and s are encoded into the starting memory (h0, c0); one LSTM step per day;
+    output = z0 + head(h), i.e. the change from t0 (starts near persistence)."""
+    def __init__(self, n_forcing, n_static, hidden=32):
+        super().__init__()
+        n_state = len(NUTRIENTS)
+        self.hidden = hidden
+        self.enc = nn.Linear(n_state + n_static, 2 * hidden)
+        self.cell = nn.LSTMCell(n_forcing + n_static, hidden)
+        self.head = nn.Linear(hidden, n_state)
+        with torch.no_grad():  # start near 'no change', like the Neural ODE
+            self.head.weight.mul_(0.1)
+            self.head.bias.zero_()
+
+    def forward(self, z0, U, s):
+        hc = torch.tanh(self.enc(torch.cat([z0, s], dim=-1)))
+        h = hc[:, :self.hidden].contiguous()
+        c = hc[:, self.hidden:].contiguous()
+        out = []
+        for i in range(U.shape[1]):
+            h, c = self.cell(torch.cat([U[:, i], s], dim=-1), (h, c))
+            out.append(z0 + self.head(h))
+        return torch.stack(out, dim=1)  # (B, H, 3)
+
+
+DEFAULT_HIDDEN = {"node": 64, "lstm": 32}
+
+def build_model(name, n_forcing, n_static, hidden=None, substeps=1):
+    hidden = hidden or DEFAULT_HIDDEN[name]
+    if name == "node":
+        return NeuralODE(n_forcing, n_static, hidden, substeps)
+    if name == "lstm":
+        return LSTMSeq(n_forcing, n_static, hidden)
+    raise ValueError(f"unknown model: {name}")

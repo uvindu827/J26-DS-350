@@ -1,6 +1,7 @@
+Model: Neural ODE
 Training windows: 89,004 | validation windows: 17,448
 Inputs: state 3 | forcing 19 | static 6
-Neural ODE parameters: 6,211 | hidden=64 | RK4 substeps/day=1
+Neural ODE parameters: 6,211 | hidden=64
 iteration    1 | loss 0.17608
 iteration   50 | loss 0.11420
 iteration  100 | loss 0.06810

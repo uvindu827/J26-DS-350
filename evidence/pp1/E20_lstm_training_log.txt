@@ -1,0 +1,22 @@
+Model: LSTM-B
+Training windows: 89,004 | validation windows: 17,448
+Inputs: state 3 | forcing 19 | static 6
+LSTM-B parameters: 8,291 | hidden=32
+Reference: persistence validation loss = 0.15002
+
+epoch   1 | train 0.13702 | val 0.11586 |    3s  * best
+epoch   2 | train 0.11052 | val 0.10666 |    3s  * best
+epoch   3 | train 0.10104 | val 0.10581 |    3s  * best
+epoch   4 | train 0.09561 | val 0.10248 |    3s  * best
+epoch   5 | train 0.09178 | val 0.10170 |    3s  * best
+epoch   6 | train 0.08911 | val 0.10323 |    3s
+epoch   7 | train 0.08731 | val 0.10299 |    3s
+epoch   8 | train 0.08481 | val 0.10416 |    3s
+epoch   9 | train 0.08352 | val 0.10363 |    3s
+epoch  10 | train 0.08207 | val 0.10363 |    3s
+epoch  11 | train 0.08085 | val 0.10771 |    3s
+Early stopping: no validation improvement for 6 epochs.
+
+Best validation loss: 0.10170 | persistence: 0.15002 | improvement: 32.2%
+Saved: experiments/models/lstm_best.pt, lstm_config.json, history, E21_lstm_loss_curve.png
+Step 08 completed successfully.

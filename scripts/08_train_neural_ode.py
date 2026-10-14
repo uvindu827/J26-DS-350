@@ -1,10 +1,14 @@
 """
-Step 08 - Train the simplified multi-nutrient Neural ODE.
+Step 08 - Train a sequence model with ONE shared procedure (fair comparison).
 
-  python scripts/08_train_neural_ode.py --overfit   -> sanity check on 256 windows (evidence E14)
-  python scripts/08_train_neural_ode.py             -> full training, early stopping on validation (E15/E16)
+  --model node : simplified multi-nutrient Neural ODE (proposed model)
+  --model lstm : LSTM-B discrete-time control (same inputs, same training procedure)
 
-Train split only for learning; validation only for early stopping; test is NOT touched here.
+  python scripts/08_train_neural_ode.py --model node --overfit
+  python scripts/08_train_neural_ode.py --model lstm --overfit
+  python scripts/08_train_neural_ode.py --model lstm
+
+Train split for learning; validation only for early stopping; test NOT touched here.
 """
 from pathlib import Path
 import argparse
@@ -18,25 +22,29 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from common import SEED, load_dataset
-from node_model import NeuralODE, prepare_arrays, windows, get_batch, FORCING_COLS, STATIC_COLS
+from node_model import build_model, prepare_arrays, windows, get_batch, FORCING_COLS, STATIC_COLS
 
 p = argparse.ArgumentParser()
+p.add_argument("--model", choices=["node", "lstm"], default="node")
 p.add_argument("--overfit", action="store_true", help="sanity check: fit 256 training windows only")
 p.add_argument("--epochs", type=int, default=40)
-p.add_argument("--hidden", type=int, default=64)
+p.add_argument("--hidden", type=int, default=None, help="default: 64 for node, 32 for lstm")
 p.add_argument("--lr", type=float, default=1e-3)
 p.add_argument("--batch", type=int, default=512)
 p.add_argument("--patience", type=int, default=6)
-p.add_argument("--substeps", type=int, default=1)
+p.add_argument("--substeps", type=int, default=1, help="RK4 steps per day (node only)")
 args = p.parse_args()
+
+LABEL = {"node": "Neural ODE", "lstm": "LSTM-B"}[args.model]
+TAGS = {"node": ("E15", "E16"), "lstm": ("E20", "E21")}[args.model]
 
 torch.manual_seed(SEED)
 rng = np.random.default_rng(SEED)
 EVID = Path("evidence/pp1")
 RES = Path("experiments/results"); RES.mkdir(parents=True, exist_ok=True)
 MODELS = Path("experiments/models"); MODELS.mkdir(parents=True, exist_ok=True)
-tag = "E14_node_overfit" if args.overfit else "E15_node_training"
-LOG_FILE = EVID / f"{tag}_log.txt"
+log_name = f"E14_{args.model}_overfit" if args.overfit else f"{TAGS[0]}_{args.model}_training"
+LOG_FILE = EVID / f"{log_name}_log.txt"
 LOG_FILE.write_text("")
 
 def log(msg=""):
@@ -48,12 +56,14 @@ def log(msg=""):
 df = load_dataset()
 arr = prepare_arrays(df)
 tr, va = windows(arr, "train"), windows(arr, "val")
+log(f"Model: {LABEL}")
 log(f"Training windows: {len(tr):,} | validation windows: {len(va):,}")
 log(f"Inputs: state 3 | forcing {len(FORCING_COLS)} | static {len(STATIC_COLS)}")
 
-model = NeuralODE(len(FORCING_COLS), len(STATIC_COLS), args.hidden, args.substeps)
-n_params = sum(p.numel() for p in model.parameters())
-log(f"Neural ODE parameters: {n_params:,} | hidden={args.hidden} | RK4 substeps/day={args.substeps}")
+model = build_model(args.model, len(FORCING_COLS), len(STATIC_COLS), args.hidden, args.substeps)
+hidden = args.hidden or (64 if args.model == "node" else 32)
+n_params = sum(q.numel() for q in model.parameters())
+log(f"{LABEL} parameters: {n_params:,} | hidden={hidden}")
 opt = torch.optim.Adam(model.parameters(), lr=args.lr)
 mse = torch.nn.MSELoss()
 
@@ -84,14 +94,15 @@ if args.overfit:
     log(f"\nLoss {hist[0]:.5f} -> {hist[-1]:.5f} ({100 * (1 - hist[-1] / hist[0]):.1f}% reduction)")
     plt.figure(figsize=(7, 4)); plt.plot(hist); plt.yscale("log")
     plt.xlabel("Iteration"); plt.ylabel("MSE (standardised, log scale)")
-    plt.title("Neural ODE overfit test on 256 training windows")
-    plt.savefig(EVID / "E14_node_overfit.png", dpi=150, bbox_inches="tight")
+    plt.title(f"{LABEL} overfit test on 256 training windows")
+    plt.savefig(EVID / f"E14_{args.model}_overfit.png", dpi=150, bbox_inches="tight")
+    plt.close()
     log("Overfit test finished. A large, steady drop means the model and training loop work.")
     raise SystemExit(0)
 
 # ------------------------------------------------------------ mode 2: full training
 pers_val = eval_loss(va, persistence=True)
-log(f"Reference: persistence validation loss = {pers_val:.5f} (the Neural ODE must go below this)\n")
+log(f"Reference: persistence validation loss = {pers_val:.5f}\n")
 
 best, bad, hist = np.inf, 0, []
 for epoch in range(1, args.epochs + 1):
@@ -112,7 +123,7 @@ for epoch in range(1, args.epochs + 1):
     improved = va_loss < best - 1e-5
     if improved:
         best, bad = va_loss, 0
-        torch.save(model.state_dict(), MODELS / "node_best.pt")
+        torch.save(model.state_dict(), MODELS / f"{args.model}_best.pt")
     else:
         bad += 1
     hist.append({"epoch": epoch, "train_loss": tr_loss, "val_loss": va_loss})
@@ -127,22 +138,26 @@ log(f"\nBest validation loss: {best:.5f} | persistence: {pers_val:.5f} | "
 
 # ------------------------------------------------------------ save history, plot, config
 h = pd.DataFrame(hist)
-h.to_csv(RES / "node_training_history.csv", index=False)
+h.to_csv(RES / f"{args.model}_training_history.csv", index=False)
 plt.figure(figsize=(8, 4.5))
 plt.plot(h["epoch"], h["train_loss"], marker="o", label="Train")
 plt.plot(h["epoch"], h["val_loss"], marker="o", label="Validation")
 plt.axhline(pers_val, color="grey", ls="--", label="Persistence (validation)")
 plt.xlabel("Epoch"); plt.ylabel("MSE (standardised)"); plt.legend()
-plt.title("Neural ODE training curve")
-plt.savefig(EVID / "E16_node_loss_curve.png", dpi=150, bbox_inches="tight")
+plt.title(f"{LABEL} training curve")
+curve = "E16_node_loss_curve.png" if args.model == "node" else f"{TAGS[1]}_{args.model}_loss_curve.png"
+plt.savefig(EVID / curve, dpi=150, bbox_inches="tight")
 plt.close()
 
-(Path("experiments") / "node_config.json").write_text(json.dumps({
-    "equation": "dz/dt = f_theta(z, u(t), s); fixed-step RK4, 1 day per step",
+(Path("experiments") / f"{args.model}_config.json").write_text(json.dumps({
+    "model": args.model,
+    "description": {"node": "dz/dt = f_theta(z, u(t), s); fixed-step RK4, 1 day per step",
+                    "lstm": "LSTM-B: h0,c0 from [z0,s]; one LSTMCell step per day on [u(t), s]; "
+                            "output z0 + head(h)"}[args.model],
     "state": ["no3", "po4", "si"], "forcing_cols": FORCING_COLS, "static_cols": STATIC_COLS,
-    "hidden": args.hidden, "substeps": args.substeps, "lr": args.lr, "batch": args.batch,
+    "hidden": hidden, "substeps": args.substeps, "lr": args.lr, "batch": args.batch,
     "max_epochs": args.epochs, "patience": args.patience, "epochs_run": len(h),
     "n_params": n_params, "seed": SEED, "best_val_loss": best, "persistence_val_loss": pers_val,
     "scaling": "standardised with train-split statistics only"}, indent=2))
-log("Saved: experiments/models/node_best.pt, node_config.json, training history, E16 plot")
+log(f"Saved: experiments/models/{args.model}_best.pt, {args.model}_config.json, history, {curve}")
 log("Step 08 completed successfully.")
