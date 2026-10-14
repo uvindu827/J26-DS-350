@@ -1,0 +1,26 @@
+Model selection (validation loss only):
+  NeuralODE seed    42: best validation loss 0.10137
+  NeuralODE seed     7: best validation loss 0.10193
+  NeuralODE seed  2026: best validation loss 0.10013
+Selected: NeuralODE_s2026
+
+Contract checks (integration_contract_c1_c2.md v1.0):
+  [PASS] columns exactly as contract
+  [PASS] all 12 coastal cell_ids from cells.csv
+  [PASS] lead_time_days exactly 1..7
+  [PASS] unique key cell_id + issue_date + lead_time_days
+  [PASS] target_date = issue_date + lead_time_days
+  [PASS] target dates inside test period 2022-01-01..2025-12-31
+  [PASS] same number of rows for every cell
+  [PASS] no missing values
+  [PASS] no negative concentrations
+  [PASS] cell centres on the 0.25 degree grid
+
+Traceability (RMSE computed from the exported file vs E23 evaluation):
+  no3: file 0.2996 | E23 0.2996 | MATCH
+  po4: file 0.0359 | E23 0.0359 | MATCH
+  si: file 0.3020 | E23 0.3020 | MATCH
+
+Written: outputs/c1_to_c2/c1_nutrient_forecasts_test_2022_2025.csv (122,136 rows, 14.1 MB)
+Written: outputs/c1_to_c2/README_c1_nutrient_forecasts.md, docs/c1_to_c2_export_notes.md
+Step 11 completed successfully.
