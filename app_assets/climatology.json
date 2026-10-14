@@ -1,0 +1,1043 @@
+{
+  "period": "1997-01-01 to 2025-12-31",
+  "by_region": {
+    "Southern": [
+      {
+        "month": 1,
+        "precip_mm": 4.04,
+        "wind_speed": 3.98,
+        "wind_dir_from_deg": 44
+      },
+      {
+        "month": 2,
+        "precip_mm": 3.22,
+        "wind_speed": 3.95,
+        "wind_dir_from_deg": 57
+      },
+      {
+        "month": 3,
+        "precip_mm": 3.93,
+        "wind_speed": 3.54,
+        "wind_dir_from_deg": 76
+      },
+      {
+        "month": 4,
+        "precip_mm": 6.9,
+        "wind_speed": 3.75,
+        "wind_dir_from_deg": 250
+      },
+      {
+        "month": 5,
+        "precip_mm": 8.18,
+        "wind_speed": 6.62,
+        "wind_dir_from_deg": 256
+      },
+      {
+        "month": 6,
+        "precip_mm": 6.62,
+        "wind_speed": 7.54,
+        "wind_dir_from_deg": 261
+      },
+      {
+        "month": 7,
+        "precip_mm": 5.6,
+        "wind_speed": 7.59,
+        "wind_dir_from_deg": 267
+      },
+      {
+        "month": 8,
+        "precip_mm": 5.65,
+        "wind_speed": 7.29,
+        "wind_dir_from_deg": 262
+      },
+      {
+        "month": 9,
+        "precip_mm": 7.22,
+        "wind_speed": 6.77,
+        "wind_dir_from_deg": 258
+      },
+      {
+        "month": 10,
+        "precip_mm": 9.29,
+        "wind_speed": 5.43,
+        "wind_dir_from_deg": 264
+      },
+      {
+        "month": 11,
+        "precip_mm": 11.38,
+        "wind_speed": 3.94,
+        "wind_dir_from_deg": 307
+      },
+      {
+        "month": 12,
+        "precip_mm": 7.15,
+        "wind_speed": 3.94,
+        "wind_dir_from_deg": 26
+      }
+    ],
+    "Western": [
+      {
+        "month": 1,
+        "precip_mm": 4.92,
+        "wind_speed": 4.05,
+        "wind_dir_from_deg": 14
+      },
+      {
+        "month": 2,
+        "precip_mm": 4.4,
+        "wind_speed": 3.02,
+        "wind_dir_from_deg": 1
+      },
+      {
+        "month": 3,
+        "precip_mm": 5.12,
+        "wind_speed": 2.42,
+        "wind_dir_from_deg": 240
+      },
+      {
+        "month": 4,
+        "precip_mm": 9.07,
+        "wind_speed": 2.83,
+        "wind_dir_from_deg": 224
+      },
+      {
+        "month": 5,
+        "precip_mm": 10.83,
+        "wind_speed": 5.05,
+        "wind_dir_from_deg": 240
+      },
+      {
+        "month": 6,
+        "precip_mm": 9.91,
+        "wind_speed": 5.88,
+        "wind_dir_from_deg": 250
+      },
+      {
+        "month": 7,
+        "precip_mm": 8.76,
+        "wind_speed": 5.85,
+        "wind_dir_from_deg": 257
+      },
+      {
+        "month": 8,
+        "precip_mm": 8.29,
+        "wind_speed": 5.63,
+        "wind_dir_from_deg": 251
+      },
+      {
+        "month": 9,
+        "precip_mm": 9.53,
+        "wind_speed": 5.17,
+        "wind_dir_from_deg": 245
+      },
+      {
+        "month": 10,
+        "precip_mm": 13.46,
+        "wind_speed": 3.91,
+        "wind_dir_from_deg": 251
+      },
+      {
+        "month": 11,
+        "precip_mm": 14.66,
+        "wind_speed": 3.17,
+        "wind_dir_from_deg": 336
+      },
+      {
+        "month": 12,
+        "precip_mm": 8.97,
+        "wind_speed": 3.84,
+        "wind_dir_from_deg": 11
+      }
+    ]
+  },
+  "by_cell": {
+    "N5.75_E80.00": [
+      {
+        "month": 1,
+        "precip_mm": 4.05,
+        "wind_speed": 3.01,
+        "wind_dir_from_deg": 45
+      },
+      {
+        "month": 2,
+        "precip_mm": 3.37,
+        "wind_speed": 3.11,
+        "wind_dir_from_deg": 70
+      },
+      {
+        "month": 3,
+        "precip_mm": 3.96,
+        "wind_speed": 3.52,
+        "wind_dir_from_deg": 94
+      },
+      {
+        "month": 4,
+        "precip_mm": 7.01,
+        "wind_speed": 3.94,
+        "wind_dir_from_deg": 248
+      },
+      {
+        "month": 5,
+        "precip_mm": 9.72,
+        "wind_speed": 6.86,
+        "wind_dir_from_deg": 254
+      },
+      {
+        "month": 6,
+        "precip_mm": 8.27,
+        "wind_speed": 7.71,
+        "wind_dir_from_deg": 261
+      },
+      {
+        "month": 7,
+        "precip_mm": 6.97,
+        "wind_speed": 7.74,
+        "wind_dir_from_deg": 268
+      },
+      {
+        "month": 8,
+        "precip_mm": 6.87,
+        "wind_speed": 7.46,
+        "wind_dir_from_deg": 263
+      },
+      {
+        "month": 9,
+        "precip_mm": 8.51,
+        "wind_speed": 6.93,
+        "wind_dir_from_deg": 257
+      },
+      {
+        "month": 10,
+        "precip_mm": 9.88,
+        "wind_speed": 5.7,
+        "wind_dir_from_deg": 263
+      },
+      {
+        "month": 11,
+        "precip_mm": 11.24,
+        "wind_speed": 4.23,
+        "wind_dir_from_deg": 302
+      },
+      {
+        "month": 12,
+        "precip_mm": 7.04,
+        "wind_speed": 3.65,
+        "wind_dir_from_deg": 12
+      }
+    ],
+    "N5.75_E80.25": [
+      {
+        "month": 1,
+        "precip_mm": 3.49,
+        "wind_speed": 3.3,
+        "wind_dir_from_deg": 57
+      },
+      {
+        "month": 2,
+        "precip_mm": 2.72,
+        "wind_speed": 3.55,
+        "wind_dir_from_deg": 69
+      },
+      {
+        "month": 3,
+        "precip_mm": 3.27,
+        "wind_speed": 3.67,
+        "wind_dir_from_deg": 81
+      },
+      {
+        "month": 4,
+        "precip_mm": 6.02,
+        "wind_speed": 3.91,
+        "wind_dir_from_deg": 254
+      },
+      {
+        "month": 5,
+        "precip_mm": 9.23,
+        "wind_speed": 6.83,
+        "wind_dir_from_deg": 258
+      },
+      {
+        "month": 6,
+        "precip_mm": 7.79,
+        "wind_speed": 7.76,
+        "wind_dir_from_deg": 263
+      },
+      {
+        "month": 7,
+        "precip_mm": 6.49,
+        "wind_speed": 7.81,
+        "wind_dir_from_deg": 270
+      },
+      {
+        "month": 8,
+        "precip_mm": 6.43,
+        "wind_speed": 7.5,
+        "wind_dir_from_deg": 265
+      },
+      {
+        "month": 9,
+        "precip_mm": 8.05,
+        "wind_speed": 6.94,
+        "wind_dir_from_deg": 260
+      },
+      {
+        "month": 10,
+        "precip_mm": 8.95,
+        "wind_speed": 5.7,
+        "wind_dir_from_deg": 267
+      },
+      {
+        "month": 11,
+        "precip_mm": 10.0,
+        "wind_speed": 4.17,
+        "wind_dir_from_deg": 303
+      },
+      {
+        "month": 12,
+        "precip_mm": 6.31,
+        "wind_speed": 3.73,
+        "wind_dir_from_deg": 28
+      }
+    ],
+    "N5.75_E80.50": [
+      {
+        "month": 1,
+        "precip_mm": 4.2,
+        "wind_speed": 4.04,
+        "wind_dir_from_deg": 58
+      },
+      {
+        "month": 2,
+        "precip_mm": 3.29,
+        "wind_speed": 4.31,
+        "wind_dir_from_deg": 65
+      },
+      {
+        "month": 3,
+        "precip_mm": 4.1,
+        "wind_speed": 3.87,
+        "wind_dir_from_deg": 71
+      },
+      {
+        "month": 4,
+        "precip_mm": 7.06,
+        "wind_speed": 3.86,
+        "wind_dir_from_deg": 261
+      },
+      {
+        "month": 5,
+        "precip_mm": 8.07,
+        "wind_speed": 6.75,
+        "wind_dir_from_deg": 260
+      },
+      {
+        "month": 6,
+        "precip_mm": 6.44,
+        "wind_speed": 7.7,
+        "wind_dir_from_deg": 265
+      },
+      {
+        "month": 7,
+        "precip_mm": 5.43,
+        "wind_speed": 7.77,
+        "wind_dir_from_deg": 270
+      },
+      {
+        "month": 8,
+        "precip_mm": 5.62,
+        "wind_speed": 7.45,
+        "wind_dir_from_deg": 266
+      },
+      {
+        "month": 9,
+        "precip_mm": 7.27,
+        "wind_speed": 6.88,
+        "wind_dir_from_deg": 262
+      },
+      {
+        "month": 10,
+        "precip_mm": 9.06,
+        "wind_speed": 5.61,
+        "wind_dir_from_deg": 268
+      },
+      {
+        "month": 11,
+        "precip_mm": 11.33,
+        "wind_speed": 4.05,
+        "wind_dir_from_deg": 306
+      },
+      {
+        "month": 12,
+        "precip_mm": 7.29,
+        "wind_speed": 4.0,
+        "wind_dir_from_deg": 40
+      }
+    ],
+    "N5.75_E80.75": [
+      {
+        "month": 1,
+        "precip_mm": 3.31,
+        "wind_speed": 5.31,
+        "wind_dir_from_deg": 53
+      },
+      {
+        "month": 2,
+        "precip_mm": 2.51,
+        "wind_speed": 5.43,
+        "wind_dir_from_deg": 59
+      },
+      {
+        "month": 3,
+        "precip_mm": 3.62,
+        "wind_speed": 4.27,
+        "wind_dir_from_deg": 63
+      },
+      {
+        "month": 4,
+        "precip_mm": 5.95,
+        "wind_speed": 4.05,
+        "wind_dir_from_deg": 262
+      },
+      {
+        "month": 5,
+        "precip_mm": 5.8,
+        "wind_speed": 7.12,
+        "wind_dir_from_deg": 259
+      },
+      {
+        "month": 6,
+        "precip_mm": 4.11,
+        "wind_speed": 8.09,
+        "wind_dir_from_deg": 263
+      },
+      {
+        "month": 7,
+        "precip_mm": 3.47,
+        "wind_speed": 8.15,
+        "wind_dir_from_deg": 267
+      },
+      {
+        "month": 8,
+        "precip_mm": 3.7,
+        "wind_speed": 7.83,
+        "wind_dir_from_deg": 264
+      },
+      {
+        "month": 9,
+        "precip_mm": 5.2,
+        "wind_speed": 7.29,
+        "wind_dir_from_deg": 260
+      },
+      {
+        "month": 10,
+        "precip_mm": 7.19,
+        "wind_speed": 5.86,
+        "wind_dir_from_deg": 266
+      },
+      {
+        "month": 11,
+        "precip_mm": 9.94,
+        "wind_speed": 4.21,
+        "wind_dir_from_deg": 310
+      },
+      {
+        "month": 12,
+        "precip_mm": 6.39,
+        "wind_speed": 4.72,
+        "wind_dir_from_deg": 42
+      }
+    ],
+    "N5.75_E81.00": [
+      {
+        "month": 1,
+        "precip_mm": 3.18,
+        "wind_speed": 6.79,
+        "wind_dir_from_deg": 46
+      },
+      {
+        "month": 2,
+        "precip_mm": 2.29,
+        "wind_speed": 6.61,
+        "wind_dir_from_deg": 52
+      },
+      {
+        "month": 3,
+        "precip_mm": 3.18,
+        "wind_speed": 4.8,
+        "wind_dir_from_deg": 59
+      },
+      {
+        "month": 4,
+        "precip_mm": 5.32,
+        "wind_speed": 4.5,
+        "wind_dir_from_deg": 254
+      },
+      {
+        "month": 5,
+        "precip_mm": 4.68,
+        "wind_speed": 8.05,
+        "wind_dir_from_deg": 255
+      },
+      {
+        "month": 6,
+        "precip_mm": 2.99,
+        "wind_speed": 9.06,
+        "wind_dir_from_deg": 258
+      },
+      {
+        "month": 7,
+        "precip_mm": 2.46,
+        "wind_speed": 9.09,
+        "wind_dir_from_deg": 261
+      },
+      {
+        "month": 8,
+        "precip_mm": 2.69,
+        "wind_speed": 8.78,
+        "wind_dir_from_deg": 258
+      },
+      {
+        "month": 9,
+        "precip_mm": 4.06,
+        "wind_speed": 8.28,
+        "wind_dir_from_deg": 256
+      },
+      {
+        "month": 10,
+        "precip_mm": 6.36,
+        "wind_speed": 6.54,
+        "wind_dir_from_deg": 261
+      },
+      {
+        "month": 11,
+        "precip_mm": 9.52,
+        "wind_speed": 4.67,
+        "wind_dir_from_deg": 313
+      },
+      {
+        "month": 12,
+        "precip_mm": 6.12,
+        "wind_speed": 5.73,
+        "wind_dir_from_deg": 39
+      }
+    ],
+    "N6.00_E80.00": [
+      {
+        "month": 1,
+        "precip_mm": 5.62,
+        "wind_speed": 2.4,
+        "wind_dir_from_deg": 346
+      },
+      {
+        "month": 2,
+        "precip_mm": 4.57,
+        "wind_speed": 2.34,
+        "wind_dir_from_deg": 134
+      },
+      {
+        "month": 3,
+        "precip_mm": 5.15,
+        "wind_speed": 2.7,
+        "wind_dir_from_deg": 164
+      },
+      {
+        "month": 4,
+        "precip_mm": 8.95,
+        "wind_speed": 3.4,
+        "wind_dir_from_deg": 247
+      },
+      {
+        "month": 5,
+        "precip_mm": 9.38,
+        "wind_speed": 6.0,
+        "wind_dir_from_deg": 256
+      },
+      {
+        "month": 6,
+        "precip_mm": 7.61,
+        "wind_speed": 6.88,
+        "wind_dir_from_deg": 264
+      },
+      {
+        "month": 7,
+        "precip_mm": 6.63,
+        "wind_speed": 6.95,
+        "wind_dir_from_deg": 271
+      },
+      {
+        "month": 8,
+        "precip_mm": 6.96,
+        "wind_speed": 6.65,
+        "wind_dir_from_deg": 266
+      },
+      {
+        "month": 9,
+        "precip_mm": 8.73,
+        "wind_speed": 6.09,
+        "wind_dir_from_deg": 260
+      },
+      {
+        "month": 10,
+        "precip_mm": 11.37,
+        "wind_speed": 4.97,
+        "wind_dir_from_deg": 267
+      },
+      {
+        "month": 11,
+        "precip_mm": 14.03,
+        "wind_speed": 3.61,
+        "wind_dir_from_deg": 301
+      },
+      {
+        "month": 12,
+        "precip_mm": 9.12,
+        "wind_speed": 2.94,
+        "wind_dir_from_deg": 337
+      }
+    ],
+    "N6.00_E81.00": [
+      {
+        "month": 1,
+        "precip_mm": 4.39,
+        "wind_speed": 5.45,
+        "wind_dir_from_deg": 51
+      },
+      {
+        "month": 2,
+        "precip_mm": 3.04,
+        "wind_speed": 5.48,
+        "wind_dir_from_deg": 56
+      },
+      {
+        "month": 3,
+        "precip_mm": 3.75,
+        "wind_speed": 4.25,
+        "wind_dir_from_deg": 71
+      },
+      {
+        "month": 4,
+        "precip_mm": 6.59,
+        "wind_speed": 4.0,
+        "wind_dir_from_deg": 243
+      },
+      {
+        "month": 5,
+        "precip_mm": 4.82,
+        "wind_speed": 6.96,
+        "wind_dir_from_deg": 254
+      },
+      {
+        "month": 6,
+        "precip_mm": 2.63,
+        "wind_speed": 7.84,
+        "wind_dir_from_deg": 257
+      },
+      {
+        "month": 7,
+        "precip_mm": 2.26,
+        "wind_speed": 7.88,
+        "wind_dir_from_deg": 260
+      },
+      {
+        "month": 8,
+        "precip_mm": 2.55,
+        "wind_speed": 7.67,
+        "wind_dir_from_deg": 256
+      },
+      {
+        "month": 9,
+        "precip_mm": 3.99,
+        "wind_speed": 7.24,
+        "wind_dir_from_deg": 254
+      },
+      {
+        "month": 10,
+        "precip_mm": 7.88,
+        "wind_speed": 5.55,
+        "wind_dir_from_deg": 256
+      },
+      {
+        "month": 11,
+        "precip_mm": 11.63,
+        "wind_speed": 3.79,
+        "wind_dir_from_deg": 308
+      },
+      {
+        "month": 12,
+        "precip_mm": 7.48,
+        "wind_speed": 4.56,
+        "wind_dir_from_deg": 46
+      }
+    ],
+    "N6.25_E79.75": [
+      {
+        "month": 1,
+        "precip_mm": 3.89,
+        "wind_speed": 3.23,
+        "wind_dir_from_deg": 358
+      },
+      {
+        "month": 2,
+        "precip_mm": 3.48,
+        "wind_speed": 2.57,
+        "wind_dir_from_deg": 317
+      },
+      {
+        "month": 3,
+        "precip_mm": 4.06,
+        "wind_speed": 2.59,
+        "wind_dir_from_deg": 231
+      },
+      {
+        "month": 4,
+        "precip_mm": 7.48,
+        "wind_speed": 3.33,
+        "wind_dir_from_deg": 239
+      },
+      {
+        "month": 5,
+        "precip_mm": 11.11,
+        "wind_speed": 6.02,
+        "wind_dir_from_deg": 250
+      },
+      {
+        "month": 6,
+        "precip_mm": 10.12,
+        "wind_speed": 6.93,
+        "wind_dir_from_deg": 259
+      },
+      {
+        "month": 7,
+        "precip_mm": 8.54,
+        "wind_speed": 6.93,
+        "wind_dir_from_deg": 266
+      },
+      {
+        "month": 8,
+        "precip_mm": 8.13,
+        "wind_speed": 6.66,
+        "wind_dir_from_deg": 261
+      },
+      {
+        "month": 9,
+        "precip_mm": 9.7,
+        "wind_speed": 6.14,
+        "wind_dir_from_deg": 255
+      },
+      {
+        "month": 10,
+        "precip_mm": 11.54,
+        "wind_speed": 4.88,
+        "wind_dir_from_deg": 261
+      },
+      {
+        "month": 11,
+        "precip_mm": 12.27,
+        "wind_speed": 3.69,
+        "wind_dir_from_deg": 313
+      },
+      {
+        "month": 12,
+        "precip_mm": 7.17,
+        "wind_speed": 3.55,
+        "wind_dir_from_deg": 352
+      }
+    ],
+    "N6.25_E80.00": [
+      {
+        "month": 1,
+        "precip_mm": 4.21,
+        "wind_speed": 2.26,
+        "wind_dir_from_deg": 339
+      },
+      {
+        "month": 2,
+        "precip_mm": 3.73,
+        "wind_speed": 2.11,
+        "wind_dir_from_deg": 267
+      },
+      {
+        "month": 3,
+        "precip_mm": 4.29,
+        "wind_speed": 2.23,
+        "wind_dir_from_deg": 225
+      },
+      {
+        "month": 4,
+        "precip_mm": 7.72,
+        "wind_speed": 2.8,
+        "wind_dir_from_deg": 242
+      },
+      {
+        "month": 5,
+        "precip_mm": 10.81,
+        "wind_speed": 5.01,
+        "wind_dir_from_deg": 254
+      },
+      {
+        "month": 6,
+        "precip_mm": 9.62,
+        "wind_speed": 5.88,
+        "wind_dir_from_deg": 263
+      },
+      {
+        "month": 7,
+        "precip_mm": 8.17,
+        "wind_speed": 5.94,
+        "wind_dir_from_deg": 271
+      },
+      {
+        "month": 8,
+        "precip_mm": 7.86,
+        "wind_speed": 5.66,
+        "wind_dir_from_deg": 265
+      },
+      {
+        "month": 9,
+        "precip_mm": 9.48,
+        "wind_speed": 5.14,
+        "wind_dir_from_deg": 259
+      },
+      {
+        "month": 10,
+        "precip_mm": 11.35,
+        "wind_speed": 4.1,
+        "wind_dir_from_deg": 266
+      },
+      {
+        "month": 11,
+        "precip_mm": 12.42,
+        "wind_speed": 3.01,
+        "wind_dir_from_deg": 307
+      },
+      {
+        "month": 12,
+        "precip_mm": 7.43,
+        "wind_speed": 2.61,
+        "wind_dir_from_deg": 340
+      }
+    ],
+    "N6.50_E79.75": [
+      {
+        "month": 1,
+        "precip_mm": 3.32,
+        "wind_speed": 3.78,
+        "wind_dir_from_deg": 6
+      },
+      {
+        "month": 2,
+        "precip_mm": 3.01,
+        "wind_speed": 2.85,
+        "wind_dir_from_deg": 338
+      },
+      {
+        "month": 3,
+        "precip_mm": 3.67,
+        "wind_speed": 2.62,
+        "wind_dir_from_deg": 239
+      },
+      {
+        "month": 4,
+        "precip_mm": 7.31,
+        "wind_speed": 3.24,
+        "wind_dir_from_deg": 232
+      },
+      {
+        "month": 5,
+        "precip_mm": 12.04,
+        "wind_speed": 5.84,
+        "wind_dir_from_deg": 246
+      },
+      {
+        "month": 6,
+        "precip_mm": 11.61,
+        "wind_speed": 6.79,
+        "wind_dir_from_deg": 256
+      },
+      {
+        "month": 7,
+        "precip_mm": 9.72,
+        "wind_speed": 6.75,
+        "wind_dir_from_deg": 263
+      },
+      {
+        "month": 8,
+        "precip_mm": 9.08,
+        "wind_speed": 6.49,
+        "wind_dir_from_deg": 258
+      },
+      {
+        "month": 9,
+        "precip_mm": 10.57,
+        "wind_speed": 5.98,
+        "wind_dir_from_deg": 251
+      },
+      {
+        "month": 10,
+        "precip_mm": 12.62,
+        "wind_speed": 4.65,
+        "wind_dir_from_deg": 258
+      },
+      {
+        "month": 11,
+        "precip_mm": 12.64,
+        "wind_speed": 3.62,
+        "wind_dir_from_deg": 323
+      },
+      {
+        "month": 12,
+        "precip_mm": 6.9,
+        "wind_speed": 3.86,
+        "wind_dir_from_deg": 2
+      }
+    ],
+    "N6.75_E79.75": [
+      {
+        "month": 1,
+        "precip_mm": 7.37,
+        "wind_speed": 3.91,
+        "wind_dir_from_deg": 13
+      },
+      {
+        "month": 2,
+        "precip_mm": 6.31,
+        "wind_speed": 2.81,
+        "wind_dir_from_deg": 359
+      },
+      {
+        "month": 3,
+        "precip_mm": 6.56,
+        "wind_speed": 2.25,
+        "wind_dir_from_deg": 236
+      },
+      {
+        "month": 4,
+        "precip_mm": 10.66,
+        "wind_speed": 2.63,
+        "wind_dir_from_deg": 222
+      },
+      {
+        "month": 5,
+        "precip_mm": 10.68,
+        "wind_speed": 4.69,
+        "wind_dir_from_deg": 239
+      },
+      {
+        "month": 6,
+        "precip_mm": 9.19,
+        "wind_speed": 5.46,
+        "wind_dir_from_deg": 250
+      },
+      {
+        "month": 7,
+        "precip_mm": 8.23,
+        "wind_speed": 5.45,
+        "wind_dir_from_deg": 257
+      },
+      {
+        "month": 8,
+        "precip_mm": 7.97,
+        "wind_speed": 5.25,
+        "wind_dir_from_deg": 251
+      },
+      {
+        "month": 9,
+        "precip_mm": 9.22,
+        "wind_speed": 4.8,
+        "wind_dir_from_deg": 245
+      },
+      {
+        "month": 10,
+        "precip_mm": 13.82,
+        "wind_speed": 3.61,
+        "wind_dir_from_deg": 250
+      },
+      {
+        "month": 11,
+        "precip_mm": 16.98,
+        "wind_speed": 2.94,
+        "wind_dir_from_deg": 335
+      },
+      {
+        "month": 12,
+        "precip_mm": 11.95,
+        "wind_speed": 3.64,
+        "wind_dir_from_deg": 10
+      }
+    ],
+    "N7.00_E79.75": [
+      {
+        "month": 1,
+        "precip_mm": 4.07,
+        "wind_speed": 4.45,
+        "wind_dir_from_deg": 21
+      },
+      {
+        "month": 2,
+        "precip_mm": 3.89,
+        "wind_speed": 3.41,
+        "wind_dir_from_deg": 14
+      },
+      {
+        "month": 3,
+        "precip_mm": 5.14,
+        "wind_speed": 2.39,
+        "wind_dir_from_deg": 247
+      },
+      {
+        "month": 4,
+        "precip_mm": 9.24,
+        "wind_speed": 2.64,
+        "wind_dir_from_deg": 216
+      },
+      {
+        "month": 5,
+        "precip_mm": 9.76,
+        "wind_speed": 4.62,
+        "wind_dir_from_deg": 231
+      },
+      {
+        "month": 6,
+        "precip_mm": 8.93,
+        "wind_speed": 5.39,
+        "wind_dir_from_deg": 243
+      },
+      {
+        "month": 7,
+        "precip_mm": 8.34,
+        "wind_speed": 5.36,
+        "wind_dir_from_deg": 249
+      },
+      {
+        "month": 8,
+        "precip_mm": 7.82,
+        "wind_speed": 5.16,
+        "wind_dir_from_deg": 243
+      },
+      {
+        "month": 9,
+        "precip_mm": 8.78,
+        "wind_speed": 4.74,
+        "wind_dir_from_deg": 237
+      },
+      {
+        "month": 10,
+        "precip_mm": 13.95,
+        "wind_speed": 3.46,
+        "wind_dir_from_deg": 242
+      },
+      {
+        "month": 11,
+        "precip_mm": 14.35,
+        "wind_speed": 2.96,
+        "wind_dir_from_deg": 354
+      },
+      {
+        "month": 12,
+        "precip_mm": 8.07,
+        "wind_speed": 4.0,
+        "wind_dir_from_deg": 19
+      }
+    ]
+  }
+}

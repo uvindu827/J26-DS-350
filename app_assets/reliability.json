@@ -1,0 +1,49 @@
+{
+  "model": "Neural ODE",
+  "basis": "test years 2022-2025 (never used for training or model selection); mean of 3 training runs",
+  "metric": "typical error = RMSE in mmol m-3; skill = 1 - RMSE / RMSE of 'no change'",
+  "nutrients": {
+    "no3": {
+      "rmse_by_lead": [
+        0.12344,
+        0.21038,
+        0.26933,
+        0.3103,
+        0.33955,
+        0.36128,
+        0.37757
+      ],
+      "skill_all": 0.197,
+      "skill_western": 0.219,
+      "skill_southern": 0.191
+    },
+    "po4": {
+      "rmse_by_lead": [
+        0.01478,
+        0.02525,
+        0.03222,
+        0.03708,
+        0.0407,
+        0.04347,
+        0.04557
+      ],
+      "skill_all": 0.216,
+      "skill_western": 0.049,
+      "skill_southern": 0.233
+    },
+    "si": {
+      "rmse_by_lead": [
+        0.10929,
+        0.19213,
+        0.25336,
+        0.3011,
+        0.34034,
+        0.37352,
+        0.4019
+      ],
+      "skill_all": 0.099,
+      "skill_western": 0.174,
+      "skill_southern": 0.079
+    }
+  }
+}

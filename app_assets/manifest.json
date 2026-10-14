@@ -1,0 +1,27 @@
+{
+  "created": "2026-10-14T11:46:25",
+  "mode": "replay (hindcast forcing)",
+  "issue_dates": {
+    "first": "2022-01-01",
+    "last": "2025-12-24"
+  },
+  "neural_ode": {
+    "seed": 2026,
+    "file": "experiments/models/node_s2026_best.pt",
+    "sha256_16": "29fe1ab181393c88",
+    "selection": "lowest validation loss among 3 seeds; test data not used"
+  },
+  "benchmark": {
+    "name": "XGBoost B (process-aware)",
+    "file": "experiments/models/xgb_B_process.json",
+    "sha256_16": "d1c83c0490109f2d"
+  },
+  "dataset": {
+    "file": "data/processed/model_dataset_daily.parquet",
+    "rows": 124152
+  },
+  "normals_period": [
+    "1997-09-04",
+    "2017-12-31"
+  ]
+}

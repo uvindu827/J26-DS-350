@@ -1,0 +1,12 @@
+cells.json: 12 cells
+Normals period (train): 1997-09-04 -> 2017-12-31
+normals.parquet: 432 rows (12 cells x 12 months x 3 nutrients)
+change_scale.parquet: 252 rows (12 x 3 x 7)
+climatology.json: sanity check Western May rainfall 10.83 mm/day (E08 showed ~10.8), wind 5.05 m/s from 240 deg
+reliability no3: RMSE day1 0.12344 day7 0.37757 | skill all 0.197 W 0.219 S 0.191
+reliability po4: RMSE day1 0.01478 day7 0.04557 | skill all 0.216 W 0.049 S 0.233
+reliability si: RMSE day1 0.10929 day7 0.4019 | skill all 0.099 W 0.174 S 0.079
+Catchment assignment matches Step 03 for all 6 catchment-fed cells
+geo.json: 1 land outline, 6 catchment groups, 12 cells (46 kB)
+manifest.json: Neural ODE seed 2026 (29fe1ab181393c88)
+Step 12 completed successfully.
