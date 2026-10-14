@@ -1,0 +1,138 @@
+ROBUSTNESS RULE (stated before results): a difference between two models is ROBUST only if
+  (1) every run of one model beats every run of the other, AND
+  (2) |difference of means| > 2 x the larger run-to-run standard deviation.
+  Trees are single runs (std treated as 0). Otherwise: 'no robust difference'.
+
+Runs:
+  NeuralODE_s42    best val loss 0.10137 | epochs  25 | alignment 0.000000
+  NeuralODE_s7     best val loss 0.10193 | epochs  22 | alignment 0.000000
+  NeuralODE_s2026  best val loss 0.10013 | epochs  25 | alignment 0.000000
+  LSTM_B_s42       best val loss 0.10170 | epochs  11 | alignment 0.000000
+  LSTM_B_s7        best val loss 0.10327 | epochs  10 | alignment 0.000000
+  LSTM_B_s2026     best val loss 0.10244 | epochs  11 | alignment 0.000000
+Common rows: 244,272
+
+===== VAL - mean ± std across seeds (trees/persistence: single run) =====
+
+RMSE:
+nutrient                   no3              po4               si
+family                                                          
+Persistence    0.3754 ± 0.0000  0.0372 ± 0.0000  0.3335 ± 0.0000
+RF_B_process   0.3210 ± 0.0000  0.0313 ± 0.0000  0.2933 ± 0.0000
+XGB_B_process  0.3234 ± 0.0000  0.0304 ± 0.0000  0.2898 ± 0.0000
+LSTM_B         0.3090 ± 0.0008  0.0297 ± 0.0001  0.2841 ± 0.0033
+NeuralODE      0.3048 ± 0.0022  0.0296 ± 0.0004  0.2871 ± 0.0010
+
+MAE:
+nutrient                   no3              po4               si
+family                                                          
+Persistence    0.1680 ± 0.0000  0.0174 ± 0.0000  0.2123 ± 0.0000
+RF_B_process   0.1535 ± 0.0000  0.0155 ± 0.0000  0.1977 ± 0.0000
+XGB_B_process  0.1522 ± 0.0000  0.0150 ± 0.0000  0.1930 ± 0.0000
+LSTM_B         0.1558 ± 0.0016  0.0156 ± 0.0001  0.1913 ± 0.0034
+NeuralODE      0.1584 ± 0.0040  0.0157 ± 0.0004  0.1937 ± 0.0002
+
+SKILL:
+nutrient                 no3            po4             si
+family                                                    
+Persistence    0.000 ± 0.000  0.000 ± 0.000  0.000 ± 0.000
+RF_B_process   0.145 ± 0.000  0.159 ± 0.000  0.121 ± 0.000
+XGB_B_process  0.139 ± 0.000  0.182 ± 0.000  0.131 ± 0.000
+LSTM_B         0.177 ± 0.002  0.202 ± 0.002  0.148 ± 0.010
+NeuralODE      0.188 ± 0.006  0.205 ± 0.012  0.139 ± 0.003
+
+===== TEST - mean ± std across seeds (trees/persistence: single run) =====
+
+RMSE:
+nutrient                   no3              po4               si
+family                                                          
+Persistence    0.3697 ± 0.0000  0.0454 ± 0.0000  0.3304 ± 0.0000
+RF_B_process   0.3052 ± 0.0000  0.0382 ± 0.0000  0.2963 ± 0.0000
+XGB_B_process  0.3059 ± 0.0000  0.0375 ± 0.0000  0.2918 ± 0.0000
+LSTM_B         0.3056 ± 0.0022  0.0361 ± 0.0002  0.2979 ± 0.0029
+NeuralODE      0.2968 ± 0.0025  0.0356 ± 0.0004  0.2977 ± 0.0037
+
+MAE:
+nutrient                   no3              po4               si
+family                                                          
+Persistence    0.1662 ± 0.0000  0.0203 ± 0.0000  0.2096 ± 0.0000
+RF_B_process   0.1465 ± 0.0000  0.0178 ± 0.0000  0.1907 ± 0.0000
+XGB_B_process  0.1460 ± 0.0000  0.0182 ± 0.0000  0.1867 ± 0.0000
+LSTM_B         0.1526 ± 0.0017  0.0180 ± 0.0002  0.1922 ± 0.0031
+NeuralODE      0.1526 ± 0.0039  0.0186 ± 0.0002  0.1921 ± 0.0020
+
+SKILL:
+nutrient                 no3            po4             si
+family                                                    
+Persistence    0.000 ± 0.000  0.000 ± 0.000  0.000 ± 0.000
+RF_B_process   0.174 ± 0.000  0.160 ± 0.000  0.103 ± 0.000
+XGB_B_process  0.173 ± 0.000  0.174 ± 0.000  0.117 ± 0.000
+LSTM_B         0.173 ± 0.006  0.206 ± 0.004  0.098 ± 0.009
+NeuralODE      0.197 ± 0.007  0.216 ± 0.008  0.099 ± 0.011
+
+===== TEST skill - Western cells - mean ± std =====
+nutrient                 no3            po4             si
+family                                                    
+Persistence    0.000 ± 0.000  0.000 ± 0.000  0.000 ± 0.000
+RF_B_process   0.187 ± 0.000  0.080 ± 0.000  0.188 ± 0.000
+XGB_B_process  0.181 ± 0.000  0.075 ± 0.000  0.199 ± 0.000
+LSTM_B         0.214 ± 0.015  0.087 ± 0.011  0.187 ± 0.014
+NeuralODE      0.219 ± 0.013  0.049 ± 0.013  0.174 ± 0.006
+
+===== TEST skill - Southern cells - mean ± std =====
+nutrient                 no3            po4             si
+family                                                    
+Persistence    0.000 ± 0.000  0.000 ± 0.000  0.000 ± 0.000
+RF_B_process   0.171 ± 0.000  0.167 ± 0.000  0.081 ± 0.000
+XGB_B_process  0.170 ± 0.000  0.184 ± 0.000  0.095 ± 0.000
+LSTM_B         0.162 ± 0.007  0.217 ± 0.006  0.076 ± 0.008
+NeuralODE      0.191 ± 0.005  0.233 ± 0.007  0.079 ± 0.015
+
+
+NeuralODE vs LSTM_B | test | All | RMSE (lower is better)
+  no3: 0.2968 vs 0.3056 | diff -0.0088 | max sd 0.0025 | ROBUST: NeuralODE better
+  po4: 0.0356 vs 0.0361 | diff -0.0005 | max sd 0.0004 | no robust difference
+  si : 0.2977 vs 0.2979 | diff -0.0001 | max sd 0.0037 | no robust difference
+
+NeuralODE vs XGB_B_process | test | All | RMSE (lower is better)
+  no3: 0.2968 vs 0.3059 | diff -0.0091 | max sd 0.0025 | ROBUST: NeuralODE better
+  po4: 0.0356 vs 0.0375 | diff -0.0019 | max sd 0.0004 | ROBUST: NeuralODE better
+  si : 0.2977 vs 0.2918 | diff +0.0059 | max sd 0.0037 | no robust difference
+
+LSTM_B vs XGB_B_process | test | All | RMSE (lower is better)
+  no3: 0.3056 vs 0.3059 | diff -0.0002 | max sd 0.0022 | no robust difference
+  po4: 0.0361 vs 0.0375 | diff -0.0014 | max sd 0.0002 | ROBUST: LSTM_B better
+  si : 0.2979 vs 0.2918 | diff +0.0060 | max sd 0.0029 | ROBUST: XGB_B_process better
+
+NeuralODE vs LSTM_B | test | All | MAE (lower is better)
+  no3: 0.1526 vs 0.1526 | diff -0.0000 | max sd 0.0039 | no robust difference
+  po4: 0.0186 vs 0.0180 | diff +0.0006 | max sd 0.0002 | ROBUST: LSTM_B better
+  si : 0.1921 vs 0.1922 | diff -0.0001 | max sd 0.0031 | no robust difference
+
+NeuralODE vs XGB_B_process | test | All | MAE (lower is better)
+  no3: 0.1526 vs 0.1460 | diff +0.0065 | max sd 0.0039 | no robust difference
+  po4: 0.0186 vs 0.0182 | diff +0.0004 | max sd 0.0002 | no robust difference
+  si : 0.1921 vs 0.1867 | diff +0.0053 | max sd 0.0020 | ROBUST: XGB_B_process better
+
+LSTM_B vs XGB_B_process | test | All | MAE (lower is better)
+  no3: 0.1526 vs 0.1460 | diff +0.0066 | max sd 0.0017 | ROBUST: XGB_B_process better
+  po4: 0.0180 vs 0.0182 | diff -0.0002 | max sd 0.0002 | no robust difference
+  si : 0.1922 vs 0.1867 | diff +0.0055 | max sd 0.0031 | no robust difference
+
+NeuralODE vs LSTM_B | val | All | RMSE (lower is better)
+  no3: 0.3048 vs 0.3090 | diff -0.0042 | max sd 0.0022 | no robust difference
+  po4: 0.0296 vs 0.0297 | diff -0.0001 | max sd 0.0004 | no robust difference
+  si : 0.2871 vs 0.2841 | diff +0.0030 | max sd 0.0033 | no robust difference
+
+NeuralODE vs LSTM_B | test | Western | RMSE (lower is better)
+  no3: 0.2739 vs 0.2757 | diff -0.0018 | max sd 0.0053 | no robust difference
+  po4: 0.0251 vs 0.0241 | diff +0.0010 | max sd 0.0004 | ROBUST: LSTM_B better
+  si : 0.2539 vs 0.2498 | diff +0.0041 | max sd 0.0043 | no robust difference
+
+NeuralODE vs LSTM_B | test | Southern | RMSE (lower is better)
+  no3: 0.3041 vs 0.3150 | diff -0.0109 | max sd 0.0027 | ROBUST: NeuralODE better
+  po4: 0.0385 vs 0.0393 | diff -0.0008 | max sd 0.0004 | ROBUST: NeuralODE better
+  si : 0.3110 vs 0.3123 | diff -0.0013 | max sd 0.0051 | no robust difference
+
+Saved: seed_robustness_per_run.csv, seed_robustness_summary.csv, E24/E25 plots
+Step 10 completed successfully.

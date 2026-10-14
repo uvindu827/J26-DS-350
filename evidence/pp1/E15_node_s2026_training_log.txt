@@ -1,0 +1,36 @@
+Model: Neural ODE | seed: 2026
+Training windows: 89,004 | validation windows: 17,448
+Inputs: state 3 | forcing 19 | static 6
+Neural ODE parameters: 6,211 | hidden=64
+Reference: persistence validation loss = 0.15002
+
+epoch   1 | train 0.13071 | val 0.11671 |    8s  * best
+epoch   2 | train 0.11840 | val 0.11062 |    8s  * best
+epoch   3 | train 0.11216 | val 0.10892 |    8s  * best
+epoch   4 | train 0.10845 | val 0.10599 |    8s  * best
+epoch   5 | train 0.10521 | val 0.10454 |    8s  * best
+epoch   6 | train 0.10331 | val 0.10541 |    8s
+epoch   7 | train 0.10098 | val 0.10579 |    8s
+epoch   8 | train 0.09969 | val 0.10348 |    8s  * best
+epoch   9 | train 0.09822 | val 0.10354 |    8s
+epoch  10 | train 0.09690 | val 0.10462 |    8s
+epoch  11 | train 0.09609 | val 0.10516 |    8s
+epoch  12 | train 0.09473 | val 0.10311 |    8s  * best
+epoch  13 | train 0.09395 | val 0.10372 |    8s
+epoch  14 | train 0.09359 | val 0.10124 |    8s  * best
+epoch  15 | train 0.09245 | val 0.10438 |    8s
+epoch  16 | train 0.09196 | val 0.10471 |    8s
+epoch  17 | train 0.09129 | val 0.10341 |    8s
+epoch  18 | train 0.09053 | val 0.10262 |    8s
+epoch  19 | train 0.08989 | val 0.10013 |    8s  * best
+epoch  20 | train 0.08975 | val 0.10140 |    8s
+epoch  21 | train 0.08895 | val 0.10041 |    8s
+epoch  22 | train 0.08815 | val 0.10075 |    8s
+epoch  23 | train 0.08756 | val 0.10298 |    8s
+epoch  24 | train 0.08739 | val 0.10207 |    8s
+epoch  25 | train 0.08661 | val 0.10168 |    8s
+Early stopping: no validation improvement for 6 epochs.
+
+Best validation loss: 0.10013 | persistence: 0.15002 | improvement: 33.3%
+Saved: experiments/models/node_s2026_best.pt, node_s2026_config.json, history, E16_node_s2026_loss_curve.png
+Step 08 completed successfully.

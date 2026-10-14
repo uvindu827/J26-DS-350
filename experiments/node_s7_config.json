@@ -1,0 +1,50 @@
+{
+  "model": "node",
+  "description": "dz/dt = f_theta(z, u(t), s); fixed-step RK4, 1 day per step",
+  "state": [
+    "no3",
+    "po4",
+    "si"
+  ],
+  "forcing_cols": [
+    "precip_mm",
+    "surface_runoff_mm",
+    "subsurface_runoff_mm",
+    "soil_moisture",
+    "u10",
+    "v10",
+    "wind_speed",
+    "precip_sum_3d",
+    "precip_sum_7d",
+    "precip_sum_14d",
+    "precip_sum_30d",
+    "surface_runoff_sum_3d",
+    "surface_runoff_sum_7d",
+    "subsurface_runoff_sum_7d",
+    "subsurface_runoff_sum_30d",
+    "wind_speed_mean_3d",
+    "season_code",
+    "doy_sin",
+    "doy_cos"
+  ],
+  "static_cols": [
+    "lat",
+    "lon",
+    "catchment_area_km2",
+    "n_river_outlets",
+    "n_land_points",
+    "dist_to_land_km"
+  ],
+  "hidden": 64,
+  "substeps": 1,
+  "lr": 0.001,
+  "batch": 512,
+  "max_epochs": 40,
+  "patience": 6,
+  "epochs_run": 22,
+  "n_params": 6211,
+  "seed": 7,
+  "best_val_loss": 0.10192842329589669,
+  "persistence_val_loss": 0.15002176199742054,
+  "scaling": "standardised with train-split statistics only"
+}
