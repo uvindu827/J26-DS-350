@@ -1,0 +1,23 @@
+# Component 3 datasets are stored outside this Git repository.
+# Keep only documentation files in the repository data directories.
+component - 3/data/raw/**
+component - 3/data/interim/**
+component - 3/data/processed/**
+component - 3/data/external/**
+
+!component - 3/data/raw/README.md
+!component - 3/data/interim/README.md
+!component - 3/data/processed/README.md
+!component - 3/data/external/README.md
+
+# Local Python and notebook state
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local environment files
+.env
+.env.*
+
