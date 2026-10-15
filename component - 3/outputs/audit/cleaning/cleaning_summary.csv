@@ -1,0 +1,10 @@
+year_label,source_file,source_sheet,source_role,rows_read,staged_columns,empty_cells_after_standardisation,placeholder_tokens_converted,padded_text_values_standardised,non_numeric_candidate_flags,invalid_date_flags,suspicious_coordinate_flags,duplicate_rows_flagged,rows_with_any_quality_flag,output_file
+2017,2017 Log Data.xlsx,Sheet1,candidate_observations,604311,50,2485089,131865,5868937,1208624,935,0,78825,604311,fisheries_2017_staged.parquet
+2018,2018 Log data.xlsx,2018 Log data,candidate_observations,363234,94,2116951,317,1453458,1625606,162,111,5658,363234,fisheries_2018_staged.parquet
+2019,2019 Log data.xlsx,Sheet1,candidate_observations,408747,72,4198980,306,409006,817552,243,0,0,408747,fisheries_2019_staged.parquet
+2020,2020 Log Data.xlsx,Sheet5,candidate_observations,284626,40,19482,0,30057,0,0,65140,61105,77657,fisheries_2020_staged.parquet
+2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations,280619,92,2382369,2,597653,584598,86252,150733,2279,280619,fisheries_2021_staged.parquet
+2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations,158819,45,731,0,27412,158883,86343,296,52798,158819,fisheries_2022_staged.parquet
+2022,2022 Log Data.xlsx,values with issues,issue_records,28781,39,1153,0,3859,28781,0,0,15622,28781,fisheries_2022_issues.parquet
+2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations,271412,37,34431,0,13023,0,22165,14,92448,102976,fisheries_2023_staged.parquet
+2024,2024 Log Data.xlsx,Sheet1,candidate_observations,230395,35,2256,0,12680,0,0,0,50,50,fisheries_2024_staged.parquet

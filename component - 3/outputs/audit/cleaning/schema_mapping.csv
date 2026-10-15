@@ -1,0 +1,216 @@
+column_position,original_header,staged_header,year_label,source_file,source_sheet,source_role
+1,LB NUMBER,lb_number,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+2,GEAR,gear,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+3,Unnamed: 2,unnamed_2,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+4,Unnamed: 3,unnamed_3,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+5,LONGI,longi,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+6,LATTI,latti,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+7,Unnamed: 6,unnamed_6,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+8,Unnamed: 7,unnamed_7,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+9,Unnamed: 8,unnamed_8,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+10,Unnamed: 9,unnamed_9,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+11,Unnamed: 10,unnamed_10,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+12,Unnamed: 11,unnamed_11,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+13,Unnamed: 12,unnamed_12,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+14,Unnamed: 13,unnamed_13,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+15,Unnamed: 14,unnamed_14,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+16,BAIT,bait,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+17,Unnamed: 16,unnamed_16,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+18,Unnamed: 17,unnamed_17,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+19,AREA,area,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+20,Unnamed: 19,unnamed_19,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+21,Unnamed: 20,unnamed_20,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+22,CATCH,catch,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+23,KG,kg,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+24,QTY,qty,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+25,REG NUM,reg_num,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+26,ARRIVAL DATE,arrival_date,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+27,DEPARTURE DATE,departure_date,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+28,ARRIVAL PORT,arrival_port,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+29,DEPARTURE PORT,departure_port,2017,2017 Log Data.xlsx,Sheet1,candidate_observations
+1,id,id,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+2,Rec_No,rec_no,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+3,Y,y,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+4,M,m,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+5,D,d,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+6,Lat,lat,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+7,Long,long,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+8,Fish_Name,fish_name,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+9,KG,kg,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+10,Amount,amount,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+11,Boat_No,boat_no,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+12,Departure_Date,departure_date,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+13,Departure_Port,departure_port,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+14,Arrival_date,arrival_date,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+15,Arrival_Port,arrival_port,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+16,Catch_Type,catch_type,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+17,Month,month,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+18,Date_Of_Set,date_of_set,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+19,StartTime,starttime,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+20,EndTime,endtime,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+21,Latitude,latitude,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+22,Longetude,longetude,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+23,Total_Length_of_Net,total_length_of_net,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+24,Mesh_Size,mesh_size,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+25,Depth_Net_Set,depth_net_set,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+26,Height_of_net,height_of_net,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+27,FADType,fadtype,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+28,GillNetLen,gillnetlen,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+29,BranchLine_Len,branchline_len,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+30,Hooks_Between,hooks_between,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+31,Total_Hooks,total_hooks,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+32,Type_of_Bait,type_of_bait,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+33,Remarks,remarks,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+34,Rec_Date,rec_date,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+35,EndLatitude,endlatitude,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+36,EndLongetude,endlongetude,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+37,zone,zone,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+38,Fivedegree,fivedegree,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+39,Onedegree,onedegree,2018,2018 Log data.xlsx,2018 Log data,candidate_observations
+1,Rec_No,rec_no,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+2,Boat_No,boat_no,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+3,Fish_Name,fish_name,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+4,KG,kg,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+5,Amount,amount,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+6,Departure_Date,departure_date,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+7,Departure_Port,departure_port,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+8,Arrival_Date,arrival_date,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+9,Arrival_Port,arrival_port,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+10,Catch_Type,catch_type,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+11,Month,month,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+12,Date_Of_Set,date_of_set,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+13,Latitude,latitude,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+14,Longetude,longetude,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+15,Total_Hooks,total_hooks,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+16,Total_Length_of_Net,total_length_of_net,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+17,Mesh_Size,mesh_size,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+18,Depth_Net_Set,depth_net_set,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+19,Height_of_net,height_of_net,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+20,FADType,fadtype,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+21,GillNetLen,gillnetlen,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+22,BranchLine_Len,branchline_len,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+23,Hooks_Between,hooks_between,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+24,Type_of_Bait,type_of_bait,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+25,Remarks,remarks,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+26,Rec_Date,rec_date,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+27,zone,zone,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+28,Fivedegree,fivedegree,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+29,Onedegree,onedegree,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+30,Sum of KG,sum_of_kg,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+31,Column Labels,column_labels,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+32,Unnamed: 31,unnamed_31,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+33,Unnamed: 32,unnamed_32,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+34,Unnamed: 33,unnamed_33,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+35,Unnamed: 34,unnamed_34,2019,2019 Log data.xlsx,Sheet1,candidate_observations
+1,id,id,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+2,departureport,departureport,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+3,departure_date_time,departure_date_time,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+4,arrivalport,arrivalport,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+5,name,name,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+6,qty,qty,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+7,weight,weight,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+8,geartype,geartype,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+9,latttitude ,latttitude,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+10,Longitude ,longitude,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+11,Gps Derection ,gps_derection,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+12,DateAndTime,dateandtime,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+13,0 degree grid,0_degree_grid,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+14,05 degree grid,05_degree_grid,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+15,vessel_id,vessel_id,2020,2020 Log Data.xlsx,Sheet5,candidate_observations
+1,id,id,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+2,vessel_id,vessel_id,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+3,skipper_id,skipper_id,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+4,departureport,departureport,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+5,departure_date_time,departure_date_time,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+6,arrivalport,arrivalport,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+7,arrival_date_time,arrival_date_time,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+8,name,name,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+9,qty,qty,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+10,weight,weight,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+11,geartype,geartype,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+12,id.1,id_1,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+13,trip_id,trip_id,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+14,gear_type,gear_type,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+15,main_line,main_line,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+16,branch_line,branch_line,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+17,hook_type,hook_type,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+18,no_of_hooks,no_of_hooks,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+19,depth,depth,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+20,bait,bait,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+21,netMaterial,netmaterial,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+22,meshSize,meshsize,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+23,plyOfTheNet,plyofthenet,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+24,heightOfNet,heightofnet,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+25,DepthAtWhichTheNetSet,depthatwhichthenetset,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+26,numberOfNetPieces,numberofnetpieces,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+27,lengthOfTheRingNet,lengthoftheringnet,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+28,heightOfTheRingNet,heightoftheringnet,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+29,id.2,id_2,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+30,gear_id,gear_id,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+31,date_time,date_time,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+32,set_name,set_name,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+33,start_n,start_n,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+34,start_e,start_e,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+35,end_n,end_n,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+36,end_e,end_e,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+37,startGpsDerec,startgpsderec,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+38,endGpsDerec,endgpsderec,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+39,endDateAndTime,enddateandtime,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+40,1 degree grid,1_degree_grid,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+41,5 degree grid,5_degree_grid,2021,2021 LOGBOOK data final.xlsx,trip 2021,candidate_observations
+1,name,name,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+2,qty,qty,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+3,weight,weight,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+4,vessel_id,vessel_id,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+5,departure_date_time,departure_date_time,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+6,departureport,departureport,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+7,arrival_date_time,arrival_date_time,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+8,arrivalport,arrivalport,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+9,geartype,geartype,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+10,date_time,date_time,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+11,lattude,lattude,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+12,Longitude,longitude,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+13,lattude_direction,lattude_direction,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+14,5 degree grid,5_degree_grid,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+15,5 degree grid.1,5_degree_grid_1,2022,2022 Log Data.xlsx,catch 2022_NARA_with  grid valu,candidate_observations
+1,name,name,2022,2022 Log Data.xlsx,values with issues,issue_records
+2,qty,qty,2022,2022 Log Data.xlsx,values with issues,issue_records
+3,weight,weight,2022,2022 Log Data.xlsx,values with issues,issue_records
+4,vessel_id,vessel_id,2022,2022 Log Data.xlsx,values with issues,issue_records
+5,departure_date_time,departure_date_time,2022,2022 Log Data.xlsx,values with issues,issue_records
+6,departureport,departureport,2022,2022 Log Data.xlsx,values with issues,issue_records
+7,arrival_date_time,arrival_date_time,2022,2022 Log Data.xlsx,values with issues,issue_records
+8,arrivalport,arrivalport,2022,2022 Log Data.xlsx,values with issues,issue_records
+9,geartype,geartype,2022,2022 Log Data.xlsx,values with issues,issue_records
+10,date_time,date_time,2022,2022 Log Data.xlsx,values with issues,issue_records
+11,lattitude,lattitude,2022,2022 Log Data.xlsx,values with issues,issue_records
+12,Longitude,longitude,2022,2022 Log Data.xlsx,values with issues,issue_records
+13,lattude_direction,lattude_direction,2022,2022 Log Data.xlsx,values with issues,issue_records
+1,vessel_id,vessel_id,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+2,departureport,departureport,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+3,arrivalport,arrivalport,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+4,date_time,date_time,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+5,name,name,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+6,qty,qty,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+7,weight,weight,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+8,geartype,geartype,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+9,set_name,set_name,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+10,start_n,start_n,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+11,start_e,start_e,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+12,endGpsDerec,endgpsderec,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+13,One Degree Grid Code,one_degree_grid_code,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+14,Five Degree Grid Code,five_degree_grid_code,2023,2023 Log Data.xlsx,to NARA 2024_v1,candidate_observations
+1,id,id,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+2,vessel_id,vessel_id,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+3,departureport,departureport,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+4,name,name,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+5,qty,qty,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+6,weight,weight,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+7,status,status,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+8,geartype,geartype,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+9,date_time,date_time,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+10,start_n,start_n,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+11,start_e,start_e,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+12,startGpsDerec,startgpsderec,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+13,Grid Value,grid_value,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
+14,Review of the location neeeded ?,review_of_the_location_neeeded,2024,2024 Log Data.xlsx,Sheet1,candidate_observations
