@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-10-15T14:06:45.712714+00:00",
+  "runtime": "Google Colab",
+  "row_limit": null,
+  "raw_root": "/content/drive/MyDrive/FishGuard-C3/data/raw",
+  "interim_directory": "/content/drive/MyDrive/FishGuard-C3/data/interim",
+  "transformations": [
+    "unique machine-safe headers",
+    "trim/collapse text whitespace",
+    "convert explicit placeholder tokens to missing values",
+    "add parsed candidate date columns",
+    "add parsed candidate numeric columns and non-numeric review flags",
+    "add coordinate range flags",
+    "add duplicate and combined quality flags",
+    "preserve source lineage"
+  ],
+  "non_actions": [
+    "no raw overwrite",
+    "no row deletion",
+    "no outlier deletion",
+    "no year merging",
+    "no CPUE calculation",
+    "no environmental integration"
+  ],
+  "outputs": [
+    {
+      "file": "fisheries_2017_staged.parquet",
+      "rows": 604311,
+      "size_mb": 15.71
+    },
+    {
+      "file": "fisheries_2018_staged.parquet",
+      "rows": 363234,
+      "size_mb": 10.93
+    },
+    {
+      "file": "fisheries_2019_staged.parquet",
+      "rows": 408747,
+      "size_mb": 9.04
+    },
+    {
+      "file": "fisheries_2020_staged.parquet",
+      "rows": 284626,
+      "size_mb": 8.16
+    },
+    {
+      "file": "fisheries_2021_staged.parquet",
+      "rows": 280619,
+      "size_mb": 15.43
+    },
+    {
+      "file": "fisheries_2022_staged.parquet",
+      "rows": 158819,
+      "size_mb": 4.74
+    },
+    {
+      "file": "fisheries_2022_issues.parquet",
+      "rows": 28781,
+      "size_mb": 0.62
+    },
+    {
+      "file": "fisheries_2023_staged.parquet",
+      "rows": 271412,
+      "size_mb": 6.48
+    },
+    {
+      "file": "fisheries_2024_staged.parquet",
+      "rows": 230395,
+      "size_mb": 5.52
+    }
+  ]
+}
