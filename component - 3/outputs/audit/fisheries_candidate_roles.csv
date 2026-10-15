@@ -1,0 +1,46 @@
+sheet,candidate_role,observed_fields
+2017 Log Data.xlsx :: Sheet1,time,"['ARRIVAL DATE', 'DEPARTURE DATE']"
+2017 Log Data.xlsx :: Sheet1,space,"['LONGI', 'LATTI', 'AREA', 'ARRIVAL PORT', 'DEPARTURE PORT']"
+2017 Log Data.xlsx :: Sheet1,species,[]
+2017 Log Data.xlsx :: Sheet1,catch,"['CATCH', 'KG', 'QTY']"
+2017 Log Data.xlsx :: Sheet1,effort,"['GEAR', 'BAIT']"
+2018 Log data.xlsx :: 2018 Log data,time,"['Y', 'M', 'D', 'Departure_Date', 'Arrival_date', 'Month', 'Date_Of_Set', 'StartTime', 'EndTime', 'Rec_Date']"
+2018 Log data.xlsx :: 2018 Log data,space,"['Lat', 'Long', 'Departure_Port', 'Arrival_Port', 'Latitude', 'Longetude', 'EndLatitude', 'EndLongetude', 'zone']"
+2018 Log data.xlsx :: 2018 Log data,species,['Fish_Name']
+2018 Log data.xlsx :: 2018 Log data,catch,"['KG', 'Amount', 'Catch_Type']"
+2018 Log data.xlsx :: 2018 Log data,effort,"['Total_Length_of_Net', 'Mesh_Size', 'Depth_Net_Set', 'Height_of_net', 'GillNetLen', 'Hooks_Between', 'Total_Hooks', 'Type_of_Bait']"
+2019 Log data.xlsx :: Sheet1,time,"['Departure_Date', 'Arrival_Date', 'Month', 'Date_Of_Set', 'Rec_Date']"
+2019 Log data.xlsx :: Sheet1,space,"['Departure_Port', 'Arrival_Port', 'Latitude', 'Longetude', 'zone']"
+2019 Log data.xlsx :: Sheet1,species,['Fish_Name']
+2019 Log data.xlsx :: Sheet1,catch,"['KG', 'Amount', 'Catch_Type']"
+2019 Log data.xlsx :: Sheet1,effort,"['Total_Hooks', 'Total_Length_of_Net', 'Mesh_Size', 'Depth_Net_Set', 'Height_of_net', 'GillNetLen', 'Hooks_Between', 'Type_of_Bait']"
+2020 Log Data.xlsx :: Sheet5,time,"['departure_date_time', 'DateAndTime']"
+2020 Log Data.xlsx :: Sheet5,space,"['departureport', 'arrivalport', 'latttitude', 'Longitude', '0 degree grid', '05 degree grid']"
+2020 Log Data.xlsx :: Sheet5,species,['name']
+2020 Log Data.xlsx :: Sheet5,catch,"['qty', 'weight']"
+2020 Log Data.xlsx :: Sheet5,effort,['geartype']
+2021 LOGBOOK data final.xlsx :: trip 2021,time,"['departure_date_time', 'arrival_date_time', 'date_time', 'endDateAndTime']"
+2021 LOGBOOK data final.xlsx :: trip 2021,space,"['departureport', 'arrivalport', '1 degree grid', '5 degree grid']"
+2021 LOGBOOK data final.xlsx :: trip 2021,species,['name']
+2021 LOGBOOK data final.xlsx :: trip 2021,catch,"['qty', 'weight']"
+2021 LOGBOOK data final.xlsx :: trip 2021,effort,"['geartype', 'trip_id', 'gear_type', 'hook_type', 'no_of_hooks', 'depth', 'bait', 'netMaterial', 'meshSize', 'plyOfTheNet', 'heightOfNet', 'DepthAtWhichTheNetSet', 'numberOfNetPieces', 'lengthOfTheRingNet', 'heightOfTheRingNet', 'gear_id']"
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,time,"['departure_date_time', 'arrival_date_time', 'date_time']"
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,space,"['departureport', 'arrivalport', 'lattude', 'Longitude', 'lattude_direction', '5 degree grid', '5 degree grid']"
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,species,['name']
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,catch,"['qty', 'weight']"
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,effort,['geartype']
+2022 Log Data.xlsx :: values with issues,time,"['departure_date_time', 'arrival_date_time', 'date_time']"
+2022 Log Data.xlsx :: values with issues,space,"['departureport', 'arrivalport', 'lattitude', 'Longitude', 'lattude_direction']"
+2022 Log Data.xlsx :: values with issues,species,['name']
+2022 Log Data.xlsx :: values with issues,catch,"['qty', 'weight']"
+2022 Log Data.xlsx :: values with issues,effort,['geartype']
+2023 Log Data.xlsx :: to NARA 2024_v1,time,['date_time']
+2023 Log Data.xlsx :: to NARA 2024_v1,space,"['departureport', 'arrivalport', 'One Degree Grid Code', 'Five Degree Grid Code']"
+2023 Log Data.xlsx :: to NARA 2024_v1,species,['name']
+2023 Log Data.xlsx :: to NARA 2024_v1,catch,"['qty', 'weight']"
+2023 Log Data.xlsx :: to NARA 2024_v1,effort,['geartype']
+2024 Log Data.xlsx :: Sheet1,time,['date_time']
+2024 Log Data.xlsx :: Sheet1,space,"['departureport', 'Grid Value']"
+2024 Log Data.xlsx :: Sheet1,species,['name']
+2024 Log Data.xlsx :: Sheet1,catch,"['qty', 'weight']"
+2024 Log Data.xlsx :: Sheet1,effort,['geartype']

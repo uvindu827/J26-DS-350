@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-10-15T10:28:52.160427+00:00",
+  "runtime": "Google Colab",
+  "raw_root": "/content/drive/MyDrive/FishGuard-C3/data/raw",
+  "fisheries_sample_rows_per_sheet": 10000,
+  "input_files": [
+    {
+      "relative_path": "Fisheries/2017 Log Data.xlsx",
+      "size_mb": 81.18
+    },
+    {
+      "relative_path": "Fisheries/2018 Log data.xlsx",
+      "size_mb": 62.74
+    },
+    {
+      "relative_path": "Fisheries/2019 Log data.xlsx",
+      "size_mb": 58.59
+    },
+    {
+      "relative_path": "Fisheries/2020 Log Data.xlsx",
+      "size_mb": 20.77
+    },
+    {
+      "relative_path": "Fisheries/2021 LOGBOOK data final.xlsx",
+      "size_mb": 58.56
+    },
+    {
+      "relative_path": "Fisheries/2022 Log Data.xlsx",
+      "size_mb": 13.49
+    },
+    {
+      "relative_path": "Fisheries/2023 Log Data.xlsx",
+      "size_mb": 18.2
+    },
+    {
+      "relative_path": "Fisheries/2024 Log Data.xlsx",
+      "size_mb": 16.05
+    },
+    {
+      "relative_path": "chlorophyll_a/Chla_Western_Southern_SriLanka_daily.nc",
+      "size_mb": 49.8
+    },
+    {
+      "relative_path": "sst/SST_SSS_Western_Southern_SriLanka_daily.nc",
+      "size_mb": 13.96
+    }
+  ],
+  "output_files": [
+    "dataset_inventory.csv",
+    "environmental_grid_summary.csv",
+    "fisheries_candidate_ranges.csv",
+    "fisheries_candidate_roles.csv",
+    "fisheries_sample_quality.csv",
+    "fisheries_schema_matrix.csv",
+    "fisheries_workbook_structure.csv",
+    "netcdf_coverage.csv",
+    "netcdf_variables.csv"
+  ]
+}

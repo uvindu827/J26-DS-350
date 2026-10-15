@@ -1,0 +1,78 @@
+sheet,field,non_missing,numeric_count,numeric_min,numeric_max,date_count,date_min,date_max
+2017 Log Data.xlsx :: Sheet1,LONGI,10000,0,,,0,,
+2017 Log Data.xlsx :: Sheet1,LATTI,10000,0,,,0,,
+2017 Log Data.xlsx :: Sheet1,KG,10000,10000,0.0,6000.0,0,,
+2017 Log Data.xlsx :: Sheet1,QTY,10000,10000,0.0,2000.0,0,,
+2017 Log Data.xlsx :: Sheet1,ARRIVAL DATE,10000,0,,,9878,2007-11-23 00:00:00.000000000,2107-04-10 00:00:00.000000000
+2017 Log Data.xlsx :: Sheet1,DEPARTURE DATE,10000,0,,,9874,2016-01-12 00:00:00.000000000,2107-04-18 00:00:00.000000000
+2018 Log data.xlsx :: 2018 Log data,Lat,10000,0,,,0,,
+2018 Log data.xlsx :: 2018 Log data,Long,10000,0,,,0,,
+2018 Log data.xlsx :: 2018 Log data,KG,10000,10000,0.0,9000.0,0,,
+2018 Log data.xlsx :: 2018 Log data,Amount,10000,10000,0.0,15000.0,0,,
+2018 Log data.xlsx :: 2018 Log data,Departure_Date,10000,0,,,9996,2017-01-08 00:00:00.000000000,2018-12-31 00:00:00.000000000
+2018 Log data.xlsx :: 2018 Log data,Arrival_date,10000,10000,1.515024e+18,1.5472512e+18,10000,2018-01-04 00:00:00.000000000,2019-01-12 00:00:00.000000000
+2018 Log data.xlsx :: 2018 Log data,Date_Of_Set,10000,9981,1.0,31.0,9981,1970-01-01 00:00:00.000000001,1970-01-01 00:00:00.000000031
+2018 Log data.xlsx :: 2018 Log data,StartTime,10000,9981,0.0,2330.0,9981,1970-01-01 00:00:00.000000000,1970-01-01 00:00:00.000002330
+2018 Log data.xlsx :: 2018 Log data,EndTime,10000,9981,0.0,1700.0,9981,1970-01-01 00:00:00.000000000,1970-01-01 00:00:00.000001700
+2018 Log data.xlsx :: 2018 Log data,Latitude,10000,0,,,0,,
+2018 Log data.xlsx :: 2018 Log data,Longetude,10000,0,,,0,,
+2018 Log data.xlsx :: 2018 Log data,Hooks_Between,10000,9981,0.0,1500.0,0,,
+2018 Log data.xlsx :: 2018 Log data,Total_Hooks,10000,9981,0.0,2500.0,0,,
+2018 Log data.xlsx :: 2018 Log data,Rec_Date,10000,0,,,9981,2018-06-05 00:00:00.000000000,2019-01-22 00:00:00.000000000
+2018 Log data.xlsx :: 2018 Log data,EndLatitude,10000,1,2.0,2.0,0,,
+2018 Log data.xlsx :: 2018 Log data,EndLongetude,10000,0,,,0,,
+2019 Log data.xlsx :: Sheet1,KG,10000,10000,0.0,8053.0,0,,
+2019 Log data.xlsx :: Sheet1,Amount,10000,10000,0.0,25100.0,0,,
+2019 Log data.xlsx :: Sheet1,Departure_Date,10000,10000,1.5463008e+18,1.5488928e+18,10000,2019-01-01 00:00:00.000000000,2019-01-31 00:00:00.000000000
+2019 Log data.xlsx :: Sheet1,Arrival_Date,10000,10000,1.5463872e+18,1.5525216e+18,10000,2019-01-02 00:00:00.000000000,2019-03-14 00:00:00.000000000
+2019 Log data.xlsx :: Sheet1,Date_Of_Set,10000,10000,1.0,31.0,10000,1970-01-01 00:00:00.000000001,1970-01-01 00:00:00.000000031
+2019 Log data.xlsx :: Sheet1,Latitude,10000,0,,,0,,
+2019 Log data.xlsx :: Sheet1,Longetude,10000,0,,,0,,
+2019 Log data.xlsx :: Sheet1,Total_Hooks,10000,10000,0.0,7000.0,0,,
+2019 Log data.xlsx :: Sheet1,Hooks_Between,10000,10000,0.0,800.0,0,,
+2019 Log data.xlsx :: Sheet1,Rec_Date,10000,10000,1.5463008e+18,1.5540768e+18,10000,2019-01-01 00:00:00.000000000,2019-04-01 00:00:00.000000000
+2020 Log Data.xlsx :: Sheet5,departure_date_time,10000,10000,1.5778512e+18,1.6092126e+18,10000,2020-01-01 04:00:00.000000000,2020-12-29 03:30:00.000000000
+2020 Log Data.xlsx :: Sheet5,qty,10000,10000,0.0,14000.0,0,,
+2020 Log Data.xlsx :: Sheet5,weight,10000,10000,0.0,5500.0,0,,
+2020 Log Data.xlsx :: Sheet5,latttitude,9777,9777,-122.050334999999,8224.0,0,,
+2020 Log Data.xlsx :: Sheet5,Longitude,9724,9724,0.0,63001.0,0,,
+2020 Log Data.xlsx :: Sheet5,DateAndTime,10000,10000,1.5775992e+18,1.8497808e+18,10000,2019-12-29 06:00:00.000000000,2028-08-13 12:00:00.000000000
+2020 Log Data.xlsx :: Sheet5,0 degree grid,10000,10000,610000.0,623080.0,0,,
+2020 Log Data.xlsx :: Sheet5,05 degree grid,10000,10000,5100079.0,5233079.0,0,,
+2021 LOGBOOK data final.xlsx :: trip 2021,departure_date_time,10000,10000,1.5694038e+18,1.64295084e+18,10000,2019-09-25 09:30:00.000000000,2022-01-23 15:14:00.000000000
+2021 LOGBOOK data final.xlsx :: trip 2021,arrival_date_time,10000,10000,1.580427e+18,1.6392096e+18,10000,2020-01-30 23:30:00.000000000,2021-12-11 08:00:00.000000000
+2021 LOGBOOK data final.xlsx :: trip 2021,qty,10000,10000,0.0,4500.0,0,,
+2021 LOGBOOK data final.xlsx :: trip 2021,weight,10000,10000,0.0,17225.0,0,,
+2021 LOGBOOK data final.xlsx :: trip 2021,hook_type,10000,8545,1.0,4.0,0,,
+2021 LOGBOOK data final.xlsx :: trip 2021,no_of_hooks,10000,8545,0.0,21012.0,0,,
+2021 LOGBOOK data final.xlsx :: trip 2021,date_time,10000,10000,1.5695604e+18,1.6398108e+18,10000,2019-09-27 05:00:00.000000000,2021-12-18 07:00:00.000000000
+2021 LOGBOOK data final.xlsx :: trip 2021,endDateAndTime,10000,10000,1.569573e+18,1.64025e+18,10000,2019-09-27 08:30:00.000000000,2021-12-23 09:00:00.000000000
+2021 LOGBOOK data final.xlsx :: trip 2021,1 degree grid,10000,0,,,0,,
+2021 LOGBOOK data final.xlsx :: trip 2021,5 degree grid,10000,0,,,0,,
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,qty,10000,10000,0.0,40000.0,0,,
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,weight,10000,10000,1.0,15600.0,0,,
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,departure_date_time,10000,10000,1.5991344e+18,1.6691886e+18,10000,2020-09-03 12:00:00.000000000,2022-11-23 07:30:00.000000000
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,arrival_date_time,10000,10000,1.6122672e+18,1.6693632e+18,10000,2021-02-02 12:00:00.000000000,2022-11-25 08:00:00.000000000
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,date_time,10000,10000,1.5992208e+18,1.6636896e+18,10000,2020-09-04 12:00:00.000000000,2022-09-20 16:00:00.000000000
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,lattude,10000,10000,0.06,45.1,0,,
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,Longitude,10000,10000,60.11,82655.0,0,,
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,lattude_direction,10000,0,,,0,,
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,5 degree grid,10000,10000,5100077.0,510882655.0,0,,
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,5 degree grid__2,10000,10000,6100060.0,610582655.0,0,,
+2022 Log Data.xlsx :: values with issues,qty,10000,10000,0.0,12000.0,0,,
+2022 Log Data.xlsx :: values with issues,weight,10000,10000,2.0,13500.0,0,,
+2022 Log Data.xlsx :: values with issues,departure_date_time,10000,10000,1.6579944e+18,1.679508e+18,10000,2022-07-16 18:00:00.000000000,2023-03-22 18:00:00.000000000
+2022 Log Data.xlsx :: values with issues,arrival_date_time,10000,10000,1.6409841e+18,1.6728732e+18,10000,2021-12-31 20:55:00.000000000,2023-01-04 23:00:00.000000000
+2022 Log Data.xlsx :: values with issues,date_time,10000,10000,1.6404081e+18,1.69229376e+18,10000,2021-12-25 04:55:00.000000000,2023-08-17 17:36:00.000000000
+2022 Log Data.xlsx :: values with issues,lattitude,10000,10000,3.51,9.6,0,,
+2022 Log Data.xlsx :: values with issues,Longitude,10000,10000,58.65,88.16,0,,
+2022 Log Data.xlsx :: values with issues,lattude_direction,10000,0,,,0,,
+2023 Log Data.xlsx :: to NARA 2024_v1,date_time,10000,0,,,10000,2023-01-01 04:10:00.000000000,2023-12-04 14:26:00.000000000
+2023 Log Data.xlsx :: to NARA 2024_v1,qty,10000,10000,-8.0,2900.0,0,,
+2023 Log Data.xlsx :: to NARA 2024_v1,weight,10000,10000,0.0,15400.0,0,,
+2023 Log Data.xlsx :: to NARA 2024_v1,One Degree Grid Code,10000,10000,5100056.0,5250046.0,0,,
+2023 Log Data.xlsx :: to NARA 2024_v1,Five Degree Grid Code,10000,10000,6100050.0,6250045.0,0,,
+2024 Log Data.xlsx :: Sheet1,qty,10000,10000,0.0,6950.0,0,,
+2024 Log Data.xlsx :: Sheet1,weight,10000,10000,0.0,10005.0,0,,
+2024 Log Data.xlsx :: Sheet1,date_time,10000,10000,1.7040672e+18,1.7356032e+18,10000,2024-01-01 00:00:00.000000000,2024-12-31 00:00:00.000000000
+2024 Log Data.xlsx :: Sheet1,Grid Value,10000,10000,5100056.0,5217089.0,0,,

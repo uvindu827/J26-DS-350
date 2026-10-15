@@ -1,0 +1,10 @@
+sheet,sample_rows,sample_columns,empty_cells,placeholder_text_cells,padded_text_cells,duplicate_rows_in_sample
+2017 Log Data.xlsx :: Sheet1,10000,29,0,41569,96784,589
+2018 Log data.xlsx :: 2018 Log data,10000,39,0,58861,40010,107
+2019 Log data.xlsx :: Sheet1,10000,35,59691,35540,10071,0
+2020 Log Data.xlsx :: Sheet5,10000,15,660,0,814,2686
+2021 LOGBOOK data final.xlsx :: trip 2021,10000,41,598,80339,14,74
+2022 Log Data.xlsx :: catch 2022_NARA_with  grid valu,10000,15,0,0,2252,1116
+2022 Log Data.xlsx :: values with issues,10000,13,0,0,1041,4942
+2023 Log Data.xlsx :: to NARA 2024_v1,10000,14,222,798,381,1567
+2024 Log Data.xlsx :: Sheet1,10000,14,175,0,155,0

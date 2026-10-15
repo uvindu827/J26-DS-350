@@ -1,0 +1,11 @@
+file_name,variable,shape,dtype,units,standard_name,long_name,fill_value,missing_value,scale_factor,add_offset
+Chla_Western_Southern_SriLanka_daily.nc,CHL,"(10346, 30, 42)",float32,milligram m-3,mass_concentration_of_chlorophyll_a_in_sea_water,Chlorophyll-a concentration - Mean of the binned pixels,[-999.0],[-999.0],,
+Chla_Western_Southern_SriLanka_daily.nc,latitude,"(30,)",float32,degrees_north,latitude,latitude,,,,
+Chla_Western_Southern_SriLanka_daily.nc,longitude,"(42,)",float32,degrees_east,longitude,longitude,,,,
+Chla_Western_Southern_SriLanka_daily.nc,time,"(10346,)",float32,days since 1900-01-01,time,Time,,,,
+SST_SSS_Western_Southern_SriLanka_daily.nc,depth,"(1,)",float32,m,depth,Depth,,,,
+SST_SSS_Western_Southern_SriLanka_daily.nc,latitude,"(16,)",float32,degrees_north,latitude,Latitude,,,,
+SST_SSS_Western_Southern_SriLanka_daily.nc,longitude,"(22,)",float32,degrees_east,longitude,Longitude,,,,
+SST_SSS_Western_Southern_SriLanka_daily.nc,time,"(10346,)",float32,hours since 1950-01-01,time,Time,,,,
+SST_SSS_Western_Southern_SriLanka_daily.nc,thetao,"(10346, 1, 16, 22)",int16,degrees_C,sea_water_potential_temperature,Temperature,[-32767],,[0.0007324442267417908],[21.0]
+SST_SSS_Western_Southern_SriLanka_daily.nc,so,"(10346, 1, 16, 22)",int16,1e-3,sea_water_salinity,Salinity,[-32767],,[0.0015259254723787308],[-0.0015259254723787308]

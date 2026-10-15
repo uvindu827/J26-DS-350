@@ -1,0 +1,11 @@
+dataset_group,file_name,extension,size_mb,relative_path
+Fisheries,2017 Log Data.xlsx,.xlsx,81.18,Fisheries/2017 Log Data.xlsx
+Fisheries,2018 Log data.xlsx,.xlsx,62.74,Fisheries/2018 Log data.xlsx
+Fisheries,2019 Log data.xlsx,.xlsx,58.59,Fisheries/2019 Log data.xlsx
+Fisheries,2020 Log Data.xlsx,.xlsx,20.77,Fisheries/2020 Log Data.xlsx
+Fisheries,2021 LOGBOOK data final.xlsx,.xlsx,58.56,Fisheries/2021 LOGBOOK data final.xlsx
+Fisheries,2022 Log Data.xlsx,.xlsx,13.49,Fisheries/2022 Log Data.xlsx
+Fisheries,2023 Log Data.xlsx,.xlsx,18.2,Fisheries/2023 Log Data.xlsx
+Fisheries,2024 Log Data.xlsx,.xlsx,16.05,Fisheries/2024 Log Data.xlsx
+chlorophyll_a,Chla_Western_Southern_SriLanka_daily.nc,.nc,49.8,chlorophyll_a/Chla_Western_Southern_SriLanka_daily.nc
+sst,SST_SSS_Western_Southern_SriLanka_daily.nc,.nc,13.96,sst/SST_SSS_Western_Southern_SriLanka_daily.nc

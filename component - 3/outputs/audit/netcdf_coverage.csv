@@ -1,0 +1,3 @@
+file_name,latitude_min,latitude_max,latitude_count,longitude_min,longitude_max,longitude_count,time_start,time_end,time_count,time_units,depth_min,depth_max,depth_count
+Chla_Western_Southern_SriLanka_daily.nc,5.7708306312561035,6.979164123535156,30,79.27084350585938,80.97917175292969,42,1997-09-04,2025-12-31,10346,days since 1900-01-01,,,
+SST_SSS_Western_Southern_SriLanka_daily.nc,5.75,7.0,16,79.25,81.0,22,1997-09-04,2025-12-31,10346,hours since 1950-01-01,0.49402499198913574,0.49402499198913574,1.0
