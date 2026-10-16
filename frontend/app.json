@@ -7,9 +7,7 @@
     "icon": "./assets/images/icon.png",
     "scheme": "frontend",
     "userInterfaceStyle": "automatic",
-    "ios": {
-      "icon": "./assets/expo.icon"
-    },
+    "ios": {},
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
