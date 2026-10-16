@@ -1,0 +1,89 @@
+column,dtype,role,missing_count,missing_percent,availability
+month_start,datetime64[ns],identifier_or_grouping,0,0.0,structural
+spatial_cell_id,object,identifier_or_grouping,0,0.0,structural
+species_model,object,candidate_predictor,0,0.0,known before month t
+gear_model,object,candidate_predictor,0,0.0,known before month t
+target_median_catch_weight_kg,Float64,target,0,0.0,month t outcome; never a predictor
+diagnostic_total_catch_weight_kg,Float64,diagnostic_or_weight_not_predictor,0,0.0,month t outcome; never a predictor
+diagnostic_record_count,int64,diagnostic_or_weight_not_predictor,0,0.0,month t outcome; never a predictor
+cell_lat_center,Float64,candidate_predictor,0,0.0,known before month t
+cell_lon_center,Float64,candidate_predictor,0,0.0,known before month t
+target_log1p_median_catch,Float64,target,0,0.0,month t outcome; never a predictor
+forecast_horizon_months,int64,metadata,0,0.0,structural
+group_median_catch_weight_kg_lag_1,Float64,candidate_predictor,5963,59.333333333333336,known before month t
+group_median_catch_weight_kg_lag_2,Float64,candidate_predictor,6620,65.87064676616914,known before month t
+group_median_catch_weight_kg_lag_3,Float64,candidate_predictor,6962,69.27363184079603,known before month t
+group_median_catch_weight_kg_lag_4,Float64,candidate_predictor,7274,72.37810945273631,known before month t
+group_median_catch_weight_kg_lag_5,Float64,candidate_predictor,7486,74.48756218905473,known before month t
+group_median_catch_weight_kg_lag_6,Float64,candidate_predictor,7634,75.96019900497512,known before month t
+species_median_catch_weight_kg_lag_1,Float64,candidate_predictor,945,9.402985074626866,known before month t
+species_median_catch_weight_kg_lag_2,Float64,candidate_predictor,1363,13.562189054726367,known before month t
+species_median_catch_weight_kg_lag_3,Float64,candidate_predictor,1555,15.4726368159204,known before month t
+species_median_catch_weight_kg_lag_4,Float64,candidate_predictor,1905,18.955223880597014,known before month t
+species_median_catch_weight_kg_lag_5,Float64,candidate_predictor,2152,21.412935323383085,known before month t
+species_median_catch_weight_kg_lag_6,Float64,candidate_predictor,2555,25.422885572139304,known before month t
+cell_median_catch_weight_kg_lag_1,Float64,candidate_predictor,1546,15.383084577114428,known before month t
+cell_median_catch_weight_kg_lag_2,Float64,candidate_predictor,2118,21.074626865671643,known before month t
+cell_median_catch_weight_kg_lag_3,Float64,candidate_predictor,2346,23.34328358208955,known before month t
+cell_median_catch_weight_kg_lag_4,Float64,candidate_predictor,2821,28.069651741293534,known before month t
+cell_median_catch_weight_kg_lag_5,Float64,candidate_predictor,3140,31.24378109452736,known before month t
+cell_median_catch_weight_kg_lag_6,Float64,candidate_predictor,3539,35.21393034825871,known before month t
+global_median_catch_weight_kg_lag_1,Float64,candidate_predictor,120,1.1940298507462688,known before month t
+global_median_catch_weight_kg_lag_2,Float64,candidate_predictor,334,3.323383084577115,known before month t
+global_median_catch_weight_kg_lag_3,Float64,candidate_predictor,260,2.587064676616915,known before month t
+global_median_catch_weight_kg_lag_4,Float64,candidate_predictor,517,5.144278606965174,known before month t
+global_median_catch_weight_kg_lag_5,Float64,candidate_predictor,766,7.621890547263682,known before month t
+global_median_catch_weight_kg_lag_6,Float64,candidate_predictor,974,9.691542288557214,known before month t
+group_catch_history_months_available,int8,candidate_predictor,0,0.0,known before month t
+group_catch_rolling_mean_3m,Float64,candidate_predictor,4304,42.82587064676617,known before month t
+group_catch_rolling_mean_6m,Float64,candidate_predictor,3405,33.88059701492537,known before month t
+species_catch_history_months_available,int8,candidate_predictor,0,0.0,known before month t
+species_catch_rolling_mean_3m,Float64,candidate_predictor,437,4.348258706467662,known before month t
+species_catch_rolling_mean_6m,Float64,candidate_predictor,320,3.1840796019900495,known before month t
+cell_catch_history_months_available,int8,candidate_predictor,0,0.0,known before month t
+cell_catch_rolling_mean_3m,Float64,candidate_predictor,696,6.925373134328358,known before month t
+cell_catch_rolling_mean_6m,Float64,candidate_predictor,427,4.248756218905473,known before month t
+global_catch_history_months_available,int8,candidate_predictor,0,0.0,known before month t
+global_catch_rolling_mean_3m,Float64,candidate_predictor,2,0.01990049751243781,known before month t
+global_catch_rolling_mean_6m,Float64,candidate_predictor,2,0.01990049751243781,known before month t
+cell_env_median_chlorophyll_a_mg_m3_lag_1,float64,candidate_predictor,1546,15.383084577114428,known before month t
+cell_env_median_sst_c_lag_1,float64,candidate_predictor,1546,15.383084577114428,known before month t
+cell_env_median_chlorophyll_a_mg_m3_lag_2,float64,candidate_predictor,2118,21.074626865671643,known before month t
+cell_env_median_sst_c_lag_2,float64,candidate_predictor,2118,21.074626865671643,known before month t
+cell_env_median_chlorophyll_a_mg_m3_lag_3,float64,candidate_predictor,2346,23.34328358208955,known before month t
+cell_env_median_sst_c_lag_3,float64,candidate_predictor,2346,23.34328358208955,known before month t
+cell_env_median_chlorophyll_a_mg_m3_lag_4,float64,candidate_predictor,2821,28.069651741293534,known before month t
+cell_env_median_sst_c_lag_4,float64,candidate_predictor,2821,28.069651741293534,known before month t
+cell_env_median_chlorophyll_a_mg_m3_lag_5,float64,candidate_predictor,3140,31.24378109452736,known before month t
+cell_env_median_sst_c_lag_5,float64,candidate_predictor,3140,31.24378109452736,known before month t
+cell_env_median_chlorophyll_a_mg_m3_lag_6,float64,candidate_predictor,3539,35.21393034825871,known before month t
+cell_env_median_sst_c_lag_6,float64,candidate_predictor,3539,35.21393034825871,known before month t
+global_env_median_chlorophyll_a_mg_m3_lag_1,float64,candidate_predictor,120,1.1940298507462688,known before month t
+global_env_median_sst_c_lag_1,float64,candidate_predictor,120,1.1940298507462688,known before month t
+global_env_median_chlorophyll_a_mg_m3_lag_2,float64,candidate_predictor,334,3.323383084577115,known before month t
+global_env_median_sst_c_lag_2,float64,candidate_predictor,334,3.323383084577115,known before month t
+global_env_median_chlorophyll_a_mg_m3_lag_3,float64,candidate_predictor,260,2.587064676616915,known before month t
+global_env_median_sst_c_lag_3,float64,candidate_predictor,260,2.587064676616915,known before month t
+global_env_median_chlorophyll_a_mg_m3_lag_4,float64,candidate_predictor,517,5.144278606965174,known before month t
+global_env_median_sst_c_lag_4,float64,candidate_predictor,517,5.144278606965174,known before month t
+global_env_median_chlorophyll_a_mg_m3_lag_5,float64,candidate_predictor,766,7.621890547263682,known before month t
+global_env_median_sst_c_lag_5,float64,candidate_predictor,766,7.621890547263682,known before month t
+global_env_median_chlorophyll_a_mg_m3_lag_6,float64,candidate_predictor,974,9.691542288557214,known before month t
+global_env_median_sst_c_lag_6,float64,candidate_predictor,974,9.691542288557214,known before month t
+cell_env_months_available,int8,candidate_predictor,0,0.0,known before month t
+cell_env_chlorophyll_rolling_mean_3m,float64,candidate_predictor,696,6.925373134328358,known before month t
+cell_env_sst_rolling_mean_3m,float64,candidate_predictor,696,6.925373134328358,known before month t
+cell_env_chlorophyll_change_1m,float64,candidate_predictor,2699,26.855721393034827,known before month t
+cell_env_sst_change_1m,float64,candidate_predictor,2699,26.855721393034827,known before month t
+global_env_months_available,int8,candidate_predictor,0,0.0,known before month t
+global_env_chlorophyll_rolling_mean_3m,float64,candidate_predictor,2,0.01990049751243781,known before month t
+global_env_sst_rolling_mean_3m,float64,candidate_predictor,2,0.01990049751243781,known before month t
+global_env_chlorophyll_change_1m,float64,candidate_predictor,452,4.497512437810945,known before month t
+global_env_sst_change_1m,float64,candidate_predictor,452,4.497512437810945,known before month t
+year,int16,candidate_predictor,0,0.0,known before month t
+month,int8,candidate_predictor,0,0.0,known before month t
+month_sin,float64,candidate_predictor,0,0.0,known before month t
+month_cos,float64,candidate_predictor,0,0.0,known before month t
+months_since_start,int16,candidate_predictor,0,0.0,known before month t
+climate_season,string,candidate_predictor,0,0.0,known before month t
+eligible_minimum_history,bool,eligibility_filter_not_predictor,0,0.0,structural

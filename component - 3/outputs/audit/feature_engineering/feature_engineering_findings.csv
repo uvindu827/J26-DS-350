@@ -1,0 +1,10 @@
+finding,result
+Forecast unit,One calendar month × 0.10° spatial cell × species × gear
+Forecast horizon,One month ahead
+Prediction target,"log1p monthly median catch weight per record; catch-availability proxy, not CPUE"
+Effort limitation,"Reliable comparable effort is unavailable; current-month total catch and record count are diagnostics, not predictors"
+Environmental lag policy,Generate lags 1–6; select or regularize using training data only
+Missing group-month policy,"Missing/unknown, never automatically zero, interpolated or backfilled"
+Leakage audit,6 of 6 checks passed
+Model-ready rows with minimum history,"9,930 of 10,050"
+Next required stage,Chronological split design and modelling EDA before train-only preprocessing and model fitting

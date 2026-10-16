@@ -1,0 +1,11 @@
+metric,value
+input_integrated_rows,26081.0
+monthly_modelling_rows,10050.0
+eligible_minimum_history_rows,9930.0
+calendar_months,83.0
+spatial_cells,65.0
+species_categories,65.0
+gear_categories,3.0
+candidate_predictors,80.0
+forecast_horizon_months,1.0
+spatial_cell_degrees,0.1
