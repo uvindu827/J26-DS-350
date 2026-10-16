@@ -1,0 +1,10 @@
+year,file,species,weight,quantity,vessel,gear,date_mode,month,day,lat,lon,year_field,date,direction
+2017,fisheries_2017_staged.parquet,catch,kg,qty,reg_num,gear,ymd,unnamed_2,unnamed_3,longi,latti,,,
+2018,fisheries_2018_staged.parquet,fish_name,kg,amount,boat_no,catch_type,ymd_fields,m,d,lat,long,y,,
+2019,fisheries_2019_staged.parquet,fish_name,kg,amount,boat_no,catch_type,ymd,month,date_of_set,latitude,longetude,,,
+2020,fisheries_2020_staged.parquet,name,weight,qty,vessel_id,geartype,field,,,longitude,latttitude,,dateandtime,gps_derection
+2021,fisheries_2021_staged.parquet,name,weight,qty,vessel_id,geartype,field,,,start_n,start_e,,date_time,startgpsderec
+2022,fisheries_2022_staged.parquet,name,weight,qty,vessel_id,geartype,field,,,lattude,longitude,,date_time,lattude_direction
+2022,fisheries_2022_issues.parquet,name,weight,qty,vessel_id,geartype,field,,,lattitude,longitude,,date_time,lattude_direction
+2023,fisheries_2023_staged.parquet,name,weight,qty,vessel_id,geartype,field,,,start_n,start_e,,date_time,
+2024,fisheries_2024_staged.parquet,name,weight,qty,vessel_id,geartype,field,,,start_n,start_e,,date_time,startgpsderec
