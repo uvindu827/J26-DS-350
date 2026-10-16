@@ -1,0 +1,3 @@
+dataset,variable,units,shape,time_start,time_end,latitude_min,latitude_max,longitude_min,longitude_max
+chlorophyll_a,CHL,milligram m-3,"(10346, 30, 42)",1997-09-04,2025-12-31,5.7708306312561035,6.979164123535156,79.27084350585938,80.97917175292969
+sst,thetao,degrees_C,"(10346, 16, 22)",1997-09-04,2025-12-31,5.75,7.0,79.25,81.0

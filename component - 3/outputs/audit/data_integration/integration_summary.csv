@@ -1,0 +1,5 @@
+metric,rows,percent
+fisheries_candidates,26540,100.0
+chlorophyll_a_matched,26081,98.27053504144688
+sst_matched,26260,98.94498869630746
+both_environmental_variables,26081,98.27053504144688

@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-10-16T08:21:51.608289+00:00",
+  "runtime": "Google Colab",
+  "method": "exact calendar day plus independent nearest grid-cell centre",
+  "distance_limits_km": {
+    "chlorophyll_a": 4.0,
+    "sst": 7.0
+  },
+  "input_rows": 26540,
+  "output_rows_all": 26540,
+  "output_rows_complete": 26081,
+  "variables": {
+    "chlorophyll_a": "CHL, milligram m-3",
+    "sst": "thetao surface layer, degrees_C"
+  },
+  "salinity_integrated": false,
+  "outputs": [
+    "fisheries_environment_integrated_all.parquet",
+    "fisheries_environment_integrated_complete.parquet"
+  ]
+}
