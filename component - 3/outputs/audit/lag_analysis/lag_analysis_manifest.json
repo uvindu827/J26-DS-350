@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-10-16T17:45:50.391883+00:00",
+  "created_utc": "2026-10-16T18:19:57.287485+00:00",
   "runtime": "Google Colab",
   "input": "fisheries_environment_integrated_complete.parquet",
   "eligible_rows": 26081,
@@ -8,6 +8,9 @@
   "lag_definition": "environment at t-k paired with catch at t",
   "primary_outcome": "monthly median catch weight per record",
   "seasonal_adjustment": "subtract calendar-month median across years",
+  "multiple_testing": "Benjamini-Hochberg across all reported lag tests at q<0.05",
+  "significant_tests_after_fdr": 3,
+  "candidate_scatter_trend": "Theil-Sen robust linear trend",
   "missing_month_policy": "retain as missing; no interpolation or backfill",
   "source_artifact_modified": false,
   "scope": "Western Province study data; exploratory associations only",
