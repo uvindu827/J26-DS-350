@@ -1,0 +1,10 @@
+metric,value
+model_candidate_rows,26540
+event_date_start,2017-10-16T00:00:00
+event_date_end,2024-12-30T00:00:00
+species_categories,87
+gear_categories,5
+vessels,1161
+total_catch_weight_kg,2508974.5
+median_catch_weight_kg,30.0
+zero_weight_rows,101
