@@ -1,7 +1,7 @@
 metric,value
 complete_integrated_rows,26081.0
-unique_species_after_aliases,83.0
-unique_gears_after_aliases,4.0
+unique_species_after_aliases,80.0
+unique_gears_after_aliases,3.0
 median_catch_weight_kg,30.0
 median_chlorophyll_a_mg_m3,0.29880550503730774
 median_sst_c,28.675283052027225
