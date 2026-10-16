@@ -36,9 +36,9 @@ This is a living dictionary based on Data Audit 01 and the first staged-cleaning
 
 | Variable | Derivation | Status |
 |---|---|---|
-| Canonical event date | Year-specific approved fishing-event fields | Blocked pending field decision |
-| Canonical location | Approved coordinates or grid transformed to one spatial system | Blocked pending spatial decision |
-| Catch/weight | Approved year-specific catch field with verified units | Blocked pending unit confirmation |
+| Canonical event date | Year-specific fishing-event fields selected in semantic harmonization | Working assumption; validity flagged |
+| Canonical location | Parsed labelled coordinates within the provisional Western Province coastal window and common environmental grids | Working assumption; rectangular boundary and ambiguous encodings documented |
+| Catch/weight | `kg`/`weight` treated as kilograms without conversion | Working assumption; provider confirmation unavailable |
 | Effort | Approved comparable effort measure | Feasibility unresolved |
 | CPUE | Approved catch divided by approved effort | Not calculated |
 | Month/season/monsoon | Derived from approved event date | Later |

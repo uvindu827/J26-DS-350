@@ -14,10 +14,10 @@ It did not overwrite raw files, remove outliers, calculate CPUE, or integrate en
 
 | Year | Species | Catch-weight | Quantity | Event-date candidates | Coordinate candidates | Vessel | Gear |
 |---:|---|---|---|---|---|---|---|
-| 2017 | `catch` | `kg` | `qty` | reconstructed year/month/day | `longi`, `latti` (reversed labels) | `reg_num` | `gear` |
+| 2017 | `catch` | `kg` | `qty` | reconstructed year/month/day | latitude=`latti`, longitude=`longi` | `reg_num` | `gear` |
 | 2018 | `fish_name` | `kg` | `amount` | `y`/`m`/`d` | `lat`, `long` | `boat_no` | `catch_type` |
 | 2019 | `fish_name` | `kg` | `amount` | year + `month` + `date_of_set` | `latitude`, `longetude` | `boat_no` | `catch_type` |
-| 2020 | `name` | `weight` | `qty` | `dateandtime` | `longitude`, `latttitude` (reversed labels) | `vessel_id` | `geartype` |
+| 2020 | `name` | `weight` | `qty` | `dateandtime` | latitude=`latttitude`, longitude=`longitude` | `vessel_id` | `geartype` |
 | 2021 | `name` | `weight` | `qty` | `date_time` | `start_n`, `start_e` | `vessel_id` | `geartype` |
 | 2022 main | `name` | `weight` | `qty` | `date_time` | `lattude`, `longitude` | `vessel_id` | `geartype` |
 | 2022 issues | `name` | `weight` | `qty` | `date_time` | `lattitude`, `longitude` | `vessel_id` | `geartype` |
@@ -39,7 +39,8 @@ The full cleaning run staged 2,630,944 rows and reconciled every row. It recorde
 | Catch weight | Treat `kg` and `weight` as kilograms; do not convert values | Working assumption |
 | Quantity | Treat `qty`/`amount` as a count-like supplementary variable, not the target | Working assumption |
 | Event timestamp | Use the most direct set/catch timestamp available for each year | Adopted provisionally |
-| Coordinates | Parse numeric and direction-prefixed degree-minute forms with year-specific mappings | Adopted provisionally |
+| Coordinates | Follow source latitude/longitude labels; parse explicit direction-prefixed degree-minute forms; flag ambiguous compact numeric encodings | Adopted provisionally |
+| Study area | Restrict model candidates to a provisional Western Province coastal rectangle clipped to the common environmental grids | Adopted provisionally |
 | Duplicates | Retain in the all-records artifact; exclude exact canonical duplicates only from model candidates | Adopted |
 | Outliers | Retain and flag until investigated | Retain/flag |
 | 2022 issue sheet | Retain in all records; exclude from model candidates | Adopted |
@@ -52,11 +53,12 @@ The full cleaning run staged 2,630,944 rows and reconciled every row. It recorde
 2. Catch weight is the provisional prediction target. CPUE is not calculated because comparable effort metadata is unavailable.
 3. `qty` and `amount` are retained as count-like candidates but are not required for model eligibility.
 4. Dates outside 2017-2024 are flagged invalid.
-5. The 2017 labels `longi` and `latti` are interpreted in reverse because observed direction markers indicate northing and easting respectively.
-6. The 2020 coordinate labels are interpreted in reverse because the observed ranges and sample values make that interpretation geographically coherent.
-7. South latitude is negative and north latitude is positive. Existing longitude signs are preserved; west/east markers are applied when present.
-8. Exact canonical duplicates are excluded only from the model-candidate artifact. The complete harmonized artifact remains lossless at row level.
-9. Grid codes are preserved but are not used to manufacture coordinates.
+5. Latitude and longitude follow their source labels. The earlier reversed-label assumption was rejected after the first full-run diagnostic produced implausible polar clusters.
+6. South latitude is negative and north latitude is positive. Existing longitude signs are preserved; west/east markers are applied when present.
+7. Compact numeric coordinates outside ordinary degree ranges are flagged as ambiguous and are not decoded without format evidence.
+8. Model candidates must lie within the provisional Western Province coastal study window: 6.30-6.979164 degrees north and 79.270844-80.30 degrees east. This rectangle is clipped to the common environmental grids and is not claimed to be an official administrative polygon.
+9. Exact canonical duplicates are excluded only from the model-candidate artifact. The complete harmonized artifact remains lossless at row level.
+10. Grid codes are preserved but are not used to manufacture coordinates.
 
 ## Next implementation gate
 

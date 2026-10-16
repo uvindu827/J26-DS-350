@@ -1,18 +1,25 @@
 {
-  "created_utc": "2026-10-16T04:00:48.680419+00:00",
+  "created_utc": "2026-10-16T04:47:00.957132+00:00",
   "runtime": "Google Colab",
+  "study_bounds": {
+    "latitude_min": 6.3,
+    "latitude_max": 6.979164,
+    "longitude_min": 79.270844,
+    "longitude_max": 80.3
+  },
   "assumptions": [
     "weight fields treated as kilograms",
     "rows treated as species catch lines",
     "year-specific fishing dates preferred",
-    "2017 coordinate labels reversed",
-    "2020 coordinate labels swapped",
+    "coordinate fields follow their source latitude/longitude labels",
+    "ambiguous encoded numeric coordinates are flagged but not decoded",
+    "model candidates restricted to a provisional Western Province coastal rectangle within the environmental-grid intersection",
     "2022 issue sheet excluded from model candidates",
     "exact canonical duplicates excluded from model candidates",
     "catch weight used instead of CPUE"
   ],
   "all_records": 2630944,
-  "model_candidates": 2127687,
+  "model_candidates": 26540,
   "outputs": [
     "fisheries_harmonized_all.parquet",
     "fisheries_harmonized_model_candidates.parquet"
