@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-10-16T19:24:51.499425+00:00",
+  "runtime": "Google Colab",
+  "input": "fisheries_environment_integrated_complete.parquet",
+  "output": "monthly_model_features.parquet",
+  "input_rows": 26081,
+  "output_rows": 10050,
+  "scope": "Western Province study data",
+  "temporal_unit": "calendar month",
+  "forecast_horizon_months": 1,
+  "panel_unit": "month \u00d7 0.10-degree cell \u00d7 species \u00d7 gear",
+  "target": "target_log1p_median_catch",
+  "target_interpretation": "catch availability per observed record; not CPUE",
+  "catch_lags_months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "environment_lags_months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "lag_policy": "exact prior calendar months only",
+  "missing_policy": "retain missing; no zero-fill, interpolation, backfill or imputation",
+  "source_artifact_modified": false,
+  "chronological_split_created": false,
+  "figures": [
+    "feature_engineering_diagnostics.png",
+    "feature_missingness.png"
+  ],
+  "evidence": [
+    "feature_dictionary.csv",
+    "feature_engineering_findings.csv",
+    "feature_engineering_overview.csv",
+    "feature_missingness.csv",
+    "leakage_checks.csv",
+    "monthly_feature_coverage.csv"
+  ]
+}

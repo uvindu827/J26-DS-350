@@ -1,0 +1,7 @@
+check,passed,detail
+unique panel key,True,One target row per month × cell × species × gear
+no lag zero predictors,True,All history starts at t-1
+target excluded from predictors,True,"['target_median_catch_weight_kg', 'target_log1p_median_catch']"
+current-month diagnostics excluded,True,"['diagnostic_total_catch_weight_kg', 'diagnostic_record_count']"
+forecast horizon fixed,True,One calendar month
+lag naming uses positive months,True,48 lagged predictor columns
