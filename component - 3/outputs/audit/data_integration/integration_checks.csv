@@ -1,0 +1,5 @@
+check,value,passed
+fisheries_rows_preserved,26540,True
+chlorophyll_nonnegative,26081,True
+sst_plausible_range,26260,True
+complete_environment_rows,26081,True
