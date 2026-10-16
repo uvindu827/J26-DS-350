@@ -1,0 +1,8 @@
+finding,result
+Analytical population,"26,081 complete integrated observations"
+Catch-weight distribution,Strongly right-skewed; use robust summaries and consider log1p target transformation
+Catch and chlorophyll-a rank correlation,0.066
+Catch and SST rank correlation,-0.034
+Most recorded species after alias consolidation,skipjack tuna
+Most recorded gear after alias consolidation,gillnet
+Interpretation limit,"Associations may reflect year, month, location, species, gear, vessel, and sampling differences; no causal claim"

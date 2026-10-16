@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-10-16T09:40:05.964899+00:00",
+  "runtime": "Google Colab",
+  "input": "fisheries_environment_integrated_complete.parquet",
+  "rows": 26081,
+  "analysis_scope": "descriptive post-integration EDA",
+  "source_artifact_modified": false,
+  "category_aliases_analysis_only": true,
+  "figures": [
+    "catch_environment_density.png",
+    "environment_quintile_catch.png",
+    "monthly_catch_environment_patterns.png",
+    "spatial_catch_environment_patterns.png",
+    "spearman_correlation_matrix.png",
+    "species_environment_profiles.png"
+  ],
+  "evidence": [
+    "annual_environment_catch_summary.csv",
+    "environment_quintile_summary.csv",
+    "gear_alias_summary.csv",
+    "gear_environment_profiles.csv",
+    "monthly_environment_catch_summary.csv",
+    "post_integration_overview.csv",
+    "spearman_correlations.csv",
+    "species_alias_summary.csv",
+    "species_environment_profiles.csv",
+    "viva_findings.csv"
+  ]
+}
