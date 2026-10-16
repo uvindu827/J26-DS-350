@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-10-16T07:18:37.600596+00:00",
+  "runtime": "Google Colab",
+  "input": "fisheries_harmonized_model_candidates.parquet",
+  "rows": 26540,
+  "date_start": "2017-10-16T00:00:00",
+  "date_end": "2024-12-30T00:00:00",
+  "outputs": [
+    "annual_summary.csv",
+    "calendar_month_summary.csv",
+    "eda_overview.csv",
+    "gear_summary.csv",
+    "monthly_summary.csv",
+    "retention_context.csv",
+    "species_summary.csv",
+    "viva_findings.csv"
+  ],
+  "figures": [
+    "annual_coverage.png",
+    "catch_weight_distribution.png",
+    "monthly_patterns.png",
+    "spatial_patterns.png",
+    "species_and_gear_composition.png"
+  ]
+}
