@@ -1,0 +1,7 @@
+finding,result
+Model,Extra Trees Regression
+Mean expanding-window log MAE,0.8433
+2023 validation log MAE,0.8491
+2023 validation kg MAE,130.45 kg
+2023 validation kg bias,-90.27 kg
+Test status,2024 target sealed and unused
