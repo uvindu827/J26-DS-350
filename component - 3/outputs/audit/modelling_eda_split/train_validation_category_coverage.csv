@@ -1,0 +1,4 @@
+feature,train_categories,validation_categories,unseen_validation_categories,unseen_validation_rows,unseen_validation_percent
+species_model,58,32,4,12,1.5151515151515151
+gear_model,3,3,0,0,0.0
+climate_season,4,4,0,0,0.0

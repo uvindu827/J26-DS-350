@@ -1,0 +1,7 @@
+check,passed,detail
+eligible rows only,True,"9,930 rows"
+unique panel keys,True,month × cell × species × gear
+strict chronological ordering,True,train before validation before test
+test target not summarized,True,2024 outcome remains sealed
+predictor roles from dictionary,True,80 candidate predictors
+cross-validation stays inside training,True,fold validation years 2020–2022

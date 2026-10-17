@@ -1,0 +1,8 @@
+data_split,year,rows,months,spatial_cells,species
+train,2018,2848,12,64,42
+train,2019,3968,12,63,42
+train,2020,733,10,32,28
+train,2021,272,10,19,22
+train,2022,376,11,23,25
+validation,2023,792,11,27,32
+test,2024,941,12,31,32
