@@ -1,0 +1,246 @@
+STEP 16 - PER-SEASON EVALUATION (read-only; inference only; headline = TEST 2022-2025)
+==============================================================================
+
+Input files:
+  [PASS] all input files exist (dataset, predictions, E23 metrics, export, 6 models, 6 configs)  (17 files)
+  data\processed\model_dataset_daily.parquet                             sha256 d37b3633e9361061...
+  experiments\split_config.json                                          sha256 6ec204ae25fa8369...
+  data\processed\predictions\baseline_predictions.parquet                sha256 cd8e4b205fc29350...
+  experiments\results\seed_robustness_per_run.csv                        sha256 c008f45e0ad7e8d6...
+  outputs\c1_to_c2\c1_nutrient_forecasts_test_2022_2025.csv              sha256 b8344c9703243074...
+  experiments\models\node_best.pt                                        sha256 22b6477bca72c63d...
+  experiments\models\node_s7_best.pt                                     sha256 ef9798ccd02c04ed...
+  experiments\models\node_s2026_best.pt                                  sha256 29fe1ab181393c88...
+  experiments\models\lstm_best.pt                                        sha256 87b8d279e6801619...
+  experiments\models\lstm_s7_best.pt                                     sha256 d7ff9c1928cff592...
+  experiments\models\lstm_s2026_best.pt                                  sha256 d59d3e6f9642962a...
+  experiments\node_config.json                                           sha256 6596f3c377dac5dc...
+  experiments\node_s7_config.json                                        sha256 446cb346d0770562...
+  experiments\node_s2026_config.json                                     sha256 b30fcd86be6e101c...
+  experiments\lstm_config.json                                           sha256 752213121fe432ad...
+  experiments\lstm_s7_config.json                                        sha256 84727fc54be62735...
+  experiments\lstm_s2026_config.json                                     sha256 e05967355a365fc8...
+  [PASS] NeuralODE_s42: config seed is 42  (config seed 42)
+  [PASS] NeuralODE_s7: config seed is 7  (config seed 7)
+  [PASS] NeuralODE_s2026: config seed is 2026  (config seed 2026)
+  [PASS] LSTM_B_s42: config seed is 42  (config seed 42)
+  [PASS] LSTM_B_s7: config seed is 7  (config seed 7)
+  [PASS] LSTM_B_s2026: config seed is 2026  (config seed 2026)
+  [PASS] baseline predictions contain Persistence, XGB-B and true values for NO3/PO4/Si  (244,776 rows x 27 columns)
+
+Regenerating the six saved neural runs (evaluation mode, gradients disabled, no optimizer):
+  [PASS] NeuralODE_s42: true values align with the baseline file (max diff <= 0.001)  (max diff 4.77e-07; common rows now 244,272)
+  [PASS] NeuralODE_s7: true values align with the baseline file (max diff <= 0.001)  (max diff 4.77e-07; common rows now 244,272)
+  [PASS] NeuralODE_s2026: true values align with the baseline file (max diff <= 0.001)  (max diff 4.77e-07; common rows now 244,272)
+  [PASS] LSTM_B_s42: true values align with the baseline file (max diff <= 0.001)  (max diff 4.77e-07; common rows now 244,272)
+  [PASS] LSTM_B_s7: true values align with the baseline file (max diff <= 0.001)  (max diff 4.77e-07; common rows now 244,272)
+  [PASS] LSTM_B_s2026: true values align with the baseline file (max diff <= 0.001)  (max diff 4.77e-07; common rows now 244,272)
+  [PASS] common validation + test rows = 244,272  (244,272)
+  [PASS] common test rows = 122,136  (122,136)
+
+Reproduction of E23 overall test RMSE (tolerance 1e-4):
+  [PASS] Persistence: reproduces E23 test RMSE for NO3/PO4/Si  (max diff 4.16e-17)
+  [PASS] XGB_B_process: reproduces E23 test RMSE for NO3/PO4/Si  (max diff 7.63e-17)
+  [PASS] NeuralODE_s42: reproduces E23 test RMSE for NO3/PO4/Si  (max diff 5.55e-17)
+  [PASS] NeuralODE_s7: reproduces E23 test RMSE for NO3/PO4/Si  (max diff 5.55e-17)
+  [PASS] NeuralODE_s2026: reproduces E23 test RMSE for NO3/PO4/Si  (max diff 8.33e-17)
+  [PASS] LSTM_B_s42: reproduces E23 test RMSE for NO3/PO4/Si  (max diff 4.16e-17)
+  [PASS] LSTM_B_s7: reproduces E23 test RMSE for NO3/PO4/Si  (max diff 5.55e-17)
+  [PASS] LSTM_B_s2026: reproduces E23 test RMSE for NO3/PO4/Si  (max diff 5.55e-17)
+  [PASS] Neural ODE seed 2026 reproduces the Component 2 export (all 122,136 rows)  (122,136 rows matched, max diff 7.50e-07)
+
+Season assignment (by target_date month):
+  [PASS] target_date = t0 + h on every row
+  [PASS] every row has exactly one season
+  [PASS] test: season counts add up to the split total  (122,136)
+  [PASS] test: every season contains all 12 cells and lead days 1-7
+  [PASS] val: season counts add up to the split total  (122,136)
+  [PASS] val: every season contains all 12 cells and lead days 1-7
+  [PASS] no missing predictions for any model on the common rows
+
+TEST rows per season (all 12 cells; Western 3 / Southern 9):
+  NEM  Northeast Monsoon (Dec–Feb)      rows  29,736  (Western  7,434 | Southern 22,302)  target days  360  seasonal occurrences in test years: 5
+  FIM  First Inter-Monsoon (Mar–Apr)    rows  20,496  (Western  5,124 | Southern 15,372)  target days  244  seasonal occurrences in test years: 4
+  SWM  Southwest Monsoon (May–Sep)      rows  51,408  (Western 12,852 | Southern 38,556)  target days  612  seasonal occurrences in test years: 4
+  SIM  Second Inter-Monsoon (Oct–Nov)   rows  20,496  (Western  5,124 | Southern 15,372)  target days  244  seasonal occurrences in test years: 4
+  Rows whose issue day and target day fall in different seasons: 5,376 (4.4%) - counted under the target season.
+  Note: rows within a season are strongly dependent (consecutive days, neighbouring cells, overlapping forecast windows). With only a few seasonal occurrences per season, differences are descriptive.
+
+Computing metrics (per run, then mean / std / min / max across runs):
+  [PASS] all RMSE and MAE values are valid numbers
+  [PASS] skill is undefined only where persistence RMSE is exactly 0  (0 subsets with undefined skill)
+  [PASS] identical row counts for every model in every split x scope x season subset
+
+TEST (headline) - RMSE in mmol m-3, mean over runs (neural = 3 seeds):
+nutrient                    no3     po4      si
+season      model                              
+All seasons Persistence  0.3697  0.0454  0.3304
+            XGB-B        0.3059  0.0375  0.2918
+            LSTM-B       0.3056  0.0361  0.2979
+            Neural ODE   0.2968  0.0356  0.2977
+NEM         Persistence  0.4416  0.0160  0.3422
+            XGB-B        0.3960  0.0175  0.3095
+            LSTM-B       0.3845  0.0162  0.3044
+            Neural ODE   0.3746  0.0207  0.3136
+FIM         Persistence  0.1818  0.0098  0.3693
+            XGB-B        0.1525  0.0084  0.3757
+            LSTM-B       0.1570  0.0095  0.3709
+            Neural ODE   0.1538  0.0085  0.3701
+SWM         Persistence  0.2849  0.0640  0.2479
+            XGB-B        0.2125  0.0527  0.2052
+            LSTM-B       0.2051  0.0503  0.2068
+            Neural ODE   0.2046  0.0492  0.2056
+SIM         Persistence  0.5431  0.0395  0.4359
+            XGB-B        0.4399  0.0303  0.3489
+            LSTM-B       0.4604  0.0306  0.3864
+            Neural ODE   0.4390  0.0282  0.3773
+
+TEST - MAE, mean over runs:
+nutrient                    no3     po4      si
+season      model                              
+All seasons Persistence  0.1662  0.0203  0.2096
+            XGB-B        0.1460  0.0182  0.1867
+            LSTM-B       0.1526  0.0180  0.1922
+            Neural ODE   0.1526  0.0186  0.1921
+NEM         Persistence  0.2254  0.0086  0.2202
+            XGB-B        0.2064  0.0103  0.2042
+            LSTM-B       0.2022  0.0095  0.1996
+            Neural ODE   0.1966  0.0127  0.2077
+FIM         Persistence  0.1034  0.0047  0.2502
+            XGB-B        0.0906  0.0041  0.2522
+            LSTM-B       0.1010  0.0049  0.2497
+            Neural ODE   0.0987  0.0052  0.2491
+SWM         Persistence  0.1095  0.0332  0.1548
+            XGB-B        0.0918  0.0288  0.1297
+            LSTM-B       0.0984  0.0280  0.1367
+            Neural ODE   0.1062  0.0278  0.1348
+SIM         Persistence  0.2854  0.0205  0.2909
+            XGB-B        0.2498  0.0173  0.2390
+            LSTM-B       0.2683  0.0187  0.2634
+            Neural ODE   0.2587  0.0175  0.2561
+
+TEST - skill vs persistence (1 - RMSE / RMSE_persistence), mean over runs:
+nutrient                   no3    po4     si
+season      model                           
+All seasons Persistence  0.000  0.000  0.000
+            XGB-B        0.173  0.174  0.117
+            LSTM-B       0.173  0.206  0.098
+            Neural ODE   0.197  0.216  0.099
+NEM         Persistence  0.000  0.000  0.000
+            XGB-B        0.103 -0.090  0.096
+            LSTM-B       0.129 -0.011  0.111
+            Neural ODE   0.152 -0.295  0.084
+FIM         Persistence  0.000  0.000  0.000
+            XGB-B        0.161  0.142 -0.017
+            LSTM-B       0.137  0.031 -0.004
+            Neural ODE   0.154  0.130 -0.002
+SWM         Persistence  0.000  0.000  0.000
+            XGB-B        0.254  0.177  0.172
+            LSTM-B       0.280  0.214  0.166
+            Neural ODE   0.282  0.231  0.171
+SIM         Persistence  0.000  0.000  0.000
+            XGB-B        0.190  0.232  0.200
+            LSTM-B       0.152  0.224  0.113
+            Neural ODE   0.192  0.286  0.134
+
+TEST - skill vs persistence, Western cells only:
+nutrient                   no3    po4     si
+season      model                           
+All seasons Persistence  0.000  0.000  0.000
+            XGB-B        0.181  0.075  0.199
+            LSTM-B       0.214  0.087  0.187
+            Neural ODE   0.219  0.049  0.174
+NEM         Persistence  0.000  0.000  0.000
+            XGB-B        0.156 -0.077  0.172
+            LSTM-B       0.206 -0.012  0.199
+            Neural ODE   0.212 -0.459  0.167
+FIM         Persistence  0.000  0.000  0.000
+            XGB-B        0.226  0.238  0.094
+            LSTM-B       0.239  0.023  0.105
+            Neural ODE   0.269  0.282  0.096
+SWM         Persistence  0.000  0.000  0.000
+            XGB-B        0.227  0.029  0.270
+            LSTM-B       0.293  0.054  0.230
+            Neural ODE   0.276  0.060  0.204
+SIM         Persistence  0.000  0.000  0.000
+            XGB-B        0.187  0.261  0.218
+            LSTM-B       0.188  0.224  0.178
+            Neural ODE   0.193  0.219  0.192
+
+TEST - skill vs persistence, Southern cells only:
+nutrient                   no3    po4     si
+season      model                           
+All seasons Persistence  0.000  0.000  0.000
+            XGB-B        0.170  0.184  0.095
+            LSTM-B       0.162  0.217  0.076
+            Neural ODE   0.191  0.233  0.079
+NEM         Persistence  0.000  0.000  0.000
+            XGB-B        0.082 -0.094  0.072
+            LSTM-B       0.099 -0.010  0.083
+            Neural ODE   0.128 -0.247  0.058
+FIM         Persistence  0.000  0.000  0.000
+            XGB-B        0.092  0.123 -0.035
+            LSTM-B       0.033  0.033 -0.021
+            Neural ODE   0.040  0.102 -0.018
+SWM         Persistence  0.000  0.000  0.000
+            XGB-B        0.258  0.189  0.143
+            LSTM-B       0.279  0.226  0.147
+            Neural ODE   0.283  0.245  0.160
+SIM         Persistence  0.000  0.000  0.000
+            XGB-B        0.191  0.226  0.195
+            LSTM-B       0.144  0.224  0.096
+            Neural ODE   0.192  0.300  0.119
+
+TEST - descriptive robustness by season (E23 rule: every run beats every run AND gap > 2 x larger seed std; many comparisons, so descriptive only):
+     season nutrient  Neural ODE vs XGB-B Neural ODE vs LSTM-B
+All seasons      no3     Neural ODE lower     Neural ODE lower
+All seasons      po4     Neural ODE lower no robust difference
+All seasons       si no robust difference no robust difference
+        NEM      no3     Neural ODE lower no robust difference
+        NEM      po4          XGB-B lower         LSTM-B lower
+        NEM       si          XGB-B lower no robust difference
+        FIM      no3 no robust difference no robust difference
+        FIM      po4          XGB-B lower     Neural ODE lower
+        FIM       si no robust difference no robust difference
+        SWM      no3     Neural ODE lower no robust difference
+        SWM      po4     Neural ODE lower     Neural ODE lower
+        SWM       si no robust difference no robust difference
+        SIM      no3 no robust difference no robust difference
+        SIM      po4     Neural ODE lower     Neural ODE lower
+        SIM       si          XGB-B lower no robust difference
+
+VALIDATION reference (used earlier for early stopping and seed choice; not a headline) - skill:
+nutrient                   no3    po4     si
+season      model                           
+All seasons Persistence  0.000  0.000  0.000
+            XGB-B        0.139  0.182  0.131
+            LSTM-B       0.177  0.202  0.148
+            Neural ODE   0.188  0.205  0.139
+NEM         Persistence  0.000  0.000  0.000
+            XGB-B        0.095  0.066  0.069
+            LSTM-B       0.105 -0.106  0.092
+            Neural ODE   0.093 -0.088  0.040
+FIM         Persistence  0.000  0.000  0.000
+            XGB-B        0.170  0.091 -0.008
+            LSTM-B       0.110  0.034  0.022
+            Neural ODE   0.090  0.025  0.007
+SWM         Persistence  0.000  0.000  0.000
+            XGB-B        0.194  0.165  0.223
+            LSTM-B       0.222  0.214  0.241
+            Neural ODE   0.238  0.203  0.256
+SIM         Persistence  0.000  0.000  0.000
+            XGB-B        0.141  0.244  0.174
+            LSTM-B       0.216  0.185  0.176
+            Neural ODE   0.247  0.230  0.184
+
+Statements:
+  - Seasons are fixed calendar-month labels assigned by the forecast target date (NEM Dec–Feb, FIM Mar–Apr, SWM May–Sep, SIM Oct–Nov). They are descriptive groupings, not measured monsoon onset or withdrawal dates.
+  - The actual year-to-year environmental variability (rainfall, runoff, soil moisture, wind) enters the models through ERA5 / ERA5-Land reanalysis forcing, not through the season label alone.
+  - Results describe forecast performance during each season. They do not show that the monsoon causes any difference, and they do not show that any model predicts or captures monsoon onset.
+  - Targets are Copernicus Marine model-derived hindcast fields (no data assimilation), not field or in-situ measurements. Evaluation is in hindcast-forcing (replay) mode.
+  - No model, seed or setting was chosen from these seasonal test results.
+  [PASS] all input files unchanged (SHA-256 before = after)  (17 files)
+
+Validation: 36 of 36 checks passed.
+Written: evidence/pp1/E37_season_evaluation_log.txt | evidence/pp1/E38_season_metrics.csv | evidence/pp1/E39_season_rmse.png | evidence/pp1/E40_season_skill.png | docs/season_evaluation_summary.md
+Step 16 completed successfully.
