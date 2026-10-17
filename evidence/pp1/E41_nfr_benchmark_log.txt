@@ -1,0 +1,114 @@
+STEP 17 - NFR BENCHMARK (read-only; local laptop; sequential requests)
+==============================================================================
+Machine : Windows-10-10.0.26200-SP0 | processor: Intel64 Family 6 Model 170 Stepping 4, GenuineIntel | logical CPUs: 22
+Python 3.11.17 | torch 2.14.1 | xgboost 3.4.2 | fastapi 0.141.1 | uvicorn 0.54.0 | httpx 0.28.1 | pandas 3.0.6
+Memory footprint: NOT measured (psutil deliberately not installed before PP1).
+Started: 2026-10-17T15:56:07
+Manifest keys: ['benchmark', 'created', 'dataset', 'issue_dates', 'mode', 'neural_ode', 'normals_period'] | selected Neural ODE seed 2026 -> experiments\models\node_s2026_best.pt | benchmark -> experiments\models\xgb_B_process.json
+
+Read-only baseline: SHA-256 recorded for 16 files (data, export, models, app_assets, service, API).
+Fixed request list: 200 (cell, issue date) pairs, seed 42, all 12 cells, issue dates 2022-01-01 to 2025-12-24 (first and last dates included). First 10: [('N5.75_E80.00', '2022-01-01'), ('N5.75_E80.25', '2022-01-01'), ('N5.75_E80.50', '2022-01-01'), ('N5.75_E80.75', '2022-01-01'), ('N5.75_E81.00', '2022-01-01'), ('N6.00_E80.00', '2022-01-01'), ('N6.00_E81.00', '2025-12-24'), ('N6.25_E79.75', '2025-12-24'), ('N6.25_E80.00', '2025-12-24'), ('N6.50_E79.75', '2025-12-24')]
+
+Cold start - 3 fresh Python processes (imports + C1Service construction):
+  run 1: imports 7.32 s | service load 1.29 s | total 8.60 s  [first load]
+  run 2: imports 7.04 s | service load 1.20 s | total 8.24 s  [repeat (OS file cache warm)]
+  run 3: imports 6.93 s | service load 1.23 s | total 8.15 s  [repeat (OS file cache warm)]
+
+In-process service load (this benchmark process): 1.20 s
+
+Warm service latency (direct Python calls):
+  service          forecast                     p50    13.21 ms | p95    17.34 | mean    13.74 | min   11.99 | max    24.30  (n=200, warm-up 10)
+  service          forecast+benchmark           p50    22.86 ms | p95    36.42 | mean    24.19 | min   21.95 | max    38.41  (n=100, warm-up 10)
+  service          outlook (12 cells)           p50     9.67 ms | p95    12.89 | mean    10.31 | min    8.02 | max    13.73  (n=100, warm-up 10)
+
+Uvicorn server ready on http://127.0.0.1:8765 after 8.7 s (includes its own service load). API latency = real localhost HTTP.
+
+Warm API latency (api_http):
+  api_http         /c1/health                   p50     1.45 ms | p95     1.90 | mean     1.52 | min    1.15 | max     3.14  (n=100, warm-up 5)
+  api_http         /c1/meta                     p50     1.27 ms | p95     1.62 | mean     1.32 | min    1.15 | max     2.01  (n=100, warm-up 5)
+  api_http         /c1/cells                    p50     1.77 ms | p95     2.48 | mean     1.86 | min    1.57 | max     3.23  (n=100, warm-up 5)
+  api_http         /c1/geo                      p50     4.63 ms | p95     5.70 | mean     4.82 | min    4.19 | max     7.35  (n=100, warm-up 5)
+  api_http         /c1/reliability              p50     1.77 ms | p95     2.42 | mean     1.86 | min    1.49 | max     3.20  (n=100, warm-up 5)
+  api_http         /c1/climatology              p50     2.00 ms | p95     2.60 | mean     2.08 | min    1.56 | max     3.63  (n=100, warm-up 5)
+  api_http         /c1/forecast                 p50    19.73 ms | p95    23.51 | mean    20.56 | min   17.15 | max   114.06  (n=200, warm-up 10)
+  api_http         /c1/forecast+benchmark       p50    25.75 ms | p95    33.52 | mean    27.32 | min   24.49 | max    34.65  (n=100, warm-up 10)
+  api_http         /c1/outlook (12 cells)       p50    13.73 ms | p95    17.22 | mean    14.10 | min   10.06 | max    20.73  (n=100, warm-up 10)
+  api_http         /c1/forecast.csv             p50    17.92 ms | p95    22.03 | mean    18.39 | min   15.93 | max    23.49  (n=50, warm-up 5)
+
+Reliability - 100 valid requests from the fixed list:
+  [PASS] reliability: valid forecast requests succeed with complete, finite, non-negative 7-day output  (success rate 100%; structure failures 0)
+  [PASS] reliability: API forecasts equal the evaluated Component 2 export (tolerance 1e-4)  (max difference 6.00e-06)
+  [PASS] reliability: responses carry metadata (model, mode, issue date, lead dates, units)  (NFR-07 evidence)
+
+Determinism - 20 requests x 5 repeats, plus service vs API comparison:
+  [PASS] reliability: identical API requests return byte-identical responses (5 repeats each)  (SHA-256 of response body)
+  [PASS] reliability: direct service output equals API output (parsed values and structure)  (max numeric difference 0.00e+00)
+
+Invalid inputs must be rejected safely:
+  [PASS] invalid_input: training-period date 2015-06-01  (GET /c1/forecast)
+  [PASS] invalid_input: one day before range 2021-12-31  (GET /c1/forecast)
+  [PASS] invalid_input: one day after range 2025-12-25  (GET /c1/forecast)
+  [PASS] invalid_input: unknown cell XYZ  (GET /c1/forecast)
+  [PASS] invalid_input: malformed date 2024-13-40  (GET /c1/forecast)
+  [PASS] invalid_input: lead = 0  (GET /c1/outlook)
+  [PASS] invalid_input: lead = 8  (GET /c1/outlook)
+  [PASS] invalid_input: nutrient = chl  (GET /c1/outlook)
+  [PASS] invalid_input: missing cell parameter  (GET /c1/forecast)
+  [PASS] invalid_input: POST to read-only endpoint  (POST /c1/forecast)
+  [PASS] reliability: server still healthy after invalid requests
+
+Local prototype scaling - sequential workloads (3 repeats each, median reported):
+   layer  n_requests  total_s  ms_per_request
+api_http           1   0.0207         20.6613
+api_http          10   0.1970         19.7044
+api_http          50   0.9559         19.1188
+api_http         100   1.9938         19.9377
+ service           1   0.0167         16.6505
+ service          10   0.1421         14.2052
+ service          50   0.7003         14.0069
+ service         100   1.3910         13.9103
+
+Batching - one outlook call (12 cells) vs 12 separate forecast calls (service, 10 dates):
+  median: 1 outlook call 8.7 ms | 12 forecast calls 159.3 ms
+  [PASS] safety: temporary Uvicorn server stopped  (port 8765)
+
+Context sizes: dataset 124,152 rows x 35 columns (17.1 MB) | C2 export 122,136 rows (14.1 MB) | app_assets 0.10 MB | 12 cells x 7 lead days x 1,454 replay issue dates
+
+Maintainability evidence (structural, verifiable; no numeric score):
+  [FOUND] maintainability: numbered pipeline / analysis scripts  (00a_download_era5_land.py, 00b_download_era5_wind.py, 01_inspect_nutrients.py, 02_select_coastal_cells.py, 03_map_catchments_to_cells.py, 04_process_era5_land.py, 05_process_era5_wind.py, 06_build_modelling_dataset.py, 07_train_baselines.py, 08_train_neural_ode.py, 09_evaluate_neural_ode.py, 10_seed_robustness.py, 11_export_c1_to_c2.py, 12_prepare_ui_assets.py, 13_check_service.py, 14_check_api.py, 15_eda_data_quality.py, 16_season_evaluation.py, 17_nfr_benchmark.py, 99_check_cell_coverage.py, 99_check_runtime.py)
+  [FOUND] maintainability: shared task / feature / metric definitions  (scripts/common.py)
+  [FOUND] maintainability: model module (Neural ODE, LSTM-B, data windows)  (scripts/node_model.py)
+  [FOUND] maintainability: read-only forecast service  (c1_service/forecast_service.py)
+  [FOUND] maintainability: separate /c1 API router  (api/c1_router.py)
+  [FOUND] maintainability: API application  (api/main.py)
+  [FOUND] maintainability: environment definition  (environment.yml)
+  [FOUND] maintainability: data dictionary  (docs/data_dictionary.md)
+  [FOUND] maintainability: integration contract  (docs/integration_contract_c1_c2.md)
+  [FOUND] maintainability: generated OpenAPI contract  (docs/c1_api_openapi.json)
+  [FOUND] maintainability: service validation script  (scripts/13_check_service.py)
+  [FOUND] maintainability: API validation script  (scripts/14_check_api.py)
+  [FOUND] maintainability: cell coverage check  (scripts/99_check_cell_coverage.py)
+  [FOUND] maintainability: runtime check  (scripts/99_check_runtime.py)
+  [FOUND] maintainability: project README  (README.md)
+  [FOUND] maintainability: endpoints documented in OpenAPI  (/c1/cells, /c1/climatology, /c1/forecast, /c1/forecast.csv, /c1/geo, /c1/health, /c1/meta, /c1/outlook, /c1/reliability)
+  [FOUND] maintainability: version-controlled history  (branch Layara_Component1_Nutrients_Forecast)
+
+Security basics (only what exists is claimed):
+  [PASS] security: all /c1 routes are read-only (GET only)  (/c1/cells, /c1/climatology, /c1/forecast, /c1/forecast.csv, /c1/geo, /c1/health, /c1/meta, /c1/outlook, /c1/reliability)
+  [PASS] security: invalid cell / date / lead / nutrient values rejected  (see invalid_input rows; replay dates bounded)
+  [PASS] security: secrets and large data excluded by .gitignore
+  [PASS] security: no secrets, model weights or raw data tracked in Git
+  experiments\models\node_s2026_best.pt: SHA-256 29fe1ab181393c88bed89a69926b10602530a70a5689765b58a639f9a42e8100
+  [PASS] security: neural_ode model file matches its SHA-256 fingerprint in manifest.json  (experiments\models\node_s2026_best.pt)
+  experiments\models\xgb_B_process.json: SHA-256 d1c83c0490109f2dc285b0af864ca6ca0fd8e3d42500d33cbff11bff8cbfa525
+  [PASS] security: benchmark model file matches its SHA-256 fingerprint in manifest.json  (experiments\models\xgb_B_process.json)
+  [PASS] security: no personal or user data in the served dataset  (environmental grid variables only)
+  [NOTED] security: CORS origins  (must be restricted before any deployment)
+  [NOT_IMPLEMENTED] security: authentication / authorization (login, roles)  (planned for the shared FastAPI backend (NFR-09))
+
+Read-only proof:
+  [PASS] read_only: data, export, models, app_assets, service and API files unchanged
+
+Hard checks passed: 25 of 25  (FOUND/MISSING, NOTED, NOT_CHECKED and NOT_IMPLEMENTED rows are recorded as evidence, not pass/fail)
+Written: evidence/pp1/E41_nfr_benchmark_log.txt | evidence/pp1/E42_nfr_performance.csv | evidence/pp1/E43_nfr_reliability.csv | evidence/pp1/E44_nfr_performance.png | docs/nfr_pp1_summary.md
+Step 17 completed successfully.

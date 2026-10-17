@@ -1,0 +1,45 @@
+category,check,expected,actual,status,detail,counts_toward_pass
+reliability,"valid forecast requests succeed with complete, finite, non-negative 7-day output",100 of 100,100 of 100,PASS,success rate 100%; structure failures 0,True
+reliability,API forecasts equal the evaluated Component 2 export (tolerance 1e-4),100 of 100 match,100 of 100 match,PASS,max difference 6.00e-06,True
+reliability,"responses carry metadata (model, mode, issue date, lead dates, units)",present,present,PASS,NFR-07 evidence,True
+reliability,identical API requests return byte-identical responses (5 repeats each),20 of 20,20 of 20,PASS,SHA-256 of response body,True
+reliability,direct service output equals API output (parsed values and structure),20 of 20,20 of 20,PASS,max numeric difference 0.00e+00,True
+invalid_input,training-period date 2015-06-01,400,400,PASS,GET /c1/forecast,True
+invalid_input,one day before range 2021-12-31,400,400,PASS,GET /c1/forecast,True
+invalid_input,one day after range 2025-12-25,400,400,PASS,GET /c1/forecast,True
+invalid_input,unknown cell XYZ,400,400,PASS,GET /c1/forecast,True
+invalid_input,malformed date 2024-13-40,422,422,PASS,GET /c1/forecast,True
+invalid_input,lead = 0,422,422,PASS,GET /c1/outlook,True
+invalid_input,lead = 8,422,422,PASS,GET /c1/outlook,True
+invalid_input,nutrient = chl,422,422,PASS,GET /c1/outlook,True
+invalid_input,missing cell parameter,422,422,PASS,GET /c1/forecast,True
+invalid_input,POST to read-only endpoint,405,405,PASS,POST /c1/forecast,True
+reliability,server still healthy after invalid requests,200,200,PASS,,True
+safety,temporary Uvicorn server stopped,exited,exited,PASS,port 8765,True
+maintainability,numbered pipeline / analysis scripts,present,21 scripts,FOUND,"00a_download_era5_land.py, 00b_download_era5_wind.py, 01_inspect_nutrients.py, 02_select_coastal_cells.py, 03_map_catchments_to_cells.py, 04_process_era5_land.py, 05_process_era5_wind.py, 06_build_modelling_dataset.py, 07_train_baselines.py, 08_train_neural_ode.py, 09_evaluate_neural_ode.py, 10_seed_robustness.py, 11_export_c1_to_c2.py, 12_prepare_ui_assets.py, 13_check_service.py, 14_check_api.py, 15_eda_data_quality.py, 16_season_evaluation.py, 17_nfr_benchmark.py, 99_check_cell_coverage.py, 99_check_runtime.py",False
+maintainability,shared task / feature / metric definitions,present,present,FOUND,scripts/common.py,False
+maintainability,"model module (Neural ODE, LSTM-B, data windows)",present,present,FOUND,scripts/node_model.py,False
+maintainability,read-only forecast service,present,present,FOUND,c1_service/forecast_service.py,False
+maintainability,separate /c1 API router,present,present,FOUND,api/c1_router.py,False
+maintainability,API application,present,present,FOUND,api/main.py,False
+maintainability,environment definition,present,present,FOUND,environment.yml,False
+maintainability,data dictionary,present,present,FOUND,docs/data_dictionary.md,False
+maintainability,integration contract,present,present,FOUND,docs/integration_contract_c1_c2.md,False
+maintainability,generated OpenAPI contract,present,present,FOUND,docs/c1_api_openapi.json,False
+maintainability,service validation script,present,present,FOUND,scripts/13_check_service.py,False
+maintainability,API validation script,present,present,FOUND,scripts/14_check_api.py,False
+maintainability,cell coverage check,present,present,FOUND,scripts/99_check_cell_coverage.py,False
+maintainability,runtime check,present,present,FOUND,scripts/99_check_runtime.py,False
+maintainability,project README,present,present,FOUND,README.md,False
+maintainability,endpoints documented in OpenAPI,documented,9 paths,FOUND,"/c1/cells, /c1/climatology, /c1/forecast, /c1/forecast.csv, /c1/geo, /c1/health, /c1/meta, /c1/outlook, /c1/reliability",False
+maintainability,version-controlled history,commits,26 commits,FOUND,branch Layara_Component1_Nutrients_Forecast,False
+security,all /c1 routes are read-only (GET only),"GET only, 9 routes","GET only, 9 routes",PASS,"/c1/cells, /c1/climatology, /c1/forecast, /c1/forecast.csv, /c1/geo, /c1/health, /c1/meta, /c1/outlook, /c1/reliability",True
+security,invalid cell / date / lead / nutrient values rejected,10 of 10,10 of 10,PASS,see invalid_input rows; replay dates bounded,True
+security,secrets and large data excluded by .gitignore,".env, .cdsapirc, data/, experiments/models/, outputs/",all present,PASS,,True
+security,"no secrets, model weights or raw data tracked in Git",none,0 found,PASS,,True
+security,neural_ode model file matches its SHA-256 fingerprint in manifest.json,29fe1ab181393c88,29fe1ab181393c88,PASS,experiments\models\node_s2026_best.pt,True
+security,benchmark model file matches its SHA-256 fingerprint in manifest.json,d1c83c0490109f2d,d1c83c0490109f2d,PASS,experiments\models\xgb_B_process.json,True
+security,no personal or user data in the served dataset,no personal fields,none,PASS,environmental grid variables only,True
+security,CORS origins,restricted before deployment,open (*) for local development,NOTED,must be restricted before any deployment,False
+security,"authentication / authorization (login, roles)",planned,not implemented,NOT_IMPLEMENTED,planned for the shared FastAPI backend (NFR-09),False
+read_only,"data, export, models, app_assets, service and API files unchanged",16 unchanged,16 unchanged,PASS,,True
