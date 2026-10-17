@@ -1,0 +1,91 @@
+section,item,value,note
+dataset,file,data/processed/model_dataset_daily.parquet,
+dataset,rows,124152,
+dataset,columns,35,
+dataset,first_date,1997-09-04,
+dataset,last_date,2025-12-31,
+dataset,days_per_cell,10346,
+dataset,nutrient_source,Copernicus Marine GLOBAL_MULTIYEAR_BGC_001_029,"model-derived hindcast, no data assimilation; not in-situ measurements"
+dataset,forcing_source,"ERA5-Land, ERA5",reanalysis
+cells,total,12,
+cells,western,3,
+cells,southern,9,
+cells,N5.75_E80.00,Southern,10346 days
+cells,N5.75_E80.25,Southern,10346 days
+cells,N5.75_E80.50,Southern,10346 days
+cells,N5.75_E80.75,Southern,10346 days
+cells,N5.75_E81.00,Southern,10346 days
+cells,N6.00_E80.00,Southern,10346 days
+cells,N6.00_E81.00,Southern,10346 days
+cells,N6.25_E79.75,Southern,10346 days
+cells,N6.25_E80.00,Southern,10346 days
+cells,N6.50_E79.75,Western,10346 days
+cells,N6.75_E79.75,Western,10346 days
+cells,N7.00_E79.75,Western,10346 days
+split,train,89088,1997-09-04 to 2017-12-31; 7424 days; 71.8% of rows; matches config: True
+split,val,17532,2018-01-01 to 2021-12-31; 1461 days; 14.1% of rows; matches config: True
+split,test,17532,2022-01-01 to 2025-12-31; 1461 days; 14.1% of rows; matches config: True
+missing,date,0,
+missing,cell_id,0,
+missing,lat,0,
+missing,lon,0,
+missing,region,0,
+missing,no3,0,
+missing,po4,0,
+missing,si,0,
+missing,precip_mm,0,
+missing,surface_runoff_mm,0,
+missing,subsurface_runoff_mm,0,
+missing,soil_moisture,0,
+missing,u10,0,
+missing,v10,0,
+missing,wind_speed,0,
+missing,precip_sum_3d,0,
+missing,precip_sum_7d,0,
+missing,precip_sum_14d,0,
+missing,precip_sum_30d,0,
+missing,surface_runoff_sum_3d,0,
+missing,surface_runoff_sum_7d,0,
+missing,subsurface_runoff_sum_7d,0,
+missing,subsurface_runoff_sum_30d,0,
+missing,wind_speed_mean_3d,0,
+missing,catchment_area_km2,0,
+missing,n_subbasins,0,
+missing,n_river_outlets,0,
+missing,n_land_points,0,
+missing,forcing_method,0,
+missing,dist_to_land_km,0,
+missing,season,0,
+missing,season_code,0,
+missing,doy_sin,0,
+missing,doy_cos,0,
+missing,split,0,
+checks,"row count is 124,152",PASS,"124,152"
+checks,column count is 35,PASS,35
+checks,12 coastal cells,PASS,12
+checks,3 Western and 9 Southern cells,PASS,"{'Southern': 9, 'Western': 3}"
+checks,each cell has a single region,PASS,
+checks,date range 1997-09-04 to 2025-12-31,PASS,
+checks,"every cell has 10,346 days",PASS,
+checks,no gaps between days in any cell,PASS,
+checks,no duplicate cell-date rows,PASS,
+checks,zero missing values in all 35 columns,PASS,0 missing
+checks,split labels are only train / val / test,PASS,
+checks,train boundaries match split_config.json,PASS,1997-09-04 -> 2017-12-31
+checks,val boundaries match split_config.json,PASS,2018-01-01 -> 2021-12-31
+checks,test boundaries match split_config.json,PASS,2022-01-01 -> 2025-12-31
+checks,splits do not overlap in time,PASS,
+checks,split rows add up to the total,PASS,
+checks,no3 has no negative values,PASS,min 0.0036
+checks,no3 below plausibility limit 50 mmol m-3 (flag only),PASS,max 6.9757
+checks,po4 has no negative values,PASS,min 0.0000
+checks,po4 below plausibility limit 5 mmol m-3 (flag only),PASS,max 0.8729
+checks,si has no negative values,PASS,min 0.6004
+checks,si below plausibility limit 150 mmol m-3 (flag only),PASS,max 7.7277
+checks,rainfall and runoff are non-negative,PASS,
+checks,soil moisture between 0 and 1,PASS,0.144 to 0.520
+checks,wind speed non-negative,PASS,
+checks,"each cell's training series is continuous (7,424 days)",PASS,
+checks,"every lag correlation used at least 7,394 day pairs",PASS,"minimum 7,394"
+checks,every lag correlation is a valid number,PASS,0 invalid
+checks,dataset file unchanged (SHA-256 before = after),PASS,d37b3633e9361061...

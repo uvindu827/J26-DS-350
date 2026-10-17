@@ -1,0 +1,118 @@
+STEP 15 - EDA AND DATA-QUALITY EVIDENCE (read-only)
+========================================================================
+NO3, PO4 and Si are Copernicus Marine model-derived hindcast fields (no data assimilation), not field or in-situ measurements. Rainfall, runoff, soil moisture and wind are ERA5 / ERA5-Land reanalysis.
+
+Dataset: data\processed\model_dataset_daily.parquet  (SHA-256 d37b3633e9361061...)
+Rows 124,152 | columns 35 | cells 12 | 1997-09-04 -> 2025-12-31
+Cells per region: {'Southern': 9, 'Western': 3}
+
+Validation checks:
+  [PASS] row count is 124,152  (124,152)
+  [PASS] column count is 35  (35)
+  [PASS] 12 coastal cells  (12)
+  [PASS] 3 Western and 9 Southern cells  ({'Southern': 9, 'Western': 3})
+  [PASS] each cell has a single region
+  [PASS] date range 1997-09-04 to 2025-12-31
+  [PASS] every cell has 10,346 days
+  [PASS] no gaps between days in any cell
+  [PASS] no duplicate cell-date rows
+  [PASS] zero missing values in all 35 columns  (0 missing)
+  [PASS] split labels are only train / val / test
+  [PASS] train boundaries match split_config.json  (1997-09-04 -> 2017-12-31)
+  [PASS] val boundaries match split_config.json  (2018-01-01 -> 2021-12-31)
+  [PASS] test boundaries match split_config.json  (2022-01-01 -> 2025-12-31)
+  [PASS] splits do not overlap in time
+  [PASS] split rows add up to the total
+  [PASS] no3 has no negative values  (min 0.0036)
+  [PASS] no3 below plausibility limit 50 mmol m-3 (flag only)  (max 6.9757)
+  [PASS] po4 has no negative values  (min 0.0000)
+  [PASS] po4 below plausibility limit 5 mmol m-3 (flag only)  (max 0.8729)
+  [PASS] si has no negative values  (min 0.6004)
+  [PASS] si below plausibility limit 150 mmol m-3 (flag only)  (max 7.7277)
+  [PASS] rainfall and runoff are non-negative
+  [PASS] soil moisture between 0 and 1  (0.144 to 0.520)
+  [PASS] wind speed non-negative
+
+Split:
+split      first       last  days  rows  share_pct  matches_config
+train 1997-09-04 2017-12-31  7424 89088       71.8            True
+  val 2018-01-01 2021-12-31  1461 17532       14.1            True
+ test 2022-01-01 2025-12-31  1461 17532       14.1            True
+
+Missing values: 0 across all 35 columns
+
+Outlier inspection (flags only - NOTHING is removed):
+  no3: scope-wide IQR flags 13,379 days (10.8%) - descriptive only; nutrient levels vary by cell and season, so these are not treated as errors
+       cell x month IQR flags 10,597 (8.5%); robust z > 3.5 flags 17,153 (13.8%); 0 cell-month groups have zero spread (robust z not defined there)
+       cell x month flags by season: NEM 15% (share of all days 25%), FIM 9% (share of all days 17%), SWM 56% (share of all days 42%), SIM 20% (share of all days 17%)
+  po4: scope-wide IQR flags 2,165 days (1.7%) - descriptive only; nutrient levels vary by cell and season, so these are not treated as errors
+       cell x month IQR flags 9,628 (7.8%); robust z > 3.5 flags 18,221 (14.7%); 0 cell-month groups have zero spread (robust z not defined there)
+       cell x month flags by season: NEM 46% (share of all days 25%), FIM 30% (share of all days 17%), SWM 18% (share of all days 42%), SIM 7% (share of all days 17%)
+  si: scope-wide IQR flags 3,281 days (2.6%) - descriptive only; nutrient levels vary by cell and season, so these are not treated as errors
+       cell x month IQR flags 2,983 (2.4%); robust z > 3.5 flags 1,542 (1.2%); 0 cell-month groups have zero spread (robust z not defined there)
+       cell x month flags by season: NEM 21% (share of all days 25%), FIM 3% (share of all days 17%), SWM 59% (share of all days 42%), SIM 17% (share of all days 17%)
+  Decision: no values removed (removed_n = 0 for every nutrient).
+
+Descriptive statistics (all cells):
+                          unit    mean  median     std     min      p99         max  skewness  share_below_0.01
+variable                                                                                                       
+no3                   mmol m-3  0.4224  0.1068  0.7357  0.0036   3.6712    6.975700    3.1906            0.0322
+po4                   mmol m-3  0.0821  0.0212  0.1088  0.0000   0.4093    0.872900    1.3852            0.4442
+si                    mmol m-3  2.7723  2.6581  1.1200  0.6004   6.2706    7.727700    0.8459            0.0000
+precip_mm               mm/day  7.2521  4.1910  9.5243  0.0000  44.2607  264.310211    4.1106               NaN
+surface_runoff_mm       mm/day  0.7374  0.0628  2.7287  0.0000   9.9626  146.312897   14.5790               NaN
+subsurface_runoff_mm    mm/day  2.6100  1.4524  4.1521  0.0089  18.4694  103.646500    6.4374               NaN
+soil_moisture            m3/m3  0.4095  0.4428  0.0794  0.1442   0.5077    0.520000   -1.0750               NaN
+wind_speed                 m/s  5.0971  5.0815  2.4322  0.5085  10.3730   14.892700    0.2070               NaN
+
+Nutrient means by split:
+variable     no3     po4      si
+scope                           
+train     0.4283  0.0803  2.7785
+val       0.4534  0.0803  2.8432
+test      0.3620  0.0927  2.6697
+
+Lag correlations (training years only; per-cell deseasonalised anomalies; Spearman; within cell first):
+  [PASS] each cell's training series is continuous (7,424 days)
+  [PASS] every lag correlation used at least 7,394 day pairs  (minimum 7,394)
+  [PASS] every lag correlation is a valid number  (0 invalid)
+   scope nutrient               driver  peak_lag  rho_peak  rho_lag0 cell_range_at_peak  raw_seasonal_rho_peak   strength
+     All      no3            precip_mm         4     0.042     0.031     +0.01 to +0.07                  0.032 negligible
+ Western      no3            precip_mm         0     0.110     0.110     +0.04 to +0.12                 -0.121 noticeable
+Southern      no3            precip_mm         4     0.041     0.026     +0.02 to +0.07                  0.058 negligible
+     All      no3 subsurface_runoff_mm        29    -0.065     0.006     -0.18 to +0.00                 -0.096 negligible
+ Western      no3 subsurface_runoff_mm         0     0.130     0.130     -0.00 to +0.15                 -0.177 noticeable
+Southern      no3 subsurface_runoff_mm        30    -0.093    -0.002     -0.18 to +0.01                 -0.071 negligible
+     All      no3    surface_runoff_mm         6     0.044     0.041     -0.03 to +0.11                  0.049 negligible
+ Western      no3    surface_runoff_mm         0     0.156     0.156     +0.06 to +0.17                 -0.075 noticeable
+Southern      no3    surface_runoff_mm         5     0.040     0.027     -0.03 to +0.11                  0.065 negligible
+     All      po4            precip_mm         0    -0.057    -0.057     -0.08 to +0.03                  0.184 negligible
+ Western      po4            precip_mm        30     0.055    -0.007     +0.05 to +0.07                  0.257 negligible
+Southern      po4            precip_mm         0    -0.062    -0.062     -0.08 to -0.02                  0.145 negligible
+     All      po4 subsurface_runoff_mm        26     0.054     0.019     -0.01 to +0.12                  0.363 negligible
+ Western      po4 subsurface_runoff_mm        27     0.091     0.040     +0.09 to +0.12                  0.500 negligible
+Southern      po4 subsurface_runoff_mm        22     0.047    -0.019     +0.00 to +0.08                  0.296 negligible
+     All      po4    surface_runoff_mm        29     0.053    -0.045     -0.00 to +0.13                  0.167 negligible
+ Western      po4    surface_runoff_mm        30     0.089    -0.033     +0.07 to +0.13                  0.210 negligible
+Southern      po4    surface_runoff_mm         0    -0.055    -0.055     -0.09 to -0.00                  0.144 negligible
+     All       si            precip_mm        30    -0.083     0.001     -0.10 to -0.06                 -0.155 negligible
+ Western       si            precip_mm        27    -0.071     0.018     -0.07 to -0.07                 -0.185 negligible
+Southern       si            precip_mm        30    -0.083    -0.002     -0.10 to -0.07                 -0.125 negligible
+     All       si subsurface_runoff_mm        25    -0.187    -0.123     -0.26 to -0.14                 -0.307 noticeable
+ Western       si subsurface_runoff_mm        26    -0.152    -0.069     -0.19 to -0.14                 -0.363 noticeable
+Southern       si subsurface_runoff_mm        22    -0.220    -0.144     -0.26 to -0.17                 -0.274 noticeable
+     All       si    surface_runoff_mm        30    -0.080     0.004     -0.09 to -0.05                 -0.138 negligible
+ Western       si    surface_runoff_mm        28    -0.053     0.050     -0.07 to -0.05                 -0.133 negligible
+Southern       si    surface_runoff_mm        30    -0.082     0.003     -0.09 to -0.07                 -0.143 negligible
+  rho_peak = median across cells at the lag with the largest |median|; |rho| < 0.1 is called negligible.
+  raw_seasonal_rho_peak = same within-cell correlation WITHOUT removing the seasonal cycle (seasonally confounded; shown for comparison only).
+
+Windows statement:
+  The existing 3-, 7-, 14- and 30-day rainfall and runoff windows were selected a priori in Step 06 from hydrological reasoning (storm response within days, then weekly, two-week and monthly catchment memory, following the ML-SWAN-inspired design), before any model was trained. This lag analysis is supporting, descriptive evidence only. It was not used to select, add or remove features, and no model was retrained.
+Causation statement:
+  Correlation is not causation. These correlations describe association between reanalysis forcing and model-derived nutrient fields; they do not show that rainfall or runoff causes nutrient changes.
+  [PASS] dataset file unchanged (SHA-256 before = after)  (d37b3633e9361061...)
+
+Validation: 29 of 29 checks passed.
+Written: evidence/pp1/E32_eda_data_quality_log.txt | evidence/pp1/E33_dataset_profile.csv | evidence/pp1/E34_descriptive_statistics.csv | evidence/pp1/E35_nutrient_distributions.png | evidence/pp1/E36_lag_correlations.png | evidence/pp1/E36_lag_correlations.csv | docs/eda_data_quality_summary.md
+Step 15 completed successfully.
