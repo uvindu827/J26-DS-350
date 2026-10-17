@@ -19,3 +19,7 @@ frontend/.expo/
 # Generated Python test/cache files
 .pytest_cache/
 .mypy_cache/
+
+# Component 2 large research datasets
+backend/data/final_model_ready_test.csv
+backend/data/xgboost_test_predictions.csv

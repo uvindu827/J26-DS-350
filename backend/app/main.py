@@ -1,6 +1,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.api.routes.forecast import router as forecast_router
 
 app = FastAPI(
     title="Marine Productivity Intelligence API",
@@ -37,3 +38,6 @@ def health():
         "component": "CHL Forecasting",
         "api_version": "1.0.0"
     }
+
+
+app.include_router(forecast_router)
