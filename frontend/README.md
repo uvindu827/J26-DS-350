@@ -23,7 +23,7 @@ After changing `.env`, restart with `npx expo start -c`.
 | `/` | Coastal Outlook (`/c1/meta`, `/c1/cells`, `/c1/geo`, `/c1/outlook`) | built |
 | `/forecast?cell=…&issue=…` | Location Forecast (`/c1/forecast`, `/c1/reliability`, `/c1/climatology`, `/c1/meta`, `/c1/cells`) | built |
 | `/trends` | Monsoon & Trends | placeholder |
-| `/about` | About this forecast | placeholder |
+| `/about?tab=overview\|data\|models\|system` | About this forecast (static research evidence + `/c1/meta`, `/c1/reliability`, `/c1/health`) | built |
 | `/connection` | Backend connection check (diagnostics, not in the menu) | built |
 
 ## Structure
@@ -31,7 +31,8 @@ After changing `.env`, restart with `npx expo start -c`.
 ```
 src/app/          routes (Expo Router); _layout.tsx loads fonts, header and shared state
 src/screens/      screen components
-src/components/   common/, map/ (SVG coast map), charts/ (hover + tooltip), outlook/, forecast/
+src/components/   common/, map/ (SVG coast map), charts/ (hover + tooltip), outlook/, forecast/, about/
+src/content/      documented research evidence shown on the About screen (with evidence sources)
 src/api/          API client, endpoint functions, response types, structure checks, request hook
 src/state/        shared selections (issue date, nutrient, outlook day, selected cell)
 src/config/       API base URL and timeout

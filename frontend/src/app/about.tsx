@@ -1,7 +1,7 @@
-/** Route "/about": placeholder until the About This Forecast step. */
+/** Route "/about?tab=overview|data|models|system": About this forecast. */
 import Head from 'expo-router/head';
 
-import { ComingSoon } from '@/components/common';
+import { AboutScreen } from '@/screens/AboutScreen';
 
 export default function AboutRoute() {
   return (
@@ -9,7 +9,7 @@ export default function AboutRoute() {
       <Head>
         <title>About this forecast · FishGuard AI</title>
       </Head>
-      <ComingSoon title="About this forecast" step="a later step" />
+      <AboutScreen />
     </>
   );
 }
