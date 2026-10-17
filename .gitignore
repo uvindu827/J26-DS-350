@@ -10,6 +10,11 @@ component - 3/data/external/**
 !component - 3/data/processed/README.md
 !component - 3/data/external/README.md
 
+# Trained Component 3 model binaries are large generated artifacts.
+# Store them in Google Drive or another artifact store, not in Git.
+component - 3/models/**
+!component - 3/models/README.md
+
 # Local Python and notebook state
 .venv/
 venv/
