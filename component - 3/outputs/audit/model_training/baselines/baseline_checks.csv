@@ -1,0 +1,4 @@
+check,passed,detail
+test excluded,True,941 sealed rows
+three chronological folds,True,"[np.int64(1), np.int64(2), np.int64(3)]"
+finite predictions,True,1584 predictions
