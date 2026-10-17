@@ -1,0 +1,16 @@
+{
+    "method": "training_distribution_percentile",
+    "target_variable": "chlorophyll_a",
+    "source_dataset": "final_model_ready_train.csv",
+    "validation_data_used": false,
+    "test_data_used": false,
+    "low_medium_percentile": 33,
+    "medium_high_percentile": 66,
+    "low_medium_threshold_mg_m3": 0.21267095190000002,
+    "medium_high_threshold_mg_m3": 0.4330995018,
+    "classification_rules": {
+        "Low": "CHL < 0.2126709519",
+        "Medium": "0.2126709519 <= CHL <= 0.4330995018",
+        "High": "CHL > 0.4330995018"
+    }
+}
