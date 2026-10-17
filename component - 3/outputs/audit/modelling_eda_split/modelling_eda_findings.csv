@@ -1,0 +1,9 @@
+finding,result
+Frozen modelling population,"9,930 eligible rows"
+Development training period,"2018-01-01 to 2022-11-01 (8,197 rows)"
+Validation period,2023-02-01 to 2023-12-01 (792 rows)
+Final test period,2024; 941 rows; outcomes sealed during development EDA
+Internal model-comparison design,"Three expanding-window folds with validation years 2020, 2021 and 2022"
+Sampling limitation,2018–2019 contain substantially more rows than later years; report time-based metrics and avoid random splitting
+Preprocessing boundary,"Imputation, encoding, scaling and feature selection must be fitted separately within each training fold"
+Next stage,Train leakage-safe baselines and candidate regression models; use 2023 for selection and 2024 once for final evaluation

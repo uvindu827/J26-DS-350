@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-10-17T03:54:42.546941+00:00",
+  "runtime": "Google Colab",
+  "input": "monthly_model_features.parquet",
+  "input_sha256": "23a1d78fc31f6f47341ed1f363a934a3fc4a78b58283d5910dfb73b72d5ebbef",
+  "output": "monthly_model_features_split.parquet",
+  "output_sha256": "8effc300a90ec03261d59ab98483ac167671b6f4a1d94c94db9eace53fe2752f",
+  "eligible_rows": 9930,
+  "split_boundaries": {
+    "train_end": "2022-12-31",
+    "validation_start": "2023-01-01",
+    "validation_end": "2023-12-31",
+    "test_start": "2024-01-01",
+    "test_end": "2024-12-31"
+  },
+  "test_target_status": "sealed_not_analyzed",
+  "candidate_predictors": 80,
+  "categorical_predictors": [
+    "species_model",
+    "gear_model",
+    "climate_season"
+  ],
+  "numeric_predictors": 77,
+  "cv_validation_years": [
+    2020,
+    2021,
+    2022
+  ],
+  "preprocessing_fitted": false,
+  "models_fitted": false,
+  "source_artifact_modified": false,
+  "figures": [
+    "chronological_split_timeline.png",
+    "development_target_diagnostics.png",
+    "predictor_screening_and_drift.png"
+  ],
+  "evidence": [
+    "development_target_summary.csv",
+    "expanding_window_cv_folds.csv",
+    "modelling_eda_findings.csv",
+    "split_leakage_checks.csv",
+    "split_summary.csv",
+    "split_year_coverage.csv",
+    "train_validation_category_coverage.csv",
+    "train_validation_numeric_drift.csv",
+    "training_numeric_screening.csv"
+  ]
+}

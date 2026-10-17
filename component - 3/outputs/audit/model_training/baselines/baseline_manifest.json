@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-10-17T13:45:37.601098+00:00",
+  "runtime": "Google Colab",
+  "experiment": "baselines",
+  "input": "monthly_model_features_split.parquet",
+  "input_sha256": "8effc300a90ec03261d59ab98483ac167671b6f4a1d94c94db9eace53fe2752f",
+  "train_rows": 8197,
+  "validation_rows": 792,
+  "sealed_test_rows": 941,
+  "test_target_used": false,
+  "models": [
+    "median_baseline",
+    "historical_baseline"
+  ],
+  "metrics": [
+    "cv_metrics.csv",
+    "experiment_summary.csv",
+    "validation_metrics.csv"
+  ],
+  "predictions": [
+    "validation_predictions.csv"
+  ],
+  "figures": [
+    "baseline_comparison.png"
+  ]
+}
