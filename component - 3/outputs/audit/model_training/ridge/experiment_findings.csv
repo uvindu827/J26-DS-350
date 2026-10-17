@@ -1,0 +1,7 @@
+finding,result
+Model,Ridge Regression
+Mean expanding-window log MAE,1.0721
+2023 validation log MAE,1.0654
+2023 validation kg MAE,236.17 kg
+2023 validation kg bias,90.55 kg
+Test status,2024 target sealed and unused
