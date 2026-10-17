@@ -1,0 +1,7 @@
+finding,result
+Model,Histogram Gradient Boosting Regression
+Mean expanding-window log MAE,0.8211
+2023 validation log MAE,0.8307
+2023 validation kg MAE,125.01 kg
+2023 validation kg bias,-88.47 kg
+Test status,2024 target sealed and unused
