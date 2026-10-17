@@ -1,11 +1,15 @@
 /**
  * Runtime structure checks. If a response does not match, it is rejected and the screen
  * shows "unavailable" rather than presenting it as valid (NFR-05).
- * Checks exist for every endpoint a built screen uses: health, meta (Step 0),
- * cells, geo, outlook (Step 1). The rest are added when their screens are built.
+ * Checks exist for every endpoint a built screen uses: health, meta, cells, geo, outlook,
+ * forecast, reliability and cell climatology.
  */
 import type {
   Cell,
+  CellClimatologyResponse,
+  ForecastResponse,
+  NutrientForecast,
+  ReliabilityResponse,
   CellsResponse,
   GeoFeature,
   GeoResponse,
@@ -163,5 +167,100 @@ export function isOutlookResponse(value: unknown): value is OutlookResponse {
     cells.every(isOutlookCell) &&
     isRecord(regions) &&
     REGIONS.every((r) => isRegionSummary(regions[r]))
+  );
+}
+
+function isNumberArray(value: unknown, length?: number): value is number[] {
+  return Array.isArray(value) && (length === undefined || value.length === length) && value.every(isFiniteNumber);
+}
+function isStringArrayOf(value: unknown, allowed: string[], length: number): boolean {
+  return Array.isArray(value) && value.length === length && value.every((v) => isOneOf(v, allowed));
+}
+
+function isNutrientForecast(value: unknown, horizon: number): value is NutrientForecast {
+  if (!isRecord(value)) return false;
+  const { normal_issue_month: n, history } = value;
+  return (
+    isNonEmptyString(value.unit) &&
+    isFiniteNumber(value.issue_value) &&
+    isOneOf(value.issue_status, STATUSES) &&
+    isRecord(n) &&
+    isFiniteNumber(n.p25) &&
+    isFiniteNumber(n.p50) &&
+    isFiniteNumber(n.p75) &&
+    Array.isArray(history) &&
+    history.length > 0 &&
+    history.every((h) => isRecord(h) && isIsoDate(h.date) && isFiniteNumber(h.value)) &&
+    isNumberArray(value.forecast, horizon) &&
+    (value.forecast as number[]).every((v) => v >= 0) &&
+    isNumberArray(value.typical_error, horizon) &&
+    isStringArrayOf(value.status, STATUSES, horizon) &&
+    isStringArrayOf(value.trend, TRENDS, horizon) &&
+    isNumberArray(value.actual, horizon) &&
+    (value.benchmark === null || isNumberArray(value.benchmark, horizon)) &&
+    isFiniteNumber(value.no_change)
+  );
+}
+
+/** All per-lead arrays must have one value per lead date; driver series one value per driver date. */
+export function isForecastResponse(value: unknown): value is ForecastResponse {
+  if (!isRecord(value)) return false;
+  const { season, lead_dates, nutrients, drivers } = value;
+  if (!Array.isArray(lead_dates) || lead_dates.length === 0 || !lead_dates.every(isIsoDate)) return false;
+  const horizon = lead_dates.length;
+  if (!isRecord(drivers) || !Array.isArray(drivers.dates) || !drivers.dates.every(isIsoDate)) return false;
+  const nd = drivers.dates.length;
+  return (
+    isCell(value.cell) &&
+    isIsoDate(value.issue_date) &&
+    isNonEmptyString(value.mode) &&
+    isNonEmptyString(value.model) &&
+    isRecord(season) &&
+    isOneOf(season.code, SEASONS) &&
+    isNonEmptyString(season.name) &&
+    isRecord(nutrients) &&
+    NUTRIENTS.every((k) => isNutrientForecast(nutrients[k], horizon)) &&
+    ['precip_mm', 'surface_runoff_mm', 'subsurface_runoff_mm', 'soil_moisture', 'wind_speed', 'wind_dir_from_deg'].every((k) =>
+      isNumberArray(drivers[k], nd),
+    ) &&
+    isFiniteNumber(drivers.precip_sum_30d_at_issue)
+  );
+}
+
+export function isReliabilityResponse(value: unknown): value is ReliabilityResponse {
+  if (!isRecord(value) || !isRecord(value.nutrients)) return false;
+  const n = value.nutrients;
+  return (
+    isNonEmptyString(value.model) &&
+    isNonEmptyString(value.basis) &&
+    isNonEmptyString(value.metric) &&
+    NUTRIENTS.every((k) => {
+      const r = n[k];
+      return (
+        isRecord(r) &&
+        isNumberArray(r.rmse_by_lead) &&
+        (r.rmse_by_lead as number[]).length > 0 &&
+        isFiniteNumber(r.skill_all) &&
+        isFiniteNumber(r.skill_western) &&
+        isFiniteNumber(r.skill_southern)
+      );
+    })
+  );
+}
+
+export function isCellClimatologyResponse(value: unknown): value is CellClimatologyResponse {
+  return (
+    isRecord(value) &&
+    isNonEmptyString(value.period) &&
+    isNonEmptyString(value.cell_id) &&
+    Array.isArray(value.months) &&
+    value.months.every(
+      (m) =>
+        isRecord(m) &&
+        isFiniteNumber(m.month) &&
+        isFiniteNumber(m.precip_mm) &&
+        isFiniteNumber(m.wind_speed) &&
+        isFiniteNumber(m.wind_dir_from_deg),
+    )
   );
 }

@@ -32,7 +32,7 @@ export function formatMs(ms: number): string {
  * The API already rounds to 5 decimals; this only shortens for display.
  */
 export function formatConc(value: number): string {
-  if (value === 0) return '0';
+  if (value === 0) return '0.0';
   const a = Math.abs(value);
   const decimals = a >= 10 ? 1 : a >= 1 ? 2 : a >= 0.01 ? 3 : 4;
   return value.toFixed(decimals);
@@ -40,7 +40,19 @@ export function formatConc(value: number): string {
 
 /** Signed change, e.g. "+0.081" or "−1.37". Uses a real minus sign. */
 export function formatChange(value: number): string {
-  if (value === 0) return '0';
+  if (value === 0) return '0.0';
   const text = formatConc(Math.abs(value));
   return `${value > 0 ? '+' : '−'}${text}`;
+}
+
+/** Fraction as a percentage with one decimal, e.g. 0.197 -> "19.7%". */
+export function formatPercent(fraction: number): string {
+  return `${(fraction * 100).toFixed(1)}%`;
+}
+
+/** Full month name for an ISO date, e.g. "2024-05-15" -> "May". */
+export function monthName(iso: string): string {
+  const names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const m = Number(iso.slice(5, 7));
+  return names[m - 1] ?? iso;
 }

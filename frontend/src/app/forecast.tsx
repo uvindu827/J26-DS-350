@@ -1,32 +1,15 @@
-/** Route "/forecast?cell=...&issue=...": placeholder until Step 2 (Location Forecast). */
-import { useLocalSearchParams } from 'expo-router';
+/** Route "/forecast?cell=<cell_id>&issue=<YYYY-MM-DD>": Location Forecast. */
 import Head from 'expo-router/head';
-import { StyleSheet, Text } from 'react-native';
 
-import { ComingSoon, KeyValueRow } from '@/components/common';
-import { colors, textStyles } from '@/theme';
-import { formatIsoDate } from '@/utils/format';
+import { ForecastScreen } from '@/screens/ForecastScreen';
 
 export default function ForecastRoute() {
-  const { cell, issue } = useLocalSearchParams<{ cell?: string; issue?: string }>();
   return (
     <>
       <Head>
         <title>Location forecast · FishGuard AI</title>
       </Head>
-      <ComingSoon title="Location forecast" step="Step 2">
-        {cell || issue ? (
-          <>
-            <Text style={styles.text}>Requested from the Coastal Outlook:</Text>
-            {cell ? <KeyValueRow label="Cell" value={cell} mono /> : null}
-            {issue ? <KeyValueRow label="Issue date" value={formatIsoDate(issue)} /> : null}
-          </>
-        ) : null}
-      </ComingSoon>
+      <ForecastScreen />
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  text: { ...textStyles.bodySmall, color: colors.textMuted },
-});

@@ -33,6 +33,15 @@ export const colors = {
   // Series
   forecast: '#D9482B',
   reference: '#111827', // Copernicus model-hindcast reference line
+  // Benchmark indigo is checked against the forecast coral for colour-vision separation
+  // (dataviz palette validator: CVD ΔE 20.8, normal-vision ΔE 30.8); it is also dashed.
+  benchmark: '#3B5BA9',
+  noChange: '#6B7785',
+  forecastWindow: '#F2F8FA',
+  chartGrid: '#E6ECF2',
+  rain: '#3E86BF',
+  runoff: '#2F6FB2',
+  soil: '#7A6A3A',
 
   // Map (from the artifact's coastal map)
   mapSea: '#E2EEF4',

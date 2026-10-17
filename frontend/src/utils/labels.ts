@@ -34,10 +34,33 @@ export const FORCING_SOURCE_LABEL = 'ERA5-Land / ERA5 reanalysis';
 export const FORCING_SOURCE_NOTE =
   'Rainfall, runoff, soil moisture and wind come from ERA5-Land and ERA5 reanalysis, not from station observations.';
 
-export const TYPICAL_ERROR_LABEL = 'Typical error (test RMSE by lead day)';
+export const TYPICAL_ERROR_LABEL = 'Typical test error (RMSE)';
 export const TYPICAL_ERROR_NOTE =
-  'Typical error is the root-mean-square error on the 2022–2025 test period at each lead day. ' +
-  'It is not a confidence interval.';
+  'Typical test error is the root-mean-square error on the 2022–2025 test period at each lead day ' +
+  '(mean over 3 training runs). It is not a confidence interval.';
+
+export const MODEL_DESCRIPTION =
+  'Process-guided Neural ODE (an established modelling method, applied here to coastal nutrients), ' +
+  'run in replay mode with stored reanalysis forcing.';
+export const BENCHMARK_LABEL = 'XGB-B benchmark';
+export const BENCHMARK_NOTE = 'XGB-B is the process-aware XGBoost baseline used for comparison.';
+export const NO_CHANGE_LABEL = 'No-change reference';
+export const NO_CHANGE_NOTE = 'No-change (persistence) keeps the issue-day value for all 7 days.';
+export const CSV_NOTE =
+  'The CSV comes directly from /c1/forecast.csv. Its column observed_mmol_m3 holds the Copernicus ' +
+  'model-hindcast reference value, not an in-situ observation.';
+
+export const DRIVERS_NOTE =
+  'ERA5-Land / ERA5 reanalysis forcing used as model inputs. Shown for context only; ' +
+  'it does not show that any single driver caused the forecast change.';
+
+/** Plain descriptions of /c1/cells `forcing_method` values. */
+export function forcingMethodLabel(method: string, mainRiver: string | null): string {
+  if (method === 'catchment') return mainRiver ? `${mainRiver} river catchment (HydroBASINS)` : 'river catchment (HydroBASINS)';
+  if (method === 'local_30km') return 'local land area within about 30 km';
+  if (method === 'nearest_10_points') return 'nearest 10 ERA5-Land land points';
+  return method;
+}
 
 export const FORECAST_UNAVAILABLE_TITLE = 'Forecast unavailable';
 
@@ -93,8 +116,8 @@ export const SEASON_CALENDAR: { code: SeasonCode; name: string; months: string }
 export const SEASON_NOTE = 'Calendar-based season label; not measured monsoon onset.';
 
 export const ZERO_FORECAST_NOTE =
-  'A forecast of 0 means the model output was clipped at zero. Forecasts can drift towards zero in quiet, ' +
-  'low-concentration periods (known limitation).';
+  'A value of 0.0 is the model output after the non-negative constraint (concentrations cannot be negative). ' +
+  'Zero or near-zero forecasts can occur in low-concentration periods; compare with the reference and the typical test error.';
 
 export const NAV_ITEMS = [
   { href: '/', label: 'Coastal outlook' },
