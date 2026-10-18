@@ -11,6 +11,14 @@ from app.services.forecast_service import (
     get_historical_prediction,
 )
 
+from app.schemas.forecast_schema import (
+    DirectForecastRequest,
+    DirectForecastResponse,
+)
+
+from app.services.forecast_service import (
+    predict_chlorophyll,
+)
 
 router = APIRouter(
     prefix="/api/forecast",
@@ -50,3 +58,22 @@ def historical_forecast(
         )
 
     return result
+
+
+@router.post(
+    "/predict",
+    response_model=DirectForecastResponse,
+)
+def direct_forecast(request: DirectForecastRequest):
+    try:
+        result = predict_chlorophyll(
+            features=request.features
+        )
+
+        return result
+
+    except ValueError as error:
+        raise HTTPException(
+            status_code=422,
+            detail=str(error),
+        ) from error
