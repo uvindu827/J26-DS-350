@@ -3,7 +3,7 @@ import {
   ActivityIndicator, ScrollView, StyleSheet, Text,
   TextInput, TouchableOpacity, View, useWindowDimensions,
 } from 'react-native';
-import { Stack } from 'expo-router';
+import { Stack, router } from "expo-router";
 import api from '../services/api';
 import CoastalMap from '../components/CoastalMap';
 
@@ -217,6 +217,36 @@ export default function HomeScreen() {
             {selected ? (
               <>
                 <Text style={styles.coordinate}>{selected.latitude.toFixed(4)}° N · {selected.longitude.toFixed(4)}° E</Text>
+                
+<TouchableOpacity
+  accessibilityRole="button"
+  activeOpacity={0.7}
+  style={StyleSheet.flatten([
+    styles.button,
+    styles.buttonActive,
+    {
+      marginTop: 18,
+      alignSelf: "flex-start",
+    },
+  ])}
+  onPress={() => {
+    console.log("Research Analysis button pressed");
+
+    router.push({
+      pathname: "/analysis",
+      params: {
+        latitude: String(selected.latitude),
+        longitude: String(selected.longitude),
+        date: date,
+      },
+    });
+  }}
+>
+  <Text style={[styles.buttonText, { color: "#FFFFFF" }]}>
+    View Research Analysis →
+  </Text>
+</TouchableOpacity>
+
                 <Text style={styles.bigValue}>{fmt(selected.predicted_chl_mg_m3)}</Text>
                 <Text style={styles.unit}>mg/m³ predicted CHL-a</Text>
                 <View style={[styles.classBox, { borderColor: categoryColor(selected.productivity_class) }]}>
@@ -265,20 +295,7 @@ export default function HomeScreen() {
           </Panel>
         </View>
 
-        <Panel>
-          <Text style={styles.sectionLabel}>EXPLORE AVAILABLE COASTAL CELLS</Text>
-          <Text style={styles.panelTitle}>Select a historical grid coordinate</Text>
-          <Text style={styles.muted}>Showing the first 36 matching cells for convenient navigation. The map includes all returned cells.</Text>
-          <View style={styles.cellList}>
-            {mapped.slice(0, 36).map(c => (
-              <TouchableOpacity key={keyOf(c)} onPress={() => setSelectedKey(keyOf(c))}
-                style={[styles.cellItem, selectedKey === keyOf(c) && styles.cellActive]}>
-                <View style={[styles.dot, { backgroundColor: categoryColor(c.productivity_class) }]} />
-                <Text style={styles.cellText}>{c.latitude.toFixed(3)}, {c.longitude.toFixed(3)}  ·  {fmt(c.predicted_chl_mg_m3)} mg/m³</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </Panel>
+        
 
         
         <Text style={styles.footer}>FishGuard AI · Component 2 · Historical prototype for PP1 · SHAP, operational future forecasting and 3D mapping are future work</Text>
