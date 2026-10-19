@@ -1,0 +1,11 @@
+metric,value
+accuracy,0.8392448005670958
+macro_precision,0.8358168128194983
+macro_recall,0.8402999725783804
+macro_f1,0.8358874798549744
+weighted_precision,0.8490061275296972
+weighted_recall,0.8392448005670958
+weighted_f1,0.8418065446757997
+correct_classifications,132599.0
+total_observations,157998.0
+classification_agreement_percent,83.92448005670958

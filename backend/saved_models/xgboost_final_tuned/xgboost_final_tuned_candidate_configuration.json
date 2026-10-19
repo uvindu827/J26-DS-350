@@ -1,0 +1,21 @@
+{
+    "model": "XGBoost",
+    "objective": "reg:squarederror",
+    "n_estimators": 2000,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 10,
+    "reg_alpha": 0.0,
+    "reg_lambda": 5.0,
+    "random_state": 42,
+    "tree_method": "hist",
+    "device": "cuda",
+    "early_stopping_rounds": 100,
+    "target": "chlorophyll_a_log1p",
+    "original_target": "chlorophyll_a",
+    "number_of_features": 69,
+    "best_iteration": 70,
+    "best_number_of_trees": 71
+}

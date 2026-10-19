@@ -1,0 +1,30 @@
+{
+    "step": "31.9P-16T-10",
+    "status": "FINAL_TUNED_CANDIDATE",
+    "model": "XGBoost",
+    "model_file": "/content/drive/MyDrive/Indhi_Marine_Research_Data/06_models/02_XGBoost/hyperparameter_optimization/final_tuned_candidate/xgboost_final_tuned_candidate.json",
+    "configuration_file": "/content/drive/MyDrive/Indhi_Marine_Research_Data/06_models/02_XGBoost/hyperparameter_optimization/final_tuned_candidate/xgboost_final_tuned_candidate_configuration.json",
+    "validation_metrics_file": "/content/drive/MyDrive/Indhi_Marine_Research_Data/06_models/02_XGBoost/hyperparameter_optimization/final_tuned_candidate/xgboost_final_tuned_candidate_validation_metrics.json",
+    "feature_file": "/content/drive/MyDrive/Indhi_Marine_Research_Data/06_models/02_XGBoost/hyperparameter_optimization/final_tuned_candidate/xgboost_final_tuned_candidate_features.csv",
+    "test_data_loaded": false,
+    "test_data_used": false,
+    "test_predictions_generated": false,
+    "retraining_performed": false,
+    "hyperparameters_changed": false,
+    "original_model_modified": false,
+    "number_of_features": 69,
+    "best_iteration": 70,
+    "best_number_of_trees": 71,
+    "validation_metrics": {
+        "Original_CHL_MAE": 0.183277,
+        "Original_CHL_RMSE": 0.781189,
+        "Original_CHL_R2": 0.565295,
+        "Original_CHL_Bias": -0.066845,
+        "Log1p_MAE": 0.067634,
+        "Log1p_RMSE": 0.14824,
+        "Log1p_R2": 0.847291,
+        "Log1p_Bias": -0.00838,
+        "best_iteration": 70,
+        "best_number_of_trees": 71
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "step": "31.9P-16T-11-FIX",
+    "verification_status": "PASS",
+    "test_data_loaded": false,
+    "test_data_used": false,
+    "test_predictions_generated": false,
+    "training_performed": false,
+    "retraining_performed": false,
+    "hyperparameters_changed": false,
+    "original_model_modified": false,
+    "number_of_features": 69,
+    "best_iteration": 70,
+    "best_number_of_trees": 71,
+    "configuration_verified": true,
+    "recalculated_metrics": {
+        "Original_MAE": 0.18327654212236677,
+        "Original_RMSE": 0.7811886697362097,
+        "Original_R2": 0.5652951036635638,
+        "Original_Bias": -0.06684458466696072,
+        "Log_MAE": 0.06763355266232787,
+        "Log_RMSE": 0.1482401411986637,
+        "Log_R2": 0.8472905756328891,
+        "Log_Bias": -0.008380070269552252
+    },
+    "expected_metrics": {
+        "Original_MAE": 0.183277,
+        "Original_RMSE": 0.781189,
+        "Original_R2": 0.565295,
+        "Original_Bias": -0.066845,
+        "Log_MAE": 0.067634,
+        "Log_RMSE": 0.14824,
+        "Log_R2": 0.847291,
+        "Log_Bias": -0.00838
+    },
+    "maximum_absolute_difference": 4.5787763322535646e-07,
+    "tolerance": 1e-05
+}

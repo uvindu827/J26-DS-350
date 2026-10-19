@@ -1,0 +1,38 @@
+{
+    "model": "Tuned XGBoost",
+    "model_file": "/content/drive/MyDrive/Indhi_Marine_Research_Data/06_models/02_XGBoost/hyperparameter_optimization/final_tuned_candidate/xgboost_final_tuned_candidate.json",
+    "number_of_features": 69,
+    "best_iteration": 70,
+    "best_number_of_trees": 71,
+    "stored_boosting_rounds": 171,
+    "test_observations": 157998,
+    "log1p_metrics": {
+        "MAE": 0.0675196274007342,
+        "RMSE": 0.14461455791988695,
+        "R2": 0.806807347848736,
+        "Bias": -0.001139005749438259
+    },
+    "original_chl_metrics": {
+        "MAE": 0.16010962202569187,
+        "RMSE": 0.5801357232225857,
+        "R2": 0.6122583850991263,
+        "Median_AE": 0.030119105121707915,
+        "Bias": -0.03253533664348365
+    },
+    "prediction_range": {
+        "actual_min": 0.055053536,
+        "actual_max": 27.149326,
+        "predicted_min": 0.10905152559280396,
+        "predicted_max": 8.937281608581543
+    },
+    "original_xgboost_locked_test_metrics": {
+        "MAE": null,
+        "RMSE": null,
+        "R2": null
+    },
+    "final_test_decision": "TUNED_TEST_EVALUATED",
+    "test_used_for_tuning": false,
+    "test_used_for_model_selection_before_this_step": false,
+    "retraining_performed": false,
+    "hyperparameters_changed": false
+}

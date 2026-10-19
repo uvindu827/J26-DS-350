@@ -23,3 +23,10 @@ frontend/.expo/
 # Component 2 large research datasets
 backend/data/final_model_ready_test.csv
 backend/data/xgboost_test_predictions.csv
+
+# Component 2 datasets and generated predictions
+backend/data/
+
+# Python cache
+__pycache__/
+*.pyc

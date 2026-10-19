@@ -1,0 +1,10 @@
+{
+    "threshold_source": "training_only",
+    "target_variable": "chlorophyll_a",
+    "low_medium_boundary_mg_m3": 0.2126709519,
+    "medium_high_boundary_mg_m3": 0.4330995018,
+    "thresholds_recalculated": false,
+    "validation_data_loaded": false,
+    "raw_test_dataset_loaded": false,
+    "test_predictions_regenerated": false
+}

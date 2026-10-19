@@ -1,0 +1,23 @@
+{
+    "step": "31.9P-16R",
+    "model": "Final Tuned XGBoost",
+    "classification_type": "CHL-based productivity classification",
+    "threshold_source": "training_only",
+    "low_medium_threshold_mg_m3": 0.2126709519,
+    "medium_high_threshold_mg_m3": 0.4330995018,
+    "test_predictions_source": "already_generated_final_tuned_xgboost_predictions",
+    "raw_test_dataset_loaded": false,
+    "test_predictions_regenerated": false,
+    "xgboost_retrained": false,
+    "hyperparameters_changed": false,
+    "accuracy": 0.8392448005670958,
+    "macro_precision": 0.8358168128194983,
+    "macro_recall": 0.8402999725783804,
+    "macro_f1": 0.8358874798549744,
+    "weighted_precision": 0.8490061275296972,
+    "weighted_recall": 0.8392448005670958,
+    "weighted_f1": 0.8418065446757997,
+    "correct_classifications": 132599,
+    "total_observations": 157998,
+    "classification_agreement_percent": 83.92448005670958
+}
