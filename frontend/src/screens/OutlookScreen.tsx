@@ -135,10 +135,10 @@ export function OutlookScreen() {
           style={wide ? styles.mapCol : undefined}
           title={`${nut.name} (${nut.short}) · status vs seasonal normal on day ${lead}`}
           subtitle={
-            outlookData
-              ? `Target date ${formatIsoDate(outlookData.target_date)} · issued ${formatIsoDate(outlookData.issue_date)} · tap a cell to select it`
-              : `Issued ${formatIsoDate(issueDate)}`
-          }
+  outlookData
+    ? `Target date ${formatIsoDate(outlookData.target_date)} · issued ${formatIsoDate(outlookData.issue_date)} · hover a cell for change and trend · tap to select`
+    : `Issued ${formatIsoDate(issueDate)}`
+}
         >
           {outlook.status === 'loading' && <LoadingState label="Loading outlook…" />}
           {outlook.status === 'error' && (
@@ -153,7 +153,7 @@ export function OutlookScreen() {
                 onSelectCell={setSelectedCellId}
                 accessibilityLabel={`Map of the Western and Southern Sri Lankan coast with ${nut.name} status for 12 forecast cells. The same values are listed in the table below.`}
               />
-              <MapLegend showValuesNote={wide} />
+              <MapLegend />
             </>
           ) : geo.status === 'loading' ? (
             <LoadingState label="Loading map…" />
@@ -205,6 +205,7 @@ export function OutlookScreen() {
               targetDate={outlookData?.target_date ?? null}
               lead={lead}
               onOpenForecast={openForecast}
+	      geo={geo.status === 'success' ? geo.data : null}
             />
           )}
         </View>

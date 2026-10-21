@@ -53,6 +53,15 @@ export const colors = {
   mapLabel: '#52626F',
   mapNoData: '#F3F6F9',
   selection: '#0B1F33',
+  // Thematic base map (Coastal Outlook)
+  mapSeaDeep: '#CFE2EC',
+  mapShelf: '#EDF5F9',
+  mapLandLight: '#F6F5EC',
+  mapLandShade: '#E9EBDC',
+  mapCatchmentEdge: '#7F9877',
+  mapLink: '#5E7F86',
+  mapOceanLabel: '#6F93A6',
+  mapRegionLabel: '#46606F',
 
   // Controls
   controlBorder: '#CBD5DF',
